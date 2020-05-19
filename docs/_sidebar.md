@@ -3,7 +3,7 @@
 * [Guide](guide.md)
 * Content
     * React
-        * [componentWillMount](/react/componentWillMount.md)
+        * [setState() in componentWillMount](/react/componentWillMount.md)
     * JavaScript 
         * [JavaScript](/javascript/js1.md)
     * CSS
