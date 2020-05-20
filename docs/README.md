@@ -1,3 +1,1 @@
-# Home
-
-> Welcome to Jelly's Pages
+# Welcome to Jelly's blog
