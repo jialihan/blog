@@ -48,7 +48,9 @@ useComponentWillMount(() => {
  });
 ```
 we got the following error:
-$\color{red}{\text{Too many re-renders. React limits the number of renders to prevent an infinite loop.}}$, 
+```diff
+- Too many re-renders. React limits the number of renders to prevent an infinite loop.
+``` 
 
 ### Solution: for functional component
 To avoid using custom hook to call setState(), we try to do those things in constructor. But functional component doesn't have a constructor() function for us to safely to call once. Try to use `Lazy initial state`([Link]([https://reactjs.org/docs/hooks-reference.html#lazy-initial-state](https://reactjs.org/docs/hooks-reference.html#lazy-initial-state))):
