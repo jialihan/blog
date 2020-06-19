@@ -1,8 +1,8 @@
 # Welcome to Jelly's blog
 
-<img src='/assets/profile.jpg'></img>
+<img src='/docs/assets/profile.jpg'></img>
 
-![image](/assets/profile.jpg ':size=288x216')
+![image](./docs/assets/profile.jpg ':size=288x216')
 
 ### code experience
 
