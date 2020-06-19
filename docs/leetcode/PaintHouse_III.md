@@ -1,3 +1,4 @@
+## Leetcode 1473 PaintHouse III
 
 ### Description
 There is a row of m houses in a small city, each house must be painted with one of the n colors (labeled from 1 to n), some houses that has been painted last summer should not be painted again.
