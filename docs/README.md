@@ -1,6 +1,8 @@
 # Welcome to Jelly's blog
 
-![image](/docs/assets/profile.jpg "Profile" { width=288px height=216px })
+<!-- ![image](/docs/ "Profile" { width=288px height=216px }) -->
+<img src='/assets/profile.jpg' width="288" height="216"></img>
+
 ### code experience
 
 * springboot
