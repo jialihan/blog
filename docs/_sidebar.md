@@ -6,3 +6,4 @@
 * CSS
 * JS
 * Leetcode
+    * [PaintHouse_III](/leetcode/PaintHouse_III.md)
