@@ -1,3 +1,11 @@
 # Welcome to Jelly's blog
 
-![image](/assets/profile.jpeg =288x216)
+![image](/docs/assets/profile.jpg "Profile" { width=288px height=216px })
+### code experience
+
+* springboot
+* java
+* react
+* js
+* swift
+* algorithm
