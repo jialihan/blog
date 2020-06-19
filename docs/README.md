@@ -1,6 +1,6 @@
 # Welcome to Jelly's blog
 
-<img src='/assets/profile.jpg' width="288" height="216"></img>
+<img src='/assets/profile.jpg'></img>
 
 ![image](/assets/profile.jpg ':size=288x216')
 
