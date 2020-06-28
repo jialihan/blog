@@ -10,34 +10,36 @@ Reference:
 
 Kruskal's algorithm processes the edges in order of their weight values (smallest to largest), taking for the MST each edge that does not form a cycle with edges previously added, stopping after adding V-1 edges. Finally check all those edges form a forest of trees that can be a valid MST.
 #### 1. Sort edges[][] array by weight
-	```
-	  Arrays.sort(edges, (a, b) -> a[2]-b[2]);	
-	```
+```
+Arrays.sort(edges, (a, b) -> a[2]-b[2]);	
+```
+
 #### 2. Init the graph for our MST, using union-find algorithm, we need a parent[] array, with initial value set to itself. 
-	```
-	int[] p = new int[n];
-	for (int i = 0; i < p.length; i++) {
-		p[i] = i;
-	}
-	```
-	Also prepare public methods `findParent()` and 	`union(node_x, node_y)`
-	```
-	 public int findParent(int a, int[] p) {
-        if (p[a] != p[p[a]]) {
-           p[a] = findParent(p[a], p);
-        }
-        return p[a];
+```
+int[] p = new int[n];
+for (int i = 0; i < p.length; i++) {
+	p[i] = i;
+}
+```
+Also prepare public methods `findParent()` and 	`union(node_x, node_y)
+```
+public int findParent(int a, int[] p) {
+     if (p[a] != p[p[a]]) {
+        p[a] = findParent(p[a], p);
     }
-    public void union(int a, int b, int[] p)
+    return p[a];
+}
+public void union(int a, int b, int[] p)
+{
+    int x = findParent(a, p);
+    int y = findParent(b, p);
+    if(x != y)
     {
-        int x = findParent(a, p);
-        int y = findParent(b, p);
-        if(x != y)
-        {
             p[x] = y;
-        }
     }
-	```
+}
+```
+
 #### 3. Gradually try to add each edge from sorted array edges[][] into our try, `must avoid edge that will form a cycle`:
 ```
 for(int i = 0 ; i<edges.length; i++)
