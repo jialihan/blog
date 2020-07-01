@@ -128,7 +128,6 @@ step 4: my final solution
 3. When polling from PriorityQueue, pay attention to our valid condition, j is always strictly larger than i. So for each i, we must pop out previous x-position value that is `Pop out when: Node.x <= Current.x`
 
 #### Java solution: Use PriorityQueue
-	```
 	class Node{
 		int val;
 	    int x;
@@ -165,8 +164,7 @@ step 4: my final solution
 		    }
 	    }
 	    return res;
-	} 
-	```
+	}
 
 
 
