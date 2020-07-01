@@ -114,8 +114,59 @@ step 4: my final solution
 }
 ```
 
-### 
+###  1499. Max Value of Equation
+#### Key Point: 
+1. analyze the equation: `yi + yj + |xi - xj| = yi + yj + xj- xi = (yi-xi) + (xj+yj)`. Then after grouping to current node i and next node j, the max value will be when we fix at point i,  for `j - i <= k, find Max(xj+yj)`, So the final goal is to find for every `i from 0 ~ n-1, find Max(xj+yj), when(j <= k +i )`.
+2. Data structure: 
+	Since we fix current point at i, we only need to store each single node including `x-position and (xj+yj)`.
+	```
+	 class Node{
+        int val; // (x+y)
+        int x;
+    }
+	```
+3. When polling from PriorityQueue, pay attention to our valid condition, j is always strictly larger than i. So for each i, we must pop out previous x-position value that is `Pop out when: Node.x <= Current.x`
 
+#### Java solution: Use PriorityQueue
+	```
+	class Node{
+		int val;
+	    int x;
+	    public Node(int x, int val)
+	    {
+	        this.x = x;
+	        this.val = val;
+	    }
+	}
+	public int findMaxValueOfEquation(int[][] points, int k) {
+	    int m = points.length;
+	    int res = Integer.MIN_VALUE;
+	    PriorityQueue<Node> pq = new PriorityQueue<Node>((a,b)-> b.val-a.val);
+	    // for each point at i           
+	    for(int i = 0, j= 0; i < m ; i++) {
+	    
+	        // fix at current point i
+		    int cur = points[i][1] - points[i][0];
+			while(j<m && points[j][0] - points[i][0] <= k) {
+			    pq.offer(new Node(points[j][0],points[j][0]+points[j][1] ));
+			    j++;
+	        }
+	            
+	        // pop out previous point.x <= current.x     
+			while(!pq.isEmpty() && pq.peek().x<= points[i][0])
+			{
+		        pq.poll();
+		    }
+		    
+		    // compare if exist valid result
+		    if(!pq.isEmpty())
+		    {
+	            res = Math.max(res, cur + pq.peek().val);
+		    }
+	    }
+	    return res;
+	} 
+	```
 
 
 
