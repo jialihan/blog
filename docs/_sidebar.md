@@ -11,7 +11,9 @@
     * [Array Manipulation](/javascript/array.md)
     * [Date in Javascript](/javascript/date.md)
 * Leetcode
+    * [Leetcode Contest 196](/leetcode/contest196.md)
+    * [Leetcode Contest 195](/leetcode/contest195.md)
+    * [Leetcode 1489 MST](/leetcode/mst.md)
     * [PaintHouse_III](/leetcode/PaintHouse_III.md)
     * [Leetcode Contest 194](/leetcode/Contest194.md)
-    * [Leetcode 1489 MST](/leetcode/mst.md)
-    * [Leetcode Contest 195](/leetcode/contest195.md)
+   
