@@ -3,7 +3,7 @@
     * [componentWillMount()](/react/componentWillMount.md)
 * IOS
     * [Cocoapods SetUp](/ios/cocoapods_setUp.md)
-    * [SubView Auto Layout in ScrollView](/ios/scrollViw_subView.md)
+    * [ScrollView with AutoLayout](/ios/scrollViw_subView.md)
     * [Timer IOS](/ios/Timer.md)
     * [UserDefaults](/ios/userdefaults.md)
 * CSS
