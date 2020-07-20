@@ -6,6 +6,7 @@
     * [ScrollView with AutoLayout](/ios/scrollViw_subView.md)
     * [Timer IOS](/ios/Timer.md)
     * [UserDefaults](/ios/userdefaults.md)
+    * [steps to design website](/html_css/steps7.md)
 * HTML/CSS
     * [HTML Basic 01](/html_css/htmlBasic_01.md)
     * [CSS basic 01](/html_css/css_01.md)
