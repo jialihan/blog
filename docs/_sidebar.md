@@ -9,6 +9,7 @@
 * HTML/CSS
     * [HTML Basic 01](/html_css/htmlBasic_01.md)
     * [CSS basic 01](/html_css/css_01.md)
+    * [UI Design basics](/html_css/uidesign_01.md)
 * JS
     * [ES6 vs ES5](/javascript/es6.md)
     * [Webpack Config](/javascript/webpack.md)
