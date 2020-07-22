@@ -100,6 +100,13 @@ item3.width = 1 * item2.width
  ![image](../assets/proportionally.png ':size=411x256')
 
 
+### 9. source code reference
+* Description: build the ios-calculator using stackview
+* responsive ui using these rules mentioned in this article
+* functionality is not available now, will add up in the future.
+
+[Github Link: IOS-Calculator](https://github.com/jialihan/IOS-Calculator)
+
 
 
 
