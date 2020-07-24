@@ -1,8 +1,79 @@
 ## Leetcode Contest 198
 
+### 1518. Water Bottles
+
+Given  `numBottles` full water bottles, you can exchange  `numExchange`  empty water bottles for one full water bottle.
+
+The operation of drinking a full water bottle turns it into an empty bottle.
+
+Return the  **maximum**  number of water bottles you can drink.
+
+My solution:
+```
+public int numWaterBottles(int numBottles, int numExchange) {
+        int res = numBottles;
+        while(numBottles >= numExchange)
+        {
+            int cnt = numBottles / numExchange;
+            res += cnt;
+            numBottles = cnt + numBottles % numExchange; 
+            
+        }
+        return res;
+}
+```
+
+### 1519. Number of Nodes in the Sub-Tree With the Same Label
+
+[Description leetcode 1519](https://leetcode.com/contest/weekly-contest-198/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/)
+
+My solution:
+```
+class Solution {
+    int res[];  
+    int cnt[];
+    public int[] countSubTrees(int n, int[][] edges, String labels) {
+        res = new int[n];
+        cnt = new int[256];
+        Map<Integer,List<Integer>> map = new HashMap<>();
+        for(int[] e: edges)
+        {
+            if(!map.containsKey(e[0]))
+                map.put(e[0], new ArrayList<Integer>());
+            if(!map.containsKey(e[1]))
+                map.put(e[1], new ArrayList<Integer>());
+            map.get(e[0]).add(e[1]);
+            map.get(e[1]).add(e[0]);
+        }
+        dfs(map, n, 0, labels, -1);
+        return res; 
+    }
+    
+    public void dfs(Map<Integer,List<Integer>> adj, int n, int cur,  String s, int prev)
+    {
+        
+        // cur level
+        char c = s.charAt(cur);
+        int count = cnt[c]++;
+        
+        // next level
+        if(adj.containsKey(cur))
+        {     
+            for(int next: adj.get(cur))
+            {
+                if(next == prev)
+                {
+                    continue;
+                }
+               dfs(adj, n, next, s, cur);
+            }
+        }
+        res[cur] = cnt[c] - count;
+    }
+}
+```
 
 ### 1520. Maximum Number of Non-Overlapping Substrings
-
 
 Given a string  `s` of lowercase letters, you need to find the maximum number of  **non-empty**  substrings of `s` that meet the following conditions:
 
