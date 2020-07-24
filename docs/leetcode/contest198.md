@@ -165,6 +165,7 @@ Notice that you can return the substrings in  **any**  order.
 
 ### 1521.  Find a Value of a Mysterious Function Closest to Target
 Hard
+
 ![](https://assets.leetcode.com/uploads/2020/07/09/change.png)
 
 Winston was given the above mysterious function  `func`. He has an integer array  `arr`  and an integer  `target`  and he wants to find the values `l`  and  `r` that make the value  `|func(arr, l, r) - target|`  minimum possible.
