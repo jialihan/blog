@@ -18,6 +18,7 @@
     * [Array Manipulation](/javascript/array.md)
     * [Date in Javascript](/javascript/date.md)
 * Leetcode
+    * [Leetcode Contest 198](/leetcode/contest198.md)
     * [Leetcode Contest 197](/leetcode/contest197.md)
     * [Maximal Rectangle](/leetcode/lc85.md)
     * [Leetcode Contest 196](/leetcode/contest196.md)

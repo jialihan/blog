@@ -108,7 +108,7 @@ Design is how it works.
 
 ### 7. Inspiration 
 Ask yourself when begin to design:
-* collect designs you like
+* collect designs you like 
 * try to understand everything about them
 * why they look good
 * what these sites have in common?
