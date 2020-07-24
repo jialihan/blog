@@ -91,3 +91,73 @@ Notice that you can return the substrings in  **any**  order.
         return res;
     }
 ```
+
+### 1521.  Find a Value of a Mysterious Function Closest to Target
+Hard
+![](https://assets.leetcode.com/uploads/2020/07/09/change.png)
+
+Winston was given the above mysterious function  `func`. He has an integer array  `arr`  and an integer  `target`  and he wants to find the values `l`  and  `r` that make the value  `|func(arr, l, r) - target|`  minimum possible.
+
+Return  _the minimum possible value_  of  `|func(arr, l, r) - target|`.
+
+Notice that  `func`  should be called with the values `l`  and  `r`  where  `0 <= l, r < arr.length`.
+
+* Analysis: 
+	1 ) Important!!!!! here is the `bit and` operator not the XOR, so we can use the preSum[] idea to solve this
+  2 )  **property of &**: x & x = x,  `x & other <= x` so that means, the more numbers you take, the definitely reesult is becoming smaller and smaller.
+  3 ) try to find the Closest value to target, `Math.abs()`, then if once we hit 
+  ```
+  if cur-result < target
+  {
+	// calculate once
+	// then break; 
+	// because no more closest value can be found!!!	 
+  }
+  ```
+* Solution 1:  n^2 but with break rules
+```
+public int closestToTarget(int[] arr, int target) {
+        int n = arr.length;
+        int res = Integer.MAX_VALUE;
+        
+        for(int i = 0; i<n;i++)
+        {
+            int bitres = arr[i];
+              for(int j = i; j<n;j++)
+              {
+                   bitres = arr[j] & bitres;
+                   res = Math.min(res, Math.abs(bitres - target));
+                   if(bitres < target)
+                   {
+                       break;
+                   }
+              }
+            if(bitres > target)
+            {
+                // here is the smallest value that > target
+                break;
+            }
+        }
+        return  res;
+    }
+```
+
+* Solution 2: cleaner code with O(n)
+ ```
+public int closestToTarget(int[] arr, int target) {
+        int n = arr.length;
+        int sum = arr[0];
+        int res = Math.abs(sum -target);
+    
+    for(int i=1;i<arr.length;i++){ 
+        if(sum < target){
+               sum =arr[i];
+        }else{
+               sum = sum & arr[i];
+        } 
+            
+        res =Math.min(res,Math.min(Math.abs(arr[i]-target),Math.abs(sum-target)));
+        }
+        return res;   
+    }
+ ```
