@@ -306,4 +306,53 @@ const memoizedValue = useMemo(
 
 9.4) Reference api link: [useMemo Hook](https://reactjs.org/docs/hooks-reference.html#usememo)
 
+
 ### 10. Custom Hook
+#### 10.1 ) what is custom hook?
+
+A custom Hook is a JavaScript function staring with **"use"** and it helps to **share stateful logic** between components, and Each _call_ to a Hook gets **isolated state**.
+
+#### 10.2 ) rules to create your own hook
+*  name starts with `"use"` 
+* you can call other Hooks inside your own hook
+* you can decide what it takes as `arguments` and its `return`.
+
+#### 10.3 ) create your hook function
+For example, this template code from react official docs: [hooks-custom react](https://reactjs.org/docs/hooks-custom.html)
+```
+function useFriendStatus(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+  // ...
+  return isOnline;
+}
+```
+My another example, we can also use any other react hooks in our own hook. For example, the following `useHttp()` hook extract the dispatch logic to use http, you can use this hook to **get/post/delete/update** http request.
+```
+const  useHttp  =  ()  =>  {
+
+	const  [ httpState, dispatchHTTP ]  =  useReducer(httpReducer, initialState);
+
+	// fetch call to do something
+
+	return  {
+	data: httpState.data,
+	};
+};
+```
+
+#### 10.4) Use your own  hook
+* For the useFriendStatus() example: [ React docs link](https://reactjs.org/docs/hooks-custom.html)
+We can pass info as parameter to our own hook:
+The  `useState`  Hook call gives us the latest value of the  `recipientID`  state variable, we can pass it to our custom  `useFriendStatus`  Hook as an argument:
+
+```
+  const [recipientID, setRecipientID] = useState(1);
+  const isRecipientOnline = useFriendStatus(recipientID);
+```
+* For my own exmaple:
+```
+const  { data }  =  useHttp();
+```
+
+#### 10.5)  My source code example of using react custom hooks
+[github: My own useHttp Hook ](https://github.com/jialihan/react-hooks-demo/blob/master/src/hooks/http.js)
