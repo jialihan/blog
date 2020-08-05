@@ -95,7 +95,7 @@ Return  _the minimum number of steps_  needed to make the grid valid, or  **-1**
 The main diagonal of a grid is the diagonal that starts at cell  `(1, 1)`  and ends at cell  `(n, n)`.
 
 **Example 1:**
-![](https://assets.leetcode.com/uploads/2020/07/28/fw.jpg)
+`![](https://assets.leetcode.com/uploads/2020/07/28/fw.jpg)
 
 **Input:** grid = [[0,0,1],[1,1,0],[1,0,0]]
 **Output:** 3
