@@ -1,6 +1,7 @@
 * [Home](/)
 * React
     * [React Hooks](/react/reacthooks.md)
+    * [Lifecycle Method](/react/lifecycle.md)
     * [componentWillMount()](/react/componentWillMount.md)
 * IOS
     * [Tip: Radius & Shadow](/ios/radius-shadow.md)
