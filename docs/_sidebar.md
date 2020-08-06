@@ -21,6 +21,7 @@
     * [Array Manipulation](/javascript/array.md)
     * [Date in Javascript](/javascript/date.md)
 * Leetcode
+    * [1334.Smallest Number of Neighbors at a Threshold Distance](/leetcode/lc1334.md)
     * [1102.Path With Maximum Minimum Value](/leetcode/lc1102.md)
     * [Leetcode Contest 200](/leetcode/contest200.md)
     * [Leetcode Contest 199](/leetcode/contest199.md)
