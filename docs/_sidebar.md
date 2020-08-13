@@ -17,6 +17,7 @@
     * [CSS basic 01](/html_css/css_01.md)
     * [UI Design basics](/html_css/uidesign_01.md)
 * JS
+    * [Jsonp - CORS Implementation](/javascript/jsonp.md)
     * [ES6 vs ES5](/javascript/es6.md)
     * [Webpack Config](/javascript/webpack.md)
     * [Array Manipulation](/javascript/array.md)
