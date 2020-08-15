@@ -12,6 +12,7 @@
     * [design website steps](/html_css/steps7.md)
     * [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 * HTML/CSS
+    * [CSS Specificity](/html_css/specificity.md)
     * [Flexbox Introduction](/html_css/flexbox.md)
     * [HTML Basic 01](/html_css/htmlBasic_01.md)
     * [CSS basic 01](/html_css/css_01.md)
