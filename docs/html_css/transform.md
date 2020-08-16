@@ -2,7 +2,7 @@
 
 ### 2. Rotate in 3d
 #### 2.1 understand the axis in 3 directions
-![image](../assets/axis3d.png ':size=312x324')
+![image](../assets/axis3d.png ':size=249x259')
 
 **Explanation**:
 * rotateX(): element move forward or go away from you
