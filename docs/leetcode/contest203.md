@@ -112,14 +112,6 @@ Then result should be n/3 times to get the middle value.
 	```
 ### 1562.  Find Latest Group of Size M
 
-[My Submissions](https://leetcode.com/contest/weekly-contest-203/problems/find-latest-group-of-size-m/submissions/)[Back to Contest](https://leetcode.com/contest/weekly-contest-203/)
-
--   **User Accepted:**1351
--   **User Tried:**2962
--   **Total Accepted:**1394
--   **Total Submissions:**6404
--   **Difficulty:**Medium
-
 Given an array  `arr` that represents a permutation of numbers from  `1` to  `n`. You have a binary string of size `n` that initially has all its bits set to zero.
 
 At each step  `i` (assuming both the binary string and  `arr`  are 1-indexed) from  `1`  to `n`, the bit at position `arr[i]` is set to `1`. You are given an integer `m` and you need to find the latest step at which there exists a group of ones of length `m`. A group of ones is a contiguous substring of 1s such that it cannot be extended in either direction.
@@ -214,14 +206,6 @@ class Solution {
 ```
 
 ### 1563.  Stone Game V
-
-[My Submissions](https://leetcode.com/contest/weekly-contest-203/problems/stone-game-v/submissions/)[Back to Contest](https://leetcode.com/contest/weekly-contest-203/)
-
--   **User Accepted:**806
--   **User Tried:**1473
--   **Total Accepted:**838
--   **Total Submissions:**3059
--   **Difficulty:**Hard
 
 There are several stones **arranged in a row**, and each stone has an associated value which is an integer given in the array `stoneValue`.
 
