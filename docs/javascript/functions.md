@@ -109,3 +109,8 @@ var jennie = new Person('Jennie',1994, 'dancer');
    obj1.age = 18;
    // then obje2.age = 18, it will also change
    ```
+
+### 5. Working with functions
+* store functions in a variable
+* pass a function as an argument to another function
+* return a function from a function
