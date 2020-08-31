@@ -156,7 +156,7 @@ Important to arrow functions:
 * arrow function does **not have "this"** keyword
 * they share surrounding "this" keyword, so they have a **lexical "this" keyword**
 How it shares the surrounding lexical "this" keyword? Some examples here:
-Example 1: share "this" to local certain object
+**Example 1**: share "this" to local certain object
 ```
 var obj = {
   name: 'jelly',
@@ -170,7 +170,7 @@ var obj = {
 };
 ```
 
-Example 2: share "this" to global object
+**Example 2**: share "this" to global object
 ```
 var obj = {
   name: 'jelly',
@@ -183,7 +183,7 @@ var obj = {
   }
 };
 ```
-Example 3: Use case in **map() method to access "this.properties"**
+**Example 3**: Use case in **map() method to access "this.properties"**
 if we use arrow function in map() methods, we can easily have access to **'this'** object's any properties.
 ```
 Object.prototype.myFunction = function(array){
