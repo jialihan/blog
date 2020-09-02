@@ -26,6 +26,7 @@
     * [Jsonp - CORS Implementation](/javascript/jsonp.md)
     * [ES6 vs ES5](/javascript/es6.md)
     * [Webpack Config](/javascript/webpack.md)
+    * [Types in Javascript](/javascript/types.md)
     * [Array Manipulation](/javascript/array.md)
     * [Date in Javascript](/javascript/date.md)
 * Leetcode
