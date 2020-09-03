@@ -64,7 +64,7 @@ public int minOperations(int n) {
 }
 ```
 
-### 5489.  Magnetic Force Between Two Balls
+### 1552.  Magnetic Force Between Two Balls
 
 In universe Earth C-137, Rick discovered a special form of magnetic force between two balls if they are put in his new invented basket. Rick has `n`  empty baskets, the  `ith`  basket is at  `position[i]`, Morty has  `m`  balls and needs to distribute the balls into the baskets such that the  **minimum magnetic force** between any two balls is  **maximum**.
 
@@ -141,7 +141,7 @@ PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->b[1]-b[0]-a[0]+a[1]);
     }
  ```
 
-### 5490.  Minimum Number of Days to Eat N Oranges
+### 1553.  Minimum Number of Days to Eat N Oranges
 
 There are  `n`  oranges in the kitchen and you decided to eat some of these oranges every day as follows:
 
