@@ -110,7 +110,43 @@ var jennie = new Person('Jennie',1994, 'dancer');
    // then obje2.age = 18, it will also change
    ```
 
-### 5. Working with functions
+### Method shorthand(ES6)
+There exists a shorter syntax for methods in an object literal:
+Original(ES6):
+```
+const obj = {
+	name: 'jelly',
+	getName: function {
+		return this.name;
+	}
+}
+```
+It's the same with the shorthand written syntax:
+
+```
+const obj = {
+	name: 'jelly',
+	getName() {
+		return this.name;
+	}
+}
+// usage
+obj.getName();
+```
+Note: attention: since **arrow function has no "this" keyword**, 
+if we want to easliy access and make use of **"return this.name;"**,
+then we just use `function(){}` syntax.
+**Wrong** code:
+```
+const obj = {
+	name: 'jelly',
+	getName: ()=> {
+		return this.name; // wrong, cannot access this.name
+	}
+}
+```
+
+### 6. Working with functions
 * store functions in a variable
 * pass a function as an argument to another function
 * return a function from a function
