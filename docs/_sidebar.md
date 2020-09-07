@@ -20,6 +20,7 @@
     * [CSS basic 01](/html_css/css_01.md)
     * [UI Design basics](/html_css/uidesign_01.md)
 * JS
+    * [Browser APIs and DOM](/javascript/browserapi.md)
     * [Closure in JavaScript](/javascript/closure.md)
     * [Context, Scope and Hoisting in JavaScript](/javascript/hoisting.md)
     * [Objects and Functions in Javascript](/javascript/functions.md)
