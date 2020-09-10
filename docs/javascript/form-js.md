@@ -97,3 +97,5 @@ for( let el of radios)
 * **event.preventDefault()** important! don't forget to add it!
 * listen to `'submit'` event on the form
 
+#### 8. Source code Example
+[Github Repo Link](https://github.com/jialihan/JavaScript-Onboarding/tree/master/forms/JS-form)
