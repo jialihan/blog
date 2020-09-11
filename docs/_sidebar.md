@@ -20,6 +20,7 @@
     * [CSS basic 01](/html_css/css_01.md)
     * [UI Design basics](/html_css/uidesign_01.md)
 * JS
+    * [Async Javascript](/javascript/async.md)
     * [Browser APIs and DOM](/javascript/browserapi.md)
     * [Form in JavaScript](/javascript/form-js.md)
     * [Closure in JavaScript](/javascript/closure.md)

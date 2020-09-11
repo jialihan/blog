@@ -63,18 +63,99 @@ el.addEventListener("click", submitForm);
 ```
 
 2 ) Create a Promise
+```
+const promise =  new Promise((resolve,  reject)  =>  {
+if (true) {
+	resolve('success');
+	}  else  {
+	reject('error');
+	}
+});
+```
+2.1 ) How to run the promise?
+use `.then()`
+```
+promise
+.then((result)  => result +  '!')
+.then((result2)  => result2 +  '?')
+```
 
-3) Catch error
-
-4) `Promise.all( [promise1, promise2, promise3......] )`
-return array of values that each promise produced.
+3 ) Catch error: use `.catch()` method
+It only catch between code, if error is after catch() method, it won't get caught.
+```
+promise
+.then((result)  => result +  '!')
+.catch(()  =>  console.log('error'))
+.then((result3)  =>  {
+	throw  Error;
+	console.log(result3);
+});  // won't catch this error
+```
+ 
+4 ) `Promise.all( [promise1, promise2, promise3......] )`
+return array of values that each promise produced, these promises are running **in parallel**. 
 
 #### 4. Aysnc Await ( ES8)
 The goal with async await is to make **asynchronous code to look  like synchronous code**.
+* **async** keyword in function
+* `try{} catch{}` block
+* **await** keyword
+
+Code example:
+```
+async  function()  {
+try  {
+	const  [ users, posts, albums ]  =  await  Promise.all(
+		urls.map((url)  =>  {
+			return  fetch(url).then((resp)  => resp.json());
+	}));
+	console.log('success');
+}  catch (err) {
+	console.log('error:', err);
+}
+};
+```
+#### 5.  new features in ES9: Aysnc Await 
+1 ) `finally{}` block
+it will be worked no matter then or error caught, it will be executed.
+```
+myPromise
+.then(resp=>resp.json())
+.catch()
+.finally(()=>{
+	console.log('finally done');
+});
+```
+ 2 ) await in **for loop**
+it's used to process an array of promises in the same logic pattern:
+it iterates the async objects: [Reference/Statements/for-await...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
+```
+try  {
+	const arrayOfPromises = urls.map((url)  =>  fetch(url));
+	for  await (let request of arrayOfPromises) {	
+		const data =  await request.json();
+		console.log('data', data);
+	}
+}  catch (err) {
+} 
+```
+#### 6. callback queue vs job queue
+* callback -> web APIs -> external call: use **callback queue**
+* Promise -> inside Javascript engine -> use **job queue**
+* Priority order:  **job queue > callback queue**
+
+#### 7. parallel, sequence, race
+* promises.**all()** : run in parallel on the promise array
+* promises.**race()**: return the **first** result that promise finished
+* sequence:
+	 ```
+	  await  a();  // pause
+	  await  b();  // pause
+	  await  c();  // pause
+	 ```
 
 
-
-####
+#### 8. thread and concurrency
 1. threads
 2. concurrency and parallelism
 
@@ -97,3 +178,8 @@ The goal with async await is to make **asynchronous code to look  like synchrono
 |   | th2  |
 |  th1 |  |
 |   | th2  |
+
+
+
+
+
