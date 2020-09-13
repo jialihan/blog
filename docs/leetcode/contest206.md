@@ -149,8 +149,13 @@ Return _the minimum cost to make all points connected._  All points are connecte
 ![](https://assets.leetcode.com/uploads/2020/08/26/d.png)
 
 **Input:** points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+
 **Output:** 20
-**Explanation:** ![](https://assets.leetcode.com/uploads/2020/08/26/c.png)
+
+**Explanation:** 
+
+![](https://assets.leetcode.com/uploads/2020/08/26/c.png)
+
 We can connect the points as shown above to get the minimum cost of 20.
 Notice that there is a unique path between every pair of points.
 
@@ -162,6 +167,7 @@ Notice that there is a unique path between every pair of points.
 **Better solution reference from others:**
 * Union-find: connect all points into one graph
 * make edges **( point_1, point2 )**,  sort by computed cost: `|x1-x2| + |y1-y2|`
+
 ```
 class Solution {
     class Pair {
@@ -210,8 +216,7 @@ class Solution {
             parent[x] = findParent(parent, parent[x]);
         }
         return parent[x];
-    }
-        
+    }      
 }
 ```
 
