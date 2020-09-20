@@ -1,12 +1,13 @@
 # Welcome to Jelly's blog
 
-![image](/assets/profile.jpg ':size=460x345')
+![image](/assets/js-logo.png ':size=215x207')
+![image](/assets/react-logo.png)
+![image](/assets/swift-logo.jpg ':size=230x230')
 
 ### code experience
-
-* springboot
-* java
-* react
 * js
 * swift
+* react
 * algorithm
+* springboot
+* java
