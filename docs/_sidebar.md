@@ -35,6 +35,7 @@
     * [Array Manipulation](/javascript/array.md)
     * [Date in Javascript](/javascript/date.md)
 * Leetcode
+    * [Leetcode Contest 208](/leetcode/contest208.md)
     * [Leetcode Contest 207](/leetcode/contest207.md)
     * [Leetcode Contest 206](/leetcode/contest206.md)
     * [Leetcode Contest 205](/leetcode/contest205.md)
