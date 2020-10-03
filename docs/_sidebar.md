@@ -31,6 +31,7 @@
     * [JavaScript Engine - understand deeply](/javascript/engine.md)
     * [ES6 vs ES5](/javascript/es6.md)
     * [Webpack Config](/javascript/webpack.md)
+    * [eval in Javascript](/javascript/eval.md)
     * [Types in Javascript](/javascript/types.md)
     * [Array Manipulation](/javascript/array.md)
     * [Date in Javascript](/javascript/date.md)
