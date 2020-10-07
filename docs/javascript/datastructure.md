@@ -43,6 +43,14 @@ In javascript, we can only use **Arrays and Objects** ?
 - insert: O(n): use `slice()`
 - delete: O(n)
 
+pros and cons about array:
+
+| pro           | cons                       |
+| ------------- | -------------------------- |
+| fast lookups  | slow inserts               |
+| fast push/pop | slow deletes               |
+| ordered       | fixed size if static array |
+
 ### Reverse A String
 
 1. Common Solution
