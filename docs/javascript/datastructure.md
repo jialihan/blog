@@ -8,6 +8,8 @@ III. [Reverse A String](#reverse-a-string)
 
 IV. [Merge Sort In Javascript](#merge-sort-in-javascript)
 
+V. [Hash Tables](#hash-tables)
+
 ### How Computer Store Data
 
 - CPU
@@ -45,7 +47,7 @@ In javascript, we can only use **Arrays and Objects** ?
 
 pros and cons about array:
 
-| pro           | cons                       |
+| pros          | cons                       |
 | ------------- | -------------------------- |
 | fast lookups  | slow inserts               |
 | fast push/pop | slow deletes               |
@@ -129,4 +131,65 @@ while (arr1.length && arr2.length) {
 return  sorted.concat(arr1.slice().concat(arr2.slice()));
 };
 console.log(merge2([2, 5, 10, 57], [9, 12, 13]));
+```
+
+### Hash Tables
+
+- insert: O(1)
+- lookup: O(1)
+- delete: O(1)
+- search: O(1)
+
+But sometimes the collision slow down the algorithm:
+Ways to solve the collisions: https://en.wikipedia.org/wiki/Hash_table
+
+Write a Hash Table class by yourself:
+
+```
+class  HashTable {
+	constructor(size) {
+		this.data = new  Array(size);
+	}
+
+	_hash(key) {
+		// todo
+	}
+
+	set(key, val) {
+		const  index = this._hash(key);
+		if (this.data[index]) {
+			this.data[index] = [];
+		}
+		// collision: just add on that array
+		this.data[index].push([key, value]);
+	}
+
+	get(key) {
+		const  index = this._hash(key);
+		const  bucket = this.data[index];
+		if (bucket) {
+			for (const [k, v] of  bucket) {
+			if (key === k) {
+				return  v;
+			}
+			}
+		} // avg: O(1)
+		return  undefined;
+	}
+
+	keys() {
+		// loop all keys in hashtable
+		const  keysArray = [];
+		for (let  i = 0; i < this.data.length; i++) {
+			if (this.data[i]) {
+				keysArray.push(this.data[i][0][0]);
+			}
+		}
+	}
+}
+
+const  myHashTable = new  HashTable(5);
+myHashTable._hash("foo"); // still have access
+myHashTable.set("foo", 100);
+myHashTable.get("foo");
 ```
