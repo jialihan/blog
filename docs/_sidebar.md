@@ -1,6 +1,8 @@
 - [Home](/)
 - Git
+  - [git merge](/git-operation/merge.md)
   - [git rebase](/git-operation/rebase.md)
+  - [git cherry pick](/git-operation/cherrypick.md)
 - React
   - [React Hooks](/react/reacthooks.md)
   - [Lifecycle Method](/react/lifecycle.md)
@@ -40,6 +42,7 @@
   - [Array Manipulation](/javascript/array.md)
   - [Date in Javascript](/javascript/date.md)
 - Leetcode
+  - [Leetcode Contest 212 JavaScript](/leetcode/contest212.md)
   - [Leetcode Contest 211 JavaScript](/leetcode/contest211.md)
   - [Leetcode Contest 210 JavaScript](/leetcode/contest210.md)
   - [Leetcode Contest 209](/leetcode/contest209.md)
