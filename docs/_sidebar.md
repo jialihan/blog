@@ -16,6 +16,7 @@
   - [design website steps](/html_css/steps7.md)
   - [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 - HTML/CSS
+  - [CSS Common Properties](/html_css/cssproperty.md)
   - [CSS basics 02](/html_css/css02.md)
   - [DOM Manipulation](/html_css/dom.md)
   - [Transform in CSS](/html_css/transform.md)
