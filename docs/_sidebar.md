@@ -16,6 +16,7 @@
   - [design website steps](/html_css/steps7.md)
   - [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 - HTML/CSS
+  - [Background and Images in CSS](html_css/background.md)
   - [CSS Common Properties](/html_css/cssproperty.md)
   - [CSS basics 02](/html_css/css02.md)
   - [DOM Manipulation](/html_css/dom.md)
@@ -43,6 +44,7 @@
   - [Array Manipulation](/javascript/array.md)
   - [Date in Javascript](/javascript/date.md)
 - Leetcode
+  - [Leetcode Contest 213 JavaScript](leetcode/contest213.md)
   - [Leetcode Contest 212 JavaScript](/leetcode/contest212.md)
   - [Leetcode Contest 211 JavaScript](/leetcode/contest211.md)
   - [Leetcode Contest 210 JavaScript](/leetcode/contest210.md)
