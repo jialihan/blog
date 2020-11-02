@@ -1,5 +1,39 @@
 1. [vertical-align](http://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align#:~:text=Note%20that%20vertical-align%20only,vertically%20align%20block-level%20elements.): sets vertical alignment of an inline, inline-block or table-cell box.
 
+If you want to use the `virtical-align` property, you should use it on each inline-elements, otherwise, it won't take effect on the UI.
+For example on two items in one line:
+
+```html
+<div>
+  <div class="item1">hellooooooooooooooooooooooooooo</div>
+  <div class="item2">
+    helloooo
+    <br />
+    oooooooo
+    <br />
+    ooooooooooooooo
+  </div>
+</div>
+```
+
+Then we should set this property on both items to make them align middle in one line:
+
+```css
+.item1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.item2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+```
+
+then the final correct result is:
+
+![image](../asset/verticalalign.png)
+
 2. The [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)` sets the horizontal alignment of a block element or table-cell box. This means it works like [vertical-align](https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align "The vertical-align CSS property sets vertical alignment of an inline, inline-block or table-cell box.") but in the horizontal direction.
 3. [box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow): **x-offset | y-offset | blur | spread | color**
    Parameters:
