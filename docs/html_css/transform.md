@@ -1,4 +1,65 @@
 ## Deep Understanding Transform in CSS
+### 1. Transfrom
+
+### 1.1 Translate Property
+
+- **[translateX()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX)**: to the right( positive value ) or to the left( negative value )
+- **[translateY()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY)**: to the down( positive value) or to the up (negative value)
+- shorthand method: [translate()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate)
+For example usage:
+	 - number 
+	 -  percentage
+	 - one or two options: one is for both x and y
+
+	```css
+	/* Single value */
+	transform: translate(50%);
+	transform: translate(50px);
+
+	/* Double values */
+	transform: translate(100px, 100px);
+	transform: translate(100px, 50%);
+	transform: translate(30%, 50%);
+	```
+
+**Code and Examples:**
+
+code:
+```css
+.transX{
+  transform: translateX(20px);
+}
+
+.transX1{
+  transform: translateX(-20px);
+}
+
+.transY{
+  transform: translateY(30%);
+}
+
+.transY1{
+  transform: translateY(-30%);
+}
+
+.transXY{
+  transform: translate(30%,30%);
+}
+```
+
+Result images is the following:
+
+![image](../assets/translate.png ':size=740.5x441')
+
+### 1.2 Skew Property
+
+Docs: [skewX(), skewY(), skew()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew)
+
+- `skewX()`: like pull the image to the right( positive value) or to the left (negative value)
+- `skewY()`: like pull the image to the up( positive value) or to the down (negative value)
+- `skew(30deg,20deg)`: shorthand to use together
+
+![image](../assets/skew.png ':size=823x188')
 
 ### 2. Rotate in 3d
 #### 2.1 understand the axis in 3 directions
