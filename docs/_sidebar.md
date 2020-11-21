@@ -24,7 +24,7 @@
   - [DOM Manipulation](/html_css/dom.md)
   - [Transform in CSS](/html_css/transform.md)
   - [CSS Specificity](/html_css/specificity.md)
-  - [Flexbox Introduction](/html_css/flexbox.md)
+  - [Deep Understand Flexbox in CSS](/html_css/flexbox.md)
   - [HTML Basic 01](/html_css/htmlBasic_01.md)
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
