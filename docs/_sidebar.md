@@ -47,6 +47,7 @@
   - [Array Manipulation](/javascript/array.md)
   - [Date in Javascript](/javascript/date.md)
 - Leetcode
+  - [LeetCode Contest 216 JavaScript](/leetcode/contest216.md)
   - [Leetcode Contest 215 JavaScript](/leetcode/contest215.md)
   - [Leetcode Contest 214 JavaScript](/leetcode/contest214.md)
   - [Leetcode Contest 213 JavaScript](/leetcode/contest213.md)
