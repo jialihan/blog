@@ -73,7 +73,10 @@ Given two integer arrays  `days`  and  `apples`  of length  `n`, return  _the ma
 - On the fourth to the seventh days, you eat apples that grew on the fourth day.
 
 **Analysis:**
-- priority queue in JavaScript: not sure built-in library: eg: **MinPriorityQueue** ???
+- priority queue in JavaScript: [datastructures-js/priority-queue](https://github.com/datastructures-js/priority-queue)
+    ```
+    import { MinPriorityQueue, MaxPriorityQueue } from '@datastructures-js/priority-queue';
+    ```
 - use array sorting to mock the priority queue
 - always eat/consume the latest expired apple, **sort by expire date**.
 
@@ -104,6 +107,46 @@ var eatenApples = function(apples, days) {
         {
             cnt++;
             remain[0][1] = remain[0][1]-1;
+        }
+        i++;
+    }
+    return cnt;   
+};
+```
+
+**JavaScript Solution2: use DataStructure**
+
+```js
+var eatenApples = function(apples, days) {
+    // sort by expire day
+    const pq = new MinPriorityQueue({ priority: (el) => el[0] });
+    var n = apples.length;
+    var cnt = 0;
+    var i = 0;
+    while(i<n || !pq.isEmpty())
+    {
+        // grow apples
+        if(i<n && apples[i] > 0)
+        {
+               pq.enqueue([i+days[i]-1, apples[i]]);
+        }
+ 
+        // pop out expired apples
+        while(!pq.isEmpty() && (pq.front().element[1] === 0 || pq.front().element[0]< i))
+        {
+              pq.dequeue();
+        }
+         
+        // eat an apple and count
+        if(!pq.isEmpty())
+        {
+            cnt++;
+            let cur =[...pq.dequeue().element];
+            cur[1] = cur[1] - 1;
+            if(cur[1] > 0)
+            {
+                pq.enqueue(cur);
+            }
         }
         i++;
     }
