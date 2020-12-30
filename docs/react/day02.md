@@ -1,5 +1,5 @@
 
-## React-Day02 How to Avoid Unnecessary re-Renders
+## React Day02 - How to Avoid Unnecessary re-Renders
  
 I. [Render Behavior](#p1)
 
