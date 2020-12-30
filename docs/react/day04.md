@@ -9,6 +9,7 @@ III. [Set up Redux in React project](#question-3)
  - [Set up Reducer and Store](#q3-2)
  - [Dispatch Actions](#q3-3)
  - [Add Subscriptions](#q3-4)
+ - [Source code](#q3-5)
 
 IV. [Connecting Store to the React App](#question-4)
 - [Install react-redux package](#q4-1)
@@ -175,6 +176,12 @@ store.subscribe(()=>{
 	console.log("subscription:", store.getState());
 })
 ```
+
+<div id="q3-5" />
+
+#### 3.5 source code for set up redux (basics)
+
+github link: [redux-basics.js](https://github.com/jialihan/React-features/blob/main/04-redux/redux-basics/redux-basics.js)
 
 <div id="question-4"/>
 
