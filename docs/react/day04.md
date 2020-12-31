@@ -1,22 +1,31 @@
 ## React day04 - Redux: Basics
 
-I. [What is State?](#question-1)
+#### I. [What is State?](#question-1)
 
-II. [Understand Redux Data Flow](#question-2)
+#### II. [Understand Redux Data Flow](#question-2)
 
-III. [Set up Redux in React project](#question-3)
+#### III. [Set up Redux in React project](#question-3)
  - [Import Redux to application](#q3-1)
  - [Set up Reducer and Store](#q3-2)
  - [Dispatch Actions](#q3-3)
  - [Add Subscriptions](#q3-4)
- - [Source code](#q3-5)
 
-IV. [Connecting Store to the React App](#question-4)
+#### IV. [Connecting Store to the React App](#question-4)
 - [Install react-redux package](#q4-1)
 - [Import the Provider](#q4-2)
 - [Connecting Store to the react Component](#q4-3)
 - [mapStateToProps](#q4-4)
 - [mapDispatchToProps](#q4-5)
+
+#### V. [More features](#question-5)
+- [Pass & Get data with Action](#q5-1)
+- [Switch-Case in Reducer](#q5-2)
+- [Immutable Operations on State/Object](#q5-3)
+- [Immutable Operations on Array](#q5-4)
+- [Immutable Update Patterns](#q5-5)
+- [Good Practice: Outsourcing Action Types](#q5-6)
+- [Combine multiple Reducers](#q5-7)
+- [Understand State Types](#q5-8)
 
 
 <div id="question-1"/>
@@ -272,6 +281,208 @@ Usage Example:
 // class component
 <button onClick={this.props.onIncreaseCount}>Increase</button> 
 ```
+
+<div id="question-5"/>
+
+### V. More Features
+
+<div id="q5-1"/>
+
+#### 5.1  pass & get data with Action
+
+Define any optional fields when you dispatch an action. Besides the `type` property, you can define any customized fields with any name you want.
+
+For example: Pass Data to Action
+```js
+dispatch({
+	type: 'INCREASE', 
+	value: 1, 
+	name:'', 
+	payload:{}
+})
+```
+
+Get data from the action in our reducer logic, you will receive the default **"action"** as props in your reducer, then get the corresponding property field defined by yourself, eg: `action.name`,  `action.value`  and  `action.payload`
+
+For example: Get Data from Action
+```js
+const rootReducer = (state = initialState,action)=>{
+	if(action.type === 'INCREASE')
+	{
+		return {
+			...state, 
+			count: state.count + action.value,
+			name: action.name,
+			payload: action.payload
+		};
+	}
+	return state;
+}
+```
+
+<div id="q5-2"/>
+
+#### 5.2  Switch-Case in Reducer
+
+Syntax: switch by `action.type`
+For example:
+```js
+const rootReducer = (state = initialState,action)=>{
+	switch (action.type)
+	{
+		case 'INCREASE':
+			return {
+				...state,
+				count: state.count + 1
+			}
+		case 'DECREASE':
+			return {
+				...state,
+				count: state.count - 1
+			}
+	}
+	return state;
+}
+```
+
+<div id="q5-3"/>
+
+#### 5.3  Immutable Operations on State/Object
+
+Always return a new object as the new state:
+- [Object.assign](As%20mentioned%20above,%20Object.assign%28%29%20will%20do%20a%20shallow%20clone,%20fail%20to%20copy%20the%20source%20object%27s%20custom%20methods,%20and%20fail%20to%20copy%20properties%20with%20enumerable:%20false.)({}, state):
+	- does a **shallow copy**
+	- enumerable own properties: ~~no customized method~~
+	- fail to copy properties with `enumerable: false`.
+	- Note: 
+	For the purposes of redux, `Object.assign()` is sufficient 	 because the state of a redux app only contains immutable values (JSON).
+- spread operator
+
+
+
+For example:
+```js
+const newState = Object.assign({}, state);
+const newState = {...state};
+```
+
+<div id="q5-4"/>
+
+#### 5.4 Immutable Operations on Array
+
+**Add elements into Array:**
+[Array.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat): it always return a new object array as result.
+
+For example:
+```js
+const newArray = array1.concat(array2);
+```
+
+**Delete elements in Array:**
+
+- ~~Array.splice(index, count):~~ in existing array, mutable, **wrong way!!!**
+- Correct Way: spread operate to create a new array, then `splice()` to delete
+- Correct Way2: [Array.filter(function)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) 
+	Syntax:
+	```js
+	array.filter((el, index)=>{
+		return true/false;
+	})
+	```
+	For example: 
+	```js
+	// delete the item with certain id
+	results.filter( (el, index) => index!==id );
+	```
+
+<div id="q5-5"/>
+
+#### 5.5 Immutable Update Patterns
+Docs: 
+https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/
+
+**Correct Approach: Copying All Levels of Nested Data**
+
+Here's what an example of updating `state.first.second[someId].fourth` might look like:
+```
+function updateVeryNestedField(state, action)  {
+	return  {
+		...state,
+		first :  {
+			...state.first,
+			second :  {
+				...state.first.second,
+				[action.someId]  :  {
+					...state.first.second[action.someId],
+					fourth : action.someValue
+				}
+			}
+		}
+	}
+}
+```
+
+<div id="q5-6"/>
+
+#### 5.6 Outsourcing Action Types
+
+**Good Practice:** 
+store the name strings of the action into **constants** and export them.
+
+create a "action.js" file, and put all action name strings here:
+```js
+// action.js
+export const INCREASE = 'INCREASE';
+export const DECREASE = 'DECREASE';
+```
+
+Use these constants:
+```js
+// reducer.js
+import * as actionTypes from 'action.js';
+/* ... */
+switch (action.type)
+{
+	case actionTypes.INCREASE:
+		return { ... };
+}
+```
+
+<div id="q5-7"/>
+
+#### 5.7 Combine multiple Reducers
+
+When the application grows larger, it's a good practice to combine multiple reducers into one.
+
+Syntax:  [combineReducers()](https://redux.js.org/api/combinereducers)
+```jsx
+import Reducer1 from './store/reducers/reducer1.js';
+import Reducer2 from './store/reducers/reducer2.js';
+import { createStore, combineReducers } from 'redux';
+const rootReducer = combineReducers({
+	rd1: Reducer1,
+	rd2: Reducer2
+});
+```
+
+Note: 
+here the splitted properties `rd1, rd2` also split the global state into two parts. To access the state, use `state.rd1.value1`, and `state.rd2.value2`.
+
+<div id="q5-8"/>
+
+#### 5.8 Understand State Types
+
+Do we need put every state into redux store? Which state should be managed by redux?
+
+Note:  everytime user closed the browser or refresh, everything is gone in redux and it's not a replacement of database.
+
+| Type | Example |  Use Redux? |
+|--|--|--|
+| Local UI State | Show/Hide Backdrop | mostly handled within components |
+| Persistent State | All Users, all Posts, ... | Store on Server, relevant slice managed by redux |
+| Client State | is authenticated? filters set by User | Managed via Redux|
+ 
+ 
 
 
 
