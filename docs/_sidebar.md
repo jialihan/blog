@@ -4,7 +4,8 @@
   - [git rebase](/git-operation/rebase.md)
   - [git cherry pick](/git-operation/cherrypick.md)
 - React
-  - [React Day05 - Advanced Async Redux](/react/day05.md)
+  - [React Day06 - Network call: Http and Ajax in React](/react/day06.md)
+  - [React Day05 - Redux: Advanced (Action Creator & Async)](/react/day05.md)
   - [React Day04 - Redux: Basics](/react/day04.md)
   - [React Day03 - Context](/react/day03.md)
   - [React Day02 - Avoid Unnecessary Re-renders](/react/day02.md)
