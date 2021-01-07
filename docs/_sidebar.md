@@ -11,6 +11,7 @@
   - [React Day02 - Avoid Unnecessary Re-renders](/react/day02.md)
   - [React Day01 - Custom Hooks](/react/day01.md)
   - [React Hooks](/react/reacthooks.md)
+  - [Fetch API - Disadvantages](/react/fetchapi.md)
   - [Lifecycle Method](/react/lifecycle.md)
   - [componentWillMount()](/react/componentWillMount.md)
 - IOS
