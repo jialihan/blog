@@ -12,7 +12,7 @@
 
 #### VI.[React Dev Skills](#question-6)
 
-#### VII.[Other Animation Packages (optional)](#question-7)
+#### VII.[React - Client Side Rendering](#question-7)
 
 <div  id="question-1"  />
 
@@ -105,3 +105,19 @@ Things need to consider:
 	where the place that state lives in our app?
 -  what changes when **state changes**
 	consider the changes and re-renders, which related to performance
+
+<div id="question-7" />
+
+### VII. React - Client Side Rendering
+-   SSR (traditional way) - server side rendering: server renders the page and returns fully compiled HTML
+	- everytime we enter the new URL, client side receives whole new files of JS, HTML & CSS from server
+
+		![image](../assets/ssr.png ':size=552x311')
+    
+-   [SPA](https://en.wikipedia.org/wiki/Single-page_application#:~:text=From%20Wikipedia,%20the%20free%20encyclopedia,browser%20loading%20entire%20new%20pages.) (React) - single page application: the page loads once, HTML is send to the client and JavaScript kicks in for all future interaction and update of the UI.
+	- everytime **re-render** the page, only fetch new data, client side JS will be responsible to update the DOM and rendering.
+
+		![image](../assets/singlepageapplication.png ':size=546x385')
+
+-   CSR (React) - client side rendering: server returns (almost) empty HTML and JavaScript renders the page on the client's side
+	
