@@ -77,6 +77,7 @@
   - BFS
      - [1102.Path With Maximum Minimum Value](/leetcode/lc1102.md)
   - Contest
+    - [LeetCode Contest 226 JavaScript](/leetcode/contest226.md)
     - [LeetCode Contest 225 JavaScript](/leetcode/contest225.md)
     - [LeetCode Contest 224 JavaScript](/leetcode/contest224.md)
     - [LeetCode Contest 223 JavaScript](/leetcode/contest223.md)
