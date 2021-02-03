@@ -69,6 +69,7 @@
     - [Maximal Rectangle](/leetcode/lc85.md)
   - DP
     - [PaintHouse_III](/leetcode/PaintHouse_III.md)
+    - [Palindrome Partition I,II,III,IV](/leetcode/dp/palindrome_partition.md)
   - Graph
      - [1334.Smallest Number of Neighbors at a Threshold Distance](/leetcode/lc1334.md)
   - Tree
