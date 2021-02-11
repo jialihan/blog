@@ -73,13 +73,15 @@
   - DP
     - [PaintHouse_III](/leetcode/PaintHouse_III.md)
     - [Palindrome Partition I,II,III,IV](/leetcode/dp/palindrome_partition.md)
+  - DFS
+     - [1617. Count Subtrees With Max Distance Between Cities](/leetcode/lc1617.md)
   - Graph
      - [1334.Smallest Number of Neighbors at a Threshold Distance](/leetcode/lc1334.md)
+  - BFS
+     - [1102.Path With Maximum Minimum Value](/leetcode/lc1102.md)
   - Tree
      - [1373. Maximum Sum BST in Binary Tree](/leetcode/lc1373.md)
      - [Leetcode 1489 MST](/leetcode/mst.md)
-  - BFS
-     - [1102.Path With Maximum Minimum Value](/leetcode/lc1102.md)
   - Contest
     - [LeetCode Contest 227 JavaScript](/leetcode/contest227.md)
     - [LeetCode Contest 226 JavaScript](/leetcode/contest226.md)
