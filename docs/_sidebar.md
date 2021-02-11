@@ -75,6 +75,7 @@
     - [Palindrome Partition I,II,III,IV](/leetcode/dp/palindrome_partition.md)
   - DFS
      - [1617. Count Subtrees With Max Distance Between Cities](/leetcode/lc1617.md)
+     - [1245. Tree Diameter](/leetcode/dfs/lc1245.md)
   - Graph
      - [1334.Smallest Number of Neighbors at a Threshold Distance](/leetcode/lc1334.md)
   - BFS
