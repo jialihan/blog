@@ -68,6 +68,7 @@
   - String
     - [String prefix & suffix - KMP algorithm](/leetcode/string/kmp.md)
   - Array
+    - [Max Sub-Array Sum - kadane's algorithm](/leetcode/array/max_subarray.md)
     - [Leetcode 300/1713 Longest Increasing Sequence](/leetcode/array/LIS.md)
     - [Maximal Rectangle](/leetcode/lc85.md)
   - DP
@@ -84,6 +85,7 @@
      - [1373. Maximum Sum BST in Binary Tree](/leetcode/lc1373.md)
      - [Leetcode 1489 MST](/leetcode/mst.md)
   - Contest
+    - [LeetCode Contest 228 JavaScript](/leetcode/contest228.md)
     - [LeetCode Contest 227 JavaScript](/leetcode/contest227.md)
     - [LeetCode Contest 226 JavaScript](/leetcode/contest226.md)
     - [LeetCode Contest 225 JavaScript](/leetcode/contest225.md)
