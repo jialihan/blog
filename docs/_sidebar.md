@@ -81,6 +81,7 @@
      - [1334.Smallest Number of Neighbors at a Threshold Distance](/leetcode/lc1334.md)
   - BFS
      - [1102.Path With Maximum Minimum Value](/leetcode/lc1102.md)
+     - [505.The Maze II](/leetcode/bfs/lc505.md)
   - Tree
      - [1373. Maximum Sum BST in Binary Tree](/leetcode/lc1373.md)
      - [Leetcode 1489 MST](/leetcode/mst.md)
