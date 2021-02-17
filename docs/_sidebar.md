@@ -47,6 +47,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [Web Security & XSS](/javascript/security.md)
   - [ES11-ES2020-BigInt](/javascript/bigint.md)
   - [Data Structure in JavaScript](/javascript/datastructure.md)
   - [Iframe - CORS Implementation](/javascript/iframecors.md)
