@@ -14,6 +14,8 @@
 
 #### VII.[React - Client Side Rendering](#question-7)
 
+#### VIII.[React - Controlled vs. Uncontrolled Components](#question-8)
+
 <div  id="question-1"  />
 
 ### I. Before the React.js
@@ -121,3 +123,51 @@ Things need to consider:
 
 -   CSR (React) - client side rendering: server returns (almost) empty HTML and JavaScript renders the page on the client's side
 	
+<div id="question-8" />
+
+#### VIII. Controlled vs. Uncontrolled Components
+
+Docs: [stackoverflow-controlled-uncontrolled-components](https://stackoverflow.com/questions/42522515/what-are-react-controlled-components-and-uncontrolled-components)
+
+- A [Controlled Component](https://reactjs.org/docs/forms.html#controlled-components):
+	is one that takes its current value through props and notifies changes through callbacks like onChange. A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a "dumb component".
+
+- A [Uncontrolled Component](https://reactjs.org/docs/uncontrolled-components.html):
+	is one that stores its own state internally, and you query 		the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
+
+
+#### 8.1 controlled component 
+
+An input form element whose value is controlled by React in this way is called a “controlled component”.
+For example:
+```jsx
+<input type="text" value={value} onChange={handleChange} />
+```
+
+In its parent component:
+In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](https://reactjs.org/docs/react-component.html#setstate).
+```js
+const [value, setValue] = useState('');
+const handleChange = (event)=>{
+	setValue(event.target.value);
+}
+```
+
+
+#### 8.2 uncontrolled component
+
+To write an uncontrolled component, instead of writing an event handler for every state update, you can [use a ref](https://reactjs.org/docs/refs-and-the-dom.html) to get form values from the DOM.
+
+For example:
+```jsx
+const inputRef = React.createRef();
+<input type="text" ref={inputRef} />
+```
+
+To get the current value, like the traditional DOM manipulation:
+```js
+const handleSubmit = (event) => {   
+    event.preventDefault();
+    console.log(inputRef.current.value); 
+}
+```
