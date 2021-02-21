@@ -77,11 +77,13 @@
     - [PaintHouse_III](/leetcode/PaintHouse_III.md)
     - [Palindrome Partition I,II,III,IV](/leetcode/dp/palindrome_partition.md)
   - DFS
-     - [1617. Count Subtrees With Max Distance Between Cities](/leetcode/lc1617.md)
-     - [1245. Tree Diameter](/leetcode/dfs/lc1245.md)
+     - [1617.Count Subtrees With Max Distance Between Cities](/leetcode/lc1617.md)
+     - [1245.Tree Diameter](/leetcode/dfs/lc1245.md)
   - Graph
      - [1334.Smallest Number of Neighbors at a Threshold Distance](/leetcode/lc1334.md)
   - BFS
+     - [1559. Detect Cycles in 2D Grid](/leetcode/bfs/lc1559.md) 
+     - [1368.Minimum Cost to Make at Least One Valid Path in a Grid](/leetcode/bfs/lc1368.md)
      - [1102.Path With Maximum Minimum Value](/leetcode/lc1102.md)
      - [505.The Maze II](/leetcode/bfs/lc505.md)
   - Tree
