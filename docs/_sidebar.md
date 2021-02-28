@@ -31,6 +31,7 @@
   - [design website steps](/html_css/steps7.md)
   - [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 - HTML/CSS
+  - [Introduction to SASS/SCSS](/html_css/sass.md)
   - [Deep Understand CSS Positions](/html_css/position.md)
   - [Modern CSS](/html_css/moderncss.md)
   - [Deep Understand CSS Grid](/html_css/grid.md)
@@ -39,7 +40,7 @@
   - [Background and Images in CSS](/html_css/background.md)
   - [CSS Common Properties](/html_css/cssproperty.md)
   - [CSS basics 02](/html_css/css02.md)
-  - [DOM Manipulation](/html_css/dom.md)
+  - [DOM & DOM Manipulation](/html_css/dom.md)
   - [Transform in CSS](/html_css/transform.md)
   - [CSS Specificity](/html_css/specificity.md)
   - [Deep Understand Flexbox in CSS](/html_css/flexbox.md)
@@ -47,6 +48,8 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [JavaScript - Good Parts (book)](/javascript/goodparts.md)
+  - [Flatten an array in JavaScript](/javascript/flattenArray.md)
   - [Web interview questions & answer](/javascript/web_questions.md)
   - [Web Security & XSS](/javascript/security.md)
   - [ES11-ES2020-BigInt](/javascript/bigint.md)
