@@ -105,8 +105,33 @@ When we access variable from the closure, we won't directly create that variable
 	Then we use the returned function to call many times, they will have direct access to their parent function's variable, stored in that closure.
 
 ### V. closure in for loop
-1. ES5: scope is function-based, use IIFE to ensure data privacy.
+
+#### 5.1 ES5: scope is function-based, use IIFE to ensure data privacy.
+
+**Avoid creating functions within a loop.** It can be wasteful computationally,and it  can cause confusion, as we saw with the bad example. 
+
+**Bad example first:**
+```js
+// BAD Example
+var i = 0;
+for (i =  0; i < 5; i++) {
+	setTimeout(function()  {
+		console.log('I am at index '  + i);
+	},  3000);
+}
 ```
+**Wrong result:**
+Because `i` is bound to that variable, but not each value of the varible `i`.
+```
+// BAD Example
+I am at inde 5
+I am at inde 5
+I am at inde 5
+I am at inde 5
+I am at inde 5
+```
+**Solution: IIFE**
+```js
 for (var i =  0; i < 5; i++) {
 	(function(index)  {
 		setTimeout(function()  {
@@ -115,15 +140,23 @@ for (var i =  0; i < 5; i++) {
 	})(i);
 }
 ```
-2. ES6:  if we use `let`, it's **{} block-scoped**
-```
-for (let i =  0; i < 5; i++) {
-{   
+
+#### 5.2 ES6: if we use `let`, it's `{}` block-scoped
+```js
+for (let i =  0; i < 5; i++) {  
 	// scope created here
 	// after 3s, "i" value still kept
 	setTimeout(function()  {
 		console.log('I am at index '  + i);
 	},  3000);
 }
+```
+**Correct Result:**
+```
+I am at index 0
+I am at index 1
+I am at index 2
+I am at index 3
+I am at index 4
 ```
 
