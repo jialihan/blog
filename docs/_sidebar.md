@@ -31,6 +31,7 @@
   - [design website steps](/html_css/steps7.md)
   - [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 - HTML/CSS
+  - [CSS Selectors](/html_css/css_selectors.md)
   - [Introduction to SASS/SCSS](/html_css/sass.md)
   - [Deep Understand CSS Positions](/html_css/position.md)
   - [Modern CSS](/html_css/moderncss.md)

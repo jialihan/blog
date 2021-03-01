@@ -1,4 +1,15 @@
 ## Understand CSS Specificity 
+
+### O.Preface
+
+**What is Specificity?**
+
+**Specificity** is the means by which **browsers decide which CSS property values are the most relevant to an element** and, therefore, **will be applied**. Specificity is based on the matching rules which are composed of different sorts of [CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#selectors).
+
+**Docs:** [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
+
+**Online Specificity Calculator**: [test your css-selector here](https://polypane.app/css-specificity-calculator/#selector=)
+
 ### 1. type of css selectors
 * universal selector: 
 	```
