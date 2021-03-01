@@ -5,6 +5,8 @@
 #### II. [1769.  Minimum Number of Operations to Move All Balls to Each Box](#question-2)
 
 #### III. [1770.  Maximum Score from Performing Multiplication Operations](#question-3)
+- [DFS + memo](#q3-1)
+- [DP - bottom up](#q3-2)
 
 #### IV. [1771.  Maximize Palindrome Length From Subsequences](#question-4)
 
@@ -159,9 +161,21 @@ Return  _the  **maximum**  score after performing_ `m`  _operations._
 - Choose from the end, [**1**], adding 1 * 1 = 1 to the score.
 The total score is 9 + 4 + 1 = 14.
 
+<div id="q3-1" />
+
+#### 3.1 DFS + memo solution
+
 **JavaScript solution:**
 
 see the discussion article here:  [DFS+Memo](https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations/discuss/1075674/JavaScript:-DFS-+-Memo)
+
+<div id="q3-2" />
+
+#### 3.2 DP + bottom up
+
+**JavaScript solution:**
+
+see the discussion article here: [DP + bottom up](https://leetcode.com/problems/maximum-score-from-performing-multiplication-operations/discuss/1087392/Javascript%3A-bottom-up-%2B-DP)
 
 <div id="question-4" />
 
