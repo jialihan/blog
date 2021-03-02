@@ -153,11 +153,15 @@ allow named parameters to be initialized with default values if no value or `und
 * `clear`: map.clear(); // clear all k-v pairs
 3.  loop in a map
       [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach),  [map.entries]([https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries))
-	```
+	```js
+	for(let [key,val] of map)
 	map.forEach( (val, key) => { } );
 
 	for (let [key, val] of map.entries() ) { }
+	for (let key of map.keys()) {}
+	for (let value of map.values()) {}
 	```
+
 ### Class and SubClass
 1. Constructor
 * **ES5**:  Function Constructor

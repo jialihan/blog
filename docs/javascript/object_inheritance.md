@@ -1,4 +1,4 @@
-## Object and functions in Javascript
+## Object and Inheritance in Javascript
 
 ### 1. prototype and object inheritance
 The prototype property of an object is where we  put methods and properties that we want **other objects to inherit, but not itself**.
