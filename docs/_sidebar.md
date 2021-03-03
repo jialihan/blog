@@ -49,6 +49,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [HTTP CORS headers](/html_css/cors_header.md)
   - [JavaScript - Good Parts (book)](/javascript/goodparts.md)
   - [Flatten an array in JavaScript](/javascript/flattenArray.md)
   - [Web interview questions & answer](/javascript/web_questions.md)
