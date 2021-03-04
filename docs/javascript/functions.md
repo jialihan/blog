@@ -2,23 +2,32 @@
 
 - I. [basic features](#ch1)
 - II. [Invocation  - 3 way](#ch2)
-- III. [Arguments](#ch3)
-- IV. [Exceptions](#ch4)
-- V. [Augment Types](#ch5)
-- VI. [Recursion](#ch6)
-	- [Problem 1: Towers of Hanoi puzzle](#ch6-1)
-	- [Problem 2: Problem 2: Walk through the DOM](#ch6-2)
-	- [Problem 3: factorial](#ch6-3)
-- VII. [Scope](#ch7)
-- VIII. [Closure](#ch8)
-- IX. [Callbacks](#ch9)
-- X. [Module](#ch10)
-- XI. [Cascade](#ch11)
-- XII. [Curry](#ch12)
-- XIII. [Partial application](#ch13)
-- XIV. [Memorization](#ch14)
-- XV. [compose & pipe](#ch15)
-
+- III. [Working with Functions - 3 way](#ch3)
+- IV. [Arguments](#ch4)
+- V. [Exceptions](#ch5)
+- VI. [Augment Types](#ch6)
+- VII. [Recursion](#ch7)
+	- [Problem 1: Towers of Hanoi puzzle](#ch7-1)
+	- [Problem 2: Problem 2: Walk through the DOM](#ch7-2)
+	- [Problem 3: factorial](#ch7-3)
+- VIII. [Scope](#ch8)
+- IX. [Closure](#ch9)
+- X. [Callbacks](#ch10)
+- XI. [Module](#ch11)
+	- [What is the Module?](#ch11-1)
+	- [the module pattern](#ch11-2)
+- XII. [Cascade](#ch12)
+- XIII. [Curry](#ch13)
+	- [](#ch13-1)
+	- [](#ch13-2)
+- XIV. [Partial application](#ch14)
+- XV. [Memorization](#ch15)
+	- [What is memorization](#ch15-1)
+	- [How it works](#ch15-2)
+	- [Memorizer for fibonacci example](#ch15-3)
+- XVI. [compose & pipe](#ch16)
+	- [compose](#ch16-1)
+	- [pipe](#ch16-2)
 
 <div id="ch1" />
 
@@ -58,7 +67,14 @@ var myFunc = new Function('a', 'b', 'return a + b');
 - method invocation pattern: eg: `obj.myfunc()`, binding `this` to the object
 - use [call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)() / [apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)(): eg: `myfunc.call();`
 
-### 3. functions are first class citizens
+<div id="ch3" />
+
+### 3.Working with functions (first class citizen)
+Functions are first class citizens in JavaScript.
+* store functions in a variable
+* pass a function as an argument to another function
+* return a function from a function
+
 1 ) functions can be **assigned to variables & properties** of objects
 ```js
 var myfunc = function () {};
@@ -80,16 +96,16 @@ function b() {
 }
 ```
 
-<div id="ch3" />
+<div id="ch4" />
 
-### 3. Arguments
+### 4. Arguments
 a bonus parameter inside functions is `arguments`: an array-like-object, but not the array, no array methods on it.
 - arguments.length
 - `arguments[i]`: to grab the arguments
 
-<div id="ch4" />
+<div id="ch5" />
 
-### 4. Exceptions
+### 5. Exceptions
 throw an exception, which interrupts the exectuation of the code. It contains an object with name for the type of exception, and the desc message prop, other props if needed.
 ```js
 throw {
@@ -98,9 +114,9 @@ throw {
 };
 ```
 
-<div id="ch5" />
+<div id="ch6" />
 
-### 5. Augment Types
+### 6. Augment Types
 
 Adding  a method to `Object.prototype` makes that method                available to all objects. This also works for functions, arrays, strings, numbers, regular expressions, and booleans.
 
@@ -133,15 +149,15 @@ String.method('trim', function(){
 console.log("    test    ".trim());
 ```
 
-<div id="ch6" />
+<div id="ch7" />
 
-### 6. Recursion
+### 7. Recursion
 
 A recursive function is a function that calls itself, either                directly or indirectly.
 
-<div id="ch6-1" />
+<div id="ch7-1" />
 
-#### 6.1 Problem 1: Towers of Hanoi puzzle 
+#### 7.1 Problem 1: Towers of Hanoi puzzle 
 Reference article:  [Tower of hanoi](https://js-algorithms.tutorialhorizon.com/2016/01/11/tower-of-hanoi/)
 
 Assumption: We move the `n disks` from src to dest, with another empty.
@@ -169,9 +185,9 @@ hanoi(3, 'Src', 'Dest', 'Buffer');
 
 ![image](../assets/hanoiresult.png ':size=691x168')
 
-<div id="ch6-2" />
+<div id="ch7-2" />
 
-#### 6.2 Problem 2: Walk through the DOM
+#### 7.2 Problem 2: Walk through the DOM
 Since dom doesn't have a function to getElements by attribute, it only have a single node function [`Element.getAttribute()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute). 
 
 Note: [Node.nodeType](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType) = 1, means the Element node.
@@ -200,9 +216,9 @@ var  getElementsByAttribute = function(attr, value) {
 }
 ```
 
-<div id="ch6-3" />
+<div id="ch7-3" />
 
-#### 6.3 Problem 3: factorial  
+#### 7.3 Problem 3: factorial  
 Functions that recurse very deeply can fail by exhausting the return  stack:
 ```js
 var factorial = function factorial(n){
@@ -215,9 +231,9 @@ var factorial = function factorial(n){
 factorial(4); // 24
 ```
 
-<div id="ch7" />
+<div id="ch8" />
 
-### 7. Scope
+### 8. Scope
 
 Scope in a programming language controls the **visibility and                lifetimes of variables and parameters**. 
 
@@ -228,9 +244,9 @@ This is an important service to the programmer because it -
 ES5 - function-based scope
 ES6 - block -based scope
 
-<div id="ch8" />
+<div id="ch9" />
 
-### 8. Closure
+### 9. Closure
 
 Good thing:
 Inner functions get access to the parameters and                variables of the functions they are defined within (with the exception of this and arguments).
@@ -238,9 +254,9 @@ Inner functions get access to the parameters and                variables of the
 see another closure article instead: [here](https://jialihan.github.io/blog/#/javascript/closure) 
 
 
-<div id="ch9" />
+<div id="ch10" />
 
-### 9. Callbacks
+### 10. Callbacks
 
 Functions can make it easier to deal with discontinuous events.
 
@@ -254,15 +270,19 @@ send_request_asynchronously(request, function(response) {
 ```
 The second param function, is a callback will be executed, when the response is available.
 
-<div id="ch10" />
+<div id="ch11" />
 
-### 10. Module
+### 11. Module
 
-#### 10.1 What is the Module?
+<div id="ch11-1" />
+
+#### 11.1 What is the Module?
 
 A module is a function or object that presents an interface but that hides its state and implementation. 
 
-#### 10.2 the module pattern
+<div id="ch11-2" />
+
+#### 11.2 the module pattern
 
 - defines private variables and function
 - create privileged **function from closure** that can have access to private variables
@@ -300,9 +320,9 @@ seqer.set_seq(1000);
 var unique = seqer.gensym( ); // unique is "Q1000"
 ```
 
-<div id="ch11" />
+<div id="ch12" />
 
-### 11. Cascade
+### 12. Cascade
 
 - some methods don't return a value
 - to enable cascades, return `this` instead of `undefined`
@@ -325,12 +345,14 @@ string.split('').reverse().join();
 Advantages of cascade:
 - it can produce interfaces that are every **expressive**
 
-<div id="ch12" />
+<div id="ch13" />
 
-### 12. Curry
+### 13. Curry
 
-#### 12.1 What is curry?
-- Currying allows us to produce a new function by combining a                function and an argument
+<div id="ch13-1" />
+
+#### 13.1 What is curry?
+- Currying allows us to produce a new function by combining a function and an argument
 - It can multiple params, using curry modifying to a function that take one param at time.
 	For exmaple:
 	```js
@@ -341,7 +363,9 @@ Advantages of cascade:
 	curriedMutiply(2)(3); // 6
 	```
 
-#### 12.2 How curry works? 
+<div id="ch13-2" />
+
+#### 13.2 How curry works? 
 - works by creating a closure  that holds that original function and the arguments to curry
 - it **returns** the result of **calling that original function**, **passing it  all of the arguments from the invocation of curry**  and the current invocation.
 	```js
@@ -349,9 +373,9 @@ Advantages of cascade:
 	var curriedMutiplyBy2 = curriedMutiply(2);
 	```
 
-<div id="ch13" />
+<div id="ch14" />
 
-### XIII. Partial application
+### 14. Partial application
 
 Ahead binding some parameters, then return the new function with some parameter already set there.
 
@@ -364,18 +388,24 @@ multiply(2,3,4); // 24
 partialMultiplyBy2(3,4); // 24
 ```
 
-<div id="ch14" />
+<div id="ch15" />
 
-### XIV. Memorization
+### 15. Memorization
 
-#### 14.1 what is memorization?
+<div id="ch15-1" />
+
+#### 15.1 what is memorization?
 Functions can use objects to remember the results of previous operations, making  it possible to avoid unnecessary work. This optimization is called  *memoization*. 
 
-#### 14.2 how it works?
+<div id="ch15-2" />
+
+#### 15.2 how it works?
 
 We will keep our memoized results in a memo   array that we can hide in a closure. When our function is called, it first looks to  see if it already knows the result. If it does, it can immediately return it:
 
-#### 14.3 Memorizer for fibonacci example
+<div id="ch15-3" />
+
+#### 15.3 Memorizer for fibonacci example
 
 Original **recursive** Fibonacci function:
 ```js
@@ -407,11 +437,13 @@ memoFib(3); // 2
 memoFib(4); // 3
 ```
 
-<div id="ch15" />
+<div id="ch16" />
 
-### XV. compose & pipe
+### 16. compose & pipe
 
-#### 15.1 compose
+<div id="ch16-1" />
+
+#### 16.1 compose
 **Goal:**
 create a little assembly line, compose different functions together. Composibility is a system design principle that deals relationship between components.
 ```js
@@ -430,7 +462,9 @@ const multiplyBy3AndAbsolute = compose (
 console.log(multiplyBy3AndAbsolute(-50)); // 150
 ```
 
-#### 15.2 pipe
+<div id="ch16-2" />
+
+#### 16.2 pipe
 Goal: 
 function's order will be different, the opposite order, but the result will be same as compose way.
 ```js
