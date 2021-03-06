@@ -31,6 +31,7 @@
   - [design website steps](/html_css/steps7.md)
   - [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 - HTML/CSS
+  - [HTTP CORS headers](/html_css/cors_header.md)
   - [CSS Selectors](/html_css/css_selectors.md)
   - [Introduction to SASS/SCSS](/html_css/sass.md)
   - [Deep Understand CSS Positions](/html_css/position.md)
@@ -49,7 +50,8 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
-  - [HTTP CORS headers](/html_css/cors_header.md)
+  - [Array.prototype.reduce](/javascript/reduce.md)
+  - [Front End Design Topics](/html_css/frontend_design.md)
   - [JavaScript - Good Parts (book)](/javascript/goodparts.md)
   - [Flatten an array in JavaScript](/javascript/flattenArray.md)
   - [Web interview questions & answer](/javascript/web_questions.md)
@@ -65,12 +67,12 @@
   - [Functions in Javascript](/javascript/functions.md)
   - [Closure in JavaScript](/javascript/closure.md)
   - [Objects Inheritance](/javascript/object_inheritance.md)
+  - [Arrays in JavaScript](/javascript/array.md)
   - [JavaScript Engine - understand deeply](/javascript/engine.md)
   - [ES6 vs ES5](/javascript/es6.md)
   - [Webpack Config](/javascript/webpack.md)
   - [eval in Javascript](/javascript/eval.md)
   - [Types in Javascript](/javascript/types.md)
-  - [Array Manipulation](/javascript/array.md)
   - [Date in Javascript](/javascript/date.md)
 - Leetcodeet
   - String
