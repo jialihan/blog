@@ -50,7 +50,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
-  - [Array.prototype.reduce](/javascript/reduce.md)
+  - [Implementation of Native Array Methods](/javascript/native_array_methods.md)
   - [Front End Design Topics](/html_css/frontend_design.md)
   - [JavaScript - Good Parts (book)](/javascript/goodparts.md)
   - [Flatten an array in JavaScript](/javascript/flattenArray.md)
