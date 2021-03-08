@@ -31,6 +31,7 @@
   - [design website steps](/html_css/steps7.md)
   - [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 - HTML/CSS
+  - [Reflow/Repaint & Minimize DOM manipultion](/html_css/reflow.md)
   - [CSS float & clearfix](/html_css/float.md)
   - [HTTP CORS headers](/html_css/cors_header.md)
   - [CSS Selectors](/html_css/css_selectors.md)
