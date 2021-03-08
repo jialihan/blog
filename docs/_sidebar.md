@@ -54,7 +54,7 @@
   - [Front End Design Topics](/html_css/frontend_design.md)
   - [JavaScript - Good Parts (book)](/javascript/goodparts.md)
   - [Flatten an array in JavaScript](/javascript/flattenArray.md)
-  - [Web interview questions & answer](/javascript/web_questions.md)
+  - [Frequently asked Web app questions](/javascript/web_questions.md)
   - [Web Security & XSS](/javascript/security.md)
   - [ES11-ES2020-BigInt](/javascript/bigint.md)
   - [Data Structure in JavaScript](/javascript/datastructure.md)
