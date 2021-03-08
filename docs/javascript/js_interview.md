@@ -1,5 +1,5 @@
 ## JS interview  question
-1. what is the difference create an instance using: new ?
+Q1. what is the difference create an instance using: new ?
 	- `var x = new Person();
 	- `var x2 = Person();` ~~// wrong, undefined~~
 
@@ -12,7 +12,7 @@
 		3)  Binds the newly created object instance as the  `this`  context (i.e. all references to  `this`  in the constructor function now refer to the object created in the first step).
 		4)  Returns  `this`  if the function doesn't return an object.
 
-2. Tell me about event bubbling. How could you use it?
+Q2. Tell me about event bubbling. How could you use it?
    What is bubble down? What is bubble event?
    给个具体的例子?
    知道capture phase吗? 2，什么是 event delegation?优缺点?
@@ -32,7 +32,7 @@
 	-   event.target​ – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
 	-  this​ – is the “current” element, the one that has a currently running handler on it.
 
-3. 给了一张图片，要求用HTML/CSS实现其中的布局 = 给个tooltip图片，照着写html, css. 一个图片 ，让你用html写出来. 大概是一个linkedin的用户推荐界面。
+Q3. 给了一张图片，要求用HTML/CSS实现其中的布局 = 给个tooltip图片，照着写html, css. 一个图片 ，让你用html写出来. 大概是一个linkedin的用户推荐界面。
 
 第一行是文字People You May Know 我用div和p，​提示让用<h5>tag
 
@@ -43,6 +43,11 @@
 Version2: ​至于widget, 就是然你写一个tooltip。没有限定说用什么，不过题目是直接在一个HTML页面上， 个人感觉最好用是jQuery或vanilla JS，因为25分钟内，要set up别的UI framework的话，会浪费很多时间。全 称可以google一些方法，因为他们也是知道没人会在实际工作中用vanilla JS 做DOM manipulation. 在写得过 程当中， 面试官会问一些相关的问题。比如，你怎么写CSS，让tooltip固定在相关element的特​定位​置。 event target vs current target等等。
 
 Version3: ​加实现tooltip(Both html css 方法 and js方法​) 如何当hover在一个div上时显示tooltip。需要自己 写html和JS, use `.tooltip:hover .tooltip-text {display: block;}`
+
+Q4.
+
+
+
 
 
 
