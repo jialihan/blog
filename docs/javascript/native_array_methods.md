@@ -10,6 +10,11 @@
 - [Advanced Usage ](#q2-2)
 - [Implement your own Filter function](#q2-3)
 
+#### III. [Array.prototype.map()](#question3)
+- [Basic usage](#q3-1)
+- [Advanced Usage ](#q3-2)
+- [Implement your own Map() function](#q3-3)
+
 <div  id="question1"  />
 
 ### I. Array.prototype.reduce
@@ -174,3 +179,75 @@ Array.prototype.myFilter = function (fn, that) {
 console.log([1, 2, 3].myFilter((el) =>  el !== 1)); // [2,3]
 ```
 
+<div  id="question3"  />
+  
+### III. Array.prototype.map()
+
+<div  id="q3-1"  />
+
+#### 3.1 Basic Usage
+
+**Docs:** [map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+For example:
+```js
+const array1 = [1, 2, 3, 4];
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+// expected output: Array [1,4,9,16]
+```
+
+<div  id="q3-2"  />
+
+#### 3.2 Advanced Usage
+
+**Syntax:**
+```js
+let newArray = arr.map(callback(currentValue[, index[, array]]) {
+  // return element for newArray, after executing something
+}[, thisArg]);
+```
+
+**Parameters:**
+- `callback`
+	Function that is called for every element of  `arr`. Each time  `callback`  executes, the returned value is added to  `newArray`.
+	The  `callback`  function accepts the following **arguments**:
+	- `currentValue`
+	- `index - `Optional
+	- `array - `Optional
+- `thisArg - `Optional
+	 Value to use as `this` when executing `callback`.
+
+**Edge cases:**
+- when `undefined` or nothing returned, there is a `undefined` value added in new-returned-array.
+
+**Advanced usage example:**
+With more parameters:
+```js
+// Appending new words
+arr = ['a', 'ab', 'abc']
+const myarray = arr.map( (el, index, arr) => {
+	 ...
+})
+```
+ 
+<div  id="q3-3"  />
+
+#### 3.3 Implement your own `map()` function
+
+**Attention:**  there is an optional param `thisArg` that needs to consider to invoke the function, so I use `call(this, param1, param2, param3)` there.
+
+```js
+Array.prototype.myMap = function (fn, that) {
+	var  res = [];
+	for (var  i = 0; i < this.length; i++) {
+		res.push(fn.call(that, this[i], i, this));
+	}
+	return  res;
+};
+// usage
+var  newArray = [1, 2, 3].myMap((el, i, arr) => {
+	return  el + i * 2;
+});
+console.log(newArray); // (3) [1, 4, 7]
+```
