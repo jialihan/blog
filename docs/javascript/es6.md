@@ -163,32 +163,34 @@ allow named parameters to be initialized with default values if no value or `und
 	```
 
 ### Class and SubClass
-1. Constructor
+
+#### 1. Constructor
 * **ES5**:  Function Constructor
 	Example:
-	```
+	```js
 	var Person = function(name, age) {
 		 this.name = name;
 		 this.age = age;
 	};
 	```
 * **ES6**: Class Constructor
-	```
+	```js
 	class Person {
 		constructor(name, age) {
 		   this.name = name;
 		   this.age = age;
 		}
 	```
-2. Add a method to class
+
+#### 2. Add a method to class
 * **ES5**:  Use prototype
 	Example:
-	```
+	```js
 	className.prototype.myFunc = function() { };
 	```
 * **ES6**: Class Constructor
 attach to the class directly can have instance method and static method.
-	```
+	```js
 	class Person {
 	    constructor() {
 	    }
@@ -201,3 +203,79 @@ attach to the class directly can have instance method and static method.
 	More about instance method and static method:
 	[MDN Javascript Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 	
+#### 3.  "this" in classes
+A normal method can have access to `this.properties` inside of the class.
+```js
+class  C {
+	constructor() {
+		// here no binding is ok: foo()
+		this.name = "C";
+	}
+	foo() {
+		console.log('foo from ', this.name);
+	}
+}
+class  D  extends  C {
+	foo() {
+		super.foo(); 
+		console.log('foo from D')
+	}
+}
+new  D().foo();
+// correct output:
+// foo from C
+// foo from D
+```
+
+But when method used as `callback` function, it must bind with `this` inside of the constructor.
+
+Type Error when not binding `this` as callback: **~~WRONG !!!~~**
+```js
+class  E {
+	constructor(fn) {
+		// No binding here
+		//this.foo = this.foo.bind(this)
+		this.name = "E";
+		fn(this.foo); // because here `foo` use as callback
+	}
+	foo(val) {
+		// cannot access: this.name as callback
+		console.log('foo from ', this.name, ' with value:', val);
+	}
+}
+try {
+	new  E(fn  => {
+	fn("error!");
+	});
+} catch (e) {
+	console.log(e);
+}
+// Eror output:
+// script.js:80 Uncaught TypeError: Cannot read property 'name' of undefined
+// at foo (script.js:80)
+// at script.js:84
+// at new E (script.js:77)
+// at script.js:83
+```
+
+**Solution: use binding** 
+```js
+// Solution:
+class  F {
+	constructor(fn) {
+		this.foo = this.foo.bind(this) // you have to bind this method with `this`
+		this.name = "F";
+		fn(this.foo); // because here `foo` use as callbacks
+	}
+	foo(val) {
+		console.log('foo from ', this.name, ' with value:', val);
+	}
+}
+// test
+new  F(fn  => {
+fn("success!");
+
+});
+// expected output:
+// foo from F with value: success!
+```
