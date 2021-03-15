@@ -61,6 +61,29 @@ Docs: [skewX(), skewY(), skew()](https://developer.mozilla.org/en-US/docs/Web/CS
 
 ![image](../assets/skew.png ':size=823x188')
 
+### 1.3 Rotate in 2D
+**Docs:** [rotate()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate())
+
+**Default** property:
+`transform-origin`: default to the center of the element (50%, 50%)
+
+For example:
+```css
+.rotate360-2D{
+  animation: rotation1 4s infinite linear;
+}
+@keyframes rotation1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+```
+
+<img src="../assets/rotate2D.gif" />
+
 ### 2. Rotate in 3d
 #### 2.1 understand the axis in 3 directions
 ![image](../assets/axis3d.png ':size=249x259')
@@ -87,6 +110,9 @@ We rotate the box element at: **0 deg, 90 deg, 180 deg, -45 deg**.
 * rotateZ
 
 ![image](../assets/rotatez.png)
+
+**Animation rotate in 3D example**
+**Source code:**  [codepen link](https://codepen.io/jellyhan27/pen/ZEBPoqe)
 
 ### 3. understand the "perspective"
 
