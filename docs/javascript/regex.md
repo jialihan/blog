@@ -4,19 +4,23 @@
 
 #### II. [flags](#chapter2)
 
-#### III. [patterns - brackets](#chapter3)
+#### III. [Regex Choice](#chapter3)
 
-#### IV. [Quantifiers](#chapter4)
+#### IV. [Regex Sequence](#chapter4)
 
-#### V. [Special Character with `\`](#chapter5)
+#### V. [patterns - brackets](#chapter5)
 
-#### VI. [Grouping](#chapter6)
+#### VI. [Quantifiers](#chapter6)
 
-#### VII. [RegExp Methods in JS](#chapter7)
+#### VII. [Special Character with `\`](#chapter7)
 
-#### VIII.  [Examples](#chapter8)
-- [Phone number Regex example](#ch8-1)
-- [URL parse QueryParams example](#ch8-2)
+#### VIII. [Grouping](#chapter8)
+
+#### IX. [RegExp Methods in JS](#chapter9)
+
+#### X.  [Examples](#chapter10)
+- [Phone number Regex example](#ch10-1)
+- [URL parse QueryParams example](#ch10-2)
 
 <div id="chapter1" />
 
@@ -65,7 +69,32 @@ There are **six optional flags** that allow for functionality like global and ca
 
 <div id="chapter3" />
 
-### III. patterns - brackets
+#### III. Regex Choice
+
+A *regexp choice* contains one or more regexp sequences. The sequences are separated by the `|(vertical bar)` character. The choice matches if any of the sequences match in order.
+
+For example:
+```js
+'into'.match(/in|int/);
+// it will only match in since the first successful
+// won't match "int" because it's in second order
+```
+
+<div id="chapter4" />
+
+#### IV. Regex Sequence
+
+A regexp sequence contains one or more *regex factors*, each *regex factor* can be followed by a quantifier that determines how many times the factor is allowed to appear.
+
+- regexp factor: can be a char, a `()` group, a char classes (eg: `\w`), or an escape sequence. **All chars are treated literally except for the control characters and the special characters:**
+```
+\ / [ ] ( ) { } ? + * | . ^ $ 
+``` 
+- quantifier: [see section VI. Quantifiers](#chapter6)
+
+<div id="chapter5" />
+
+### V. patterns - brackets
 
 Brackets(`[]`) are used to find a range of characters.
 
@@ -78,9 +107,9 @@ Brackets(`[]`) are used to find a range of characters.
 |**[A-Z]** | It matches any character from uppercase  **A**  through uppercase  **Z**.|
 | **[a-Z]** | It matches any character from lowercase  **a**  through uppercase  **Z**. |
 
-<div id="chapter4" />
+<div id="chapter6" />
 
-### IV. Quantifiers
+### VI. Quantifiers
 Quantifiers define the number of occurrences of a string.
 
 | Quantifier | Description |
@@ -94,9 +123,9 @@ Quantifiers define the number of occurrences of a string.
 | **p$** | It matches any string with p at the end of it. |
 | **^p** | It matches any string with p at the beginning of it. | 
 
-<div id="chapter5" />
+<div id="chapter7" />
 
-### V. special characters with `\`
+### VII. special characters with `\`
 
 **Docs:** [character classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes)
 
@@ -115,12 +144,13 @@ Quantifiers define the number of occurrences of a string.
 | **[aeiou]** | matches a single character in the given set |
 | **[^aeiou]** | matches a single character outside the given set |
 |`(foo|bar|baz)` | matches any of the alternatives specified |
+|  **\1**, **\2** | a reference to the text that **captured by** group 1, and group 2, and so on.  |
 
-<div id="chapter6" />
+<div id="chapter8" />
 
-### VI. Grouping
+### VIII. Grouping
 
-#### 6.1 capturing group `(x)`
+#### 8.1 capturing group `(x)`
 
 **Capturing group:** Matches  `_x_`  and remembers the match.
 For example,  
@@ -138,7 +168,7 @@ while(match = reg.exec(string))
 [String.match()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)` won't return groups if the `/.../g` flag is set. However, you can still use `[String.matchAll()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)` to get all matches.
 
 
-#### 6.2 Named capturing group `(?<Name>x)`
+#### 8.2 Named capturing group `(?<Name>x)`
 Matches "x" and stores it on the groups property of the returned matches under the name specified by  `<Name>`. The angle brackets (`<`  and  `>`) are required for group name.
 
 For example:
@@ -152,13 +182,13 @@ while(match = reg.exec(string))
 }
 ```
 
-#### 6.3 Non-capturing group `(?:x)`
+#### 8.3 Non-capturing group `(?:x)`
 
 **Non-capturing group:** Matches "x" but does not remember the match. The matched substring cannot be recalled from the resulting array's elements (`[1], ..., [n]`) or from the predefined `RegExp` object's properties (`$1, ..., $9`).
 
-<div id="chapter7" />
+<div id="chapter9" />
 
-### VII. RegExp Methods in JS
+### IX. RegExp Methods in JS
 
 **Docs:** [regular expression in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#using_regular_expressions_in_javascript)
 
@@ -180,13 +210,13 @@ var myRe = /d(b+)d/g;
 var myArray = myRe.exec('cdbbdbsbz');
 ```
 
-<div id="chapter8" />
+<div id="chapter10" />
 
-### VIII. Examples
+### X. Examples
 
-<div id="ch8-1" />
+<div id="ch10-1" />
 
-#### 8.1 Phone number Regex example
+#### 10.1 Phone number Regex example
 The following regex will match  all :
 - `"(xxx)xxx-xxxx"`
 - `"xxx-xxx-xxxx"`
@@ -207,9 +237,9 @@ s = '123-456-7890';   // true
 console.log(regex.test(s));
 ```
 
-<div id="ch8-2" />
+<div id="ch10-2" />
 
-#### 8.2 URL parse QueryParams example
+#### 10.2 URL parse QueryParams example
 
 ```js
 var  regex = /[?&]([^=#]+)=([^&#]*)/g;
