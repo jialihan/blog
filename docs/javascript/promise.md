@@ -15,6 +15,8 @@
 
 Docs: [Promise object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
+**A promise is an object that may produce a single value some time in the future: either a resolved or rejected value.**
+
 How event loop deal with promise & web api callback?
 - macrotask queue: async web api callbacks, eg: setTimeout, setInterval......
 - microtask queue: eg: Promise
@@ -69,6 +71,7 @@ Gaps:
 - only implement a few major methods
 - what's about `catch()` method doing?  [Promise.prototype.catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch)
 - `then()` method can accept two arguments: `resolveHandler & rejectHandler`, [Promise.prototype.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+
 ```js
 const PENDING = 0;
 const FULFILLED = 1;
