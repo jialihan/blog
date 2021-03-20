@@ -81,6 +81,7 @@
   - [eval in Javascript](/javascript/eval.md)
   - [Types in Javascript](/javascript/types.md)
   - [Date in Javascript](/javascript/date.md)
+  - [Snake Game in Javascript](/javascript/snakegame.md)
 - Leetcodeet
   - String
     - [String prefix & suffix - KMP algorithm](/leetcode/string/kmp.md)
