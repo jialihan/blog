@@ -1,12 +1,43 @@
+## Javascript Engine
+  
+#### I. [Background](#question-1)
 
-### Javascript Engine
-#### 1. background
+#### II. [inside the engine](#question-2)
+
+#### III. [More about Interpreter & Compiler ](#question-3)
+
+#### IV. [ECMAScript](#question-4)
+
+#### V. [Write Optimized Code](#question-5)
+
+#### VI.  [Web Assembly](#question-6)
+
+#### VII. [Call stack and Memory heap](#question-7)
+
+#### VIII. [Stack Overflow](#question-8)
+
+#### IX. [Garbage Collection](#question-9)
+
+#### X. [Memory Leak](#question-10)
+
+#### XI. [Single Threaded - JavaScript](#question-11)
+
+#### XII. [Javascript Runtime](#question-12)
+
+#### XIII. [How Javascript work with browser?](#question-13)
+
+<div id="question-1"/>
+
+### 1. Background
 - javascript is an interpreted language? partial true, also have compilers to optimize it.
 - ECMAScript engines: [wiki/List_of_ECMAScript_engines](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines)
 - we give a javascript file to the engine, then the engine tell the computer what to do.
 - they read and run our javascript code, for example: V8 engine ....
 -  the first javascript engine: [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich "Brendan Eich")
-#### 2. inside the engine
+
+<div id="question-2"/>
+
+### 2. inside the engine
 - **Parser**
 - **AST:** abstract syntax tree
    online helper tools to understand the AST built on our code: [https://astexplorer.net/](https://astexplorer.net/)
@@ -15,7 +46,7 @@
    var a = 1;
   ```
   built into the tree structure like the following json:
-	```
+	```js
 	{
 	  "type": "Program",
 	  "start": 0,
@@ -51,38 +82,66 @@
 	  "sourceType": "module"
 	}
 	```
-* Interpreter -> ByteCode
-* Compiler -> Optimized Code
-1 ) Interpreter:
-translate and read the files **line by line** on the fly.
-2 ) compiler:
- it works ahead of time to create a translation of what code we've just written and it compiles down to usually a language that can be understood by our machines.
- **Compiler examples: most popular:**
- [Babel](https://babeljs.io/) is a Javascript compiler that takes your modern JS code and returns browser compatible JS (older JS code).  
-[Typescript](https://www.typescriptlang.org/) is a superset of Javascript that compiles down to Javascript.
 
-| Interpreter | Compiler  |
+* Interpreter -> ByteCode
+	the source code will be read and directly executed, line by line.
+* Compiler -> Optimized Code
+	the source file typically will be “compiled” to machine code (or byte code) before being executed.
+
+<div id="question-3"/>
+
+### 3. More about Interpreter & Compiler 
+
+<div id="q3-1"/>
+
+#### 3.1 Interpreter:
+
+translate and read the files **line by line** on the fly.
+
+<div id="q3-2"/>
+
+#### 3.2 compiler:
+
+it works ahead of time to create a translation of what code we've just written and it compiles down to usually a language that can be understood by our machines.
+
+Compiler examples: most popular:
+- [Babel](https://babeljs.io/) is a Javascript compiler that takes your modern JS code and returns browser compatible JS (older JS code).
+- [Typescript](https://www.typescriptlang.org/) is a superset of Javascript that compiles down to Javascript.
+
+<div id="q3-3"/>
+  
+#### 3.3 compare interpreter vs. compiler
+
+| Interpreter | Compiler |
 |--|--|
-| natural fit, don't need compile |  |
+| natural fit, don't need compile | |
 | slow for repeated code, eg: loops| don't need to repeat the translation for each loop |
 
-How to combine these two things?
+**How to combine these two things?**
+
 started doing browsers started mixing compilers specifically these JIT Compilers to make engine faster.
-eg: **V8 engine** how to create this: JIT Compiler
+
+For exmaple:
+ **V8 engine** how to create this: JIT Compiler
+
 ->Interpreter -> Byte code -> 01101101....
+
 ->Interpreter -> Profiler: work as a monitor to detect duplicated loop code -> Compiler -> Optimized code
-
+ 
 result will be byte code and optimized code for repeated part.
-	
-
-
+ 
 these git compilers for just in time compilation to make the engines faster.
-#### 3. ECMAScript 
+
+<div id="question-4"/>
+
+### 4. ECMAScript 
 It tells people  the standard and how you should do things in JavaScript and how it should work. ECMAScript is the governing body of javascript that essentially decides how the language should be standardized so it tells engine creators.
 
 JS engine goals: it can be implemented any way we want and it constantly changes to find the fastest way possible to have javascript work in our browsers.
 
-#### 4. write optimized code
+<div id="question-5"/>
+
+### 5. Write Optimized Code
 Things might cause JS problematic sometimes and slow:
 - eval()
 -  arguments
@@ -91,28 +150,35 @@ Things might cause JS problematic sometimes and slow:
 - delete
 Eg: eval and arguments: [Reference: managing-arguments](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers#3-managing-arguments)
 1 ) the names `eval` and `arguments` can't be bound or assigned in language syntax
-	2 ) Second, strict mode code doesn't alias properties of `arguments` objects created within it.
-	Error example:
-	```
+Error example:
+```js
+'use strict';
+eval = 17;
+arguments++;
+++eval;
+```	
+2 ) Second, strict mode code doesn't alias properties of `arguments` objects created within it.
+```js
+function f(a) {
 	'use strict';
-	eval = 17;
-	arguments++;
-	++eval;
-	```js
-	function f(a) {
-	  'use strict';
-	  a = 42; // error
-	  return [a, arguments[0]]; // arguments[i]: error
-	}
-	```
-Issue in inline-caching && hidden classes:
+	a = 42; // error
+	return [a, arguments[0]]; // arguments[i]: error
+}
+```
+// TODO: what is this?
+3 ) Issue in inline-caching && hidden classes:
 [hidden-classes.html](https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html)
 
-#### 5.  [WebAssembly](https://webassembly.org/)
+<div id="question-6"/>
+
+### 6.  [WebAssembly](https://webassembly.org/)
 The standard binary executable format called Web assembly and this is what we didn't have in 1995, we didn't have the competing browsers agreeing on this format where we can compiler way down to web assembly.
 **This executable format so that it runs really fast on the browser instead of having to go through that entire JavaScript engine process.**
 
-#### 6. call stack and memory heap
+<div id="question-7"/>
+
+### 7. Call stack and Memory heap
+
 * call stack
 a place to store and right information that is to store our variables our objects, data of our apps and a place to actually run and keep track of where your code is and its execution.
 * memory heap
@@ -128,18 +194,25 @@ For example: call stack
 
 ![image](../assets/callstack2.png ':size=510x156')
 
-#### 7. stack overflow
+<div id="question-8"/>
+
+### 8. Stack Overflow
 * recursion calls
 
-#### 8. garbage collection
+<div id="question-9"/>
+
+### 9. Garbage Collection
 * JavaScript is a garbage collected language:
 we finish calling the function and we don't need that object anymore. it will clean up for us automatically to freeze that memory when the data is not useful for us.
 * mark and sweep algorithm
 mark what we need, and sweep what we don't need
 
-#### 9. memory leak
+<div id="question-10"/>
+
+### 10. Memory Leak
+
 For example: create a loop to store in memory:
-```
+```js
 // create memory leak
 let array = [];
 for(let i=1; i>0; i++)
@@ -147,6 +220,7 @@ for(let i=1; i>0; i++)
 	array.push(i-1);
 }
 ```
+
 Common memory leaks scenario:
 * global variables:  memory becomes used more and more and more
 * event listeners
@@ -155,19 +229,29 @@ Common memory leaks scenario:
 	element.addEventListener('click', onClick); 
 	```
 * [setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
-	```
+	```js
 	setInterval(()  =>  {
 		// object here not get garbage-collected
 		// because interval never ends
 	}, interval);
 	```
+
 One more article to explain an example of memory leak:
 [garbage-collection-in-redux-applications](https://developers.soundcloud.com/blog/garbage-collection-in-redux-applications)
 
-#### 10. single threaded
+<div id="question-11"/>
+
+### 11. Single Threaded - JavaScript
 javascript only have one call stack, it's single threaded, never executed in parallel.
 
-#### 11. javascript Runtime
+**How does JS execute tasks** in a single thread? 
+the working flow process like the following image:
+
+![image](../assets/singlethreadedJS.png)
+
+<div id="question-12"/>
+
+### 12. Javascript Runtime
 * Web API	
 	- dom
 	- fetch()
@@ -192,3 +276,11 @@ javascript only have one call stack, it's single threaded, never executed in par
 
 * Event loop
 monitor once the call stack is empty, it will put the to be executed function back to the call stack.
+
+<div id="question-13"/>
+
+### 13. How Javascript work with browser?
+
+Architecture flow:
+
+![image](../assets/jsandbrowser.png)
