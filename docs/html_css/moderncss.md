@@ -177,13 +177,14 @@ browser use different defaults
 #### 3. Follow the CSS style convention: 
 [Block Element Modifier](http://getbem.com/introduction/) (BEM): a uniform and consistent way of naming the CSS classes.
 **Syntax:**
-`.` BLOCK_NAME `__`ELEMENT `__` MODIFIER
+`.` BLOCK_NAME `__`ELEMENT `--` MODIFIER
 	
 	For example:
 	```css
-	.menu-main__item--size-big {}
-	.header__brand {}
-	.button--success {}
+	.menu-main__item--size-big {} /* B + E + M */
+	.header__brand {}  /* B + E */
+	.button--success {} /* B + M */
+	.header__title--color{} /* B + E + M */
 	```
 
 <div id= "vanilla-css" />
