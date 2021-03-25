@@ -44,6 +44,7 @@ This is a variation of the traditional polling technique that allows the server 
 #### 2.2 Websocket
 - 1 ) provides [Full duplex](https://en.wikipedia.org/wiki/Duplex_(telecommunications)#Full_duplex) communication channels over a single TCP connection. 
 - 2 ) It provides a persistent connection between a client and a server that both parties can use to start sending data at any time.
+
 #### 2.3 Server Send Event
 - 1 )  Client requests data from a server using regular HTTP.
 - 2 ) The requested webpage opens a connection to the server.
