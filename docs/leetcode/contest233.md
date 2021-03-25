@@ -128,6 +128,10 @@ var countPairs = function(nums, low, high) {
 };
 ```
 
+**Trie-solution-JavaScript:**
+See the discussion article here: [JS: trie solution](https://leetcode.com/problems/count-pairs-with-xor-in-a-range/discuss/1126330/JavaScript-Trie-with-explanation)
+
+
 <div id="q4-1"/>
 
 #### 4.1 XOR Properties
