@@ -63,3 +63,18 @@ BUT: If the **~~client wants to send data to the server,~~** it would require th
 - cache `images, css, js` files on CDN is a great improvement on performance on front end
 
 ![image](../assets/cdn_flow.png ':size=627x226')
+
+
+### IV. What is the Reverse Proxy?
+
+What is proxy?
+- Selectively Block / Send request between client & server
+- log / monitor requests
+- cache responses
+
+1 ) Reverse Proxy: from client to server
+	- Ngnix
+	- Apache
+	- ...
+2 ) Forward Proxy: from server to client
+
