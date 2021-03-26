@@ -15,6 +15,8 @@
 - [Advanced Usage ](#q3-2)
 - [Implement your own Map() function](#q3-3)
 
+#### IV. [Array.prototype.push()](#question4)
+
 <div  id="question1"  />
 
 ### I. Array.prototype.reduce
@@ -251,3 +253,29 @@ var  newArray = [1, 2, 3].myMap((el, i, arr) => {
 });
 console.log(newArray); // (3) [1, 4, 7]
 ```
+
+<div  id="question4"  />
+
+### 4. Array.prototype.push
+
+native implementation of array.push():
+```js
+Array.prototype.myPush = function (...args) {
+	var  params = [...args];
+	this.splice.apply(this, [this.length, 0].concat(params));
+	return  this.length;
+};
+```
+**Usage:**
+```js
+var  arr = [];
+arr.myPush('a', 'b', 'c');
+```
+
+<div  id="question5"  />
+
+### 5. Array.prototype.shift
+```js
+
+```
+
