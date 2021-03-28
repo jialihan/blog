@@ -1,6 +1,6 @@
-center in CSS
-center in CSS
 ## How to parse URL Query Params?
+
+#### 0. [where can we get current url & params?](#chapter0)
 
 #### I. [Web APIs: URLSearchParams()](#chapter1)
 
@@ -9,6 +9,25 @@ center in CSS
 #### III. [RegExp solution](#chapter3)
 
 #### IV. [BruteForce - string operation](#chapter4)
+
+<div id="chapter0" />
+
+### 0. Where can we get current url & params?
+
+```js
+var curURL = window.location.href;
+```
+
+Then lets look at the window.location object in detail:
+
+![image](../assets/windowlocation.png)
+
+**How to get search Params?**
+
+```js
+var params = window.location.search;
+// "?v1=a&v2=c"
+```
 
 <div id="chapter1" />
 
