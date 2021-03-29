@@ -55,7 +55,7 @@
 The direct child nodes or elements, two ways to select child nodes:
 - childNodes: returns a **live**  [`NodeList`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) of child [`nodes`](https://developer.mozilla.org/en-US/docs/Web/API/Node)
 
-- children: returns a live [`NodeList`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) of child [`nodes`](https://developer.mozilla.org/en-US/docs/Web/API/Node)
+- children: a read-only property that returns a live [`HTMLCollection`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection) which contains all of the child [`elements`](https://developer.mozilla.org/en-US/docs/Web/API/Element "elements") of the node 
 
 **Comparison of this two collections:**
 

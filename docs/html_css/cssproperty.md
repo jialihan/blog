@@ -106,3 +106,38 @@ For example:
       border-color: #ff5454 !important;
 }
 ```
+
+9. How to **hide** an element in CSS ?
+
++--------------------+----------------+-----------------+
+| Property           | occupies space | consumes clicks |
++--------------------+----------------+-----------------+
+| opacity: 0         |        ✓       |        ✓        |
++--------------------+----------------+-----------------+
+| visibility: hidden |        ✓       |        ✗        |
++--------------------+----------------+-----------------+
+| display: none      |        ✗       |        ✗        |
++--------------------+----------------+-----------------+
+
+✓: yes
+✗: no
+
+10. `<ul>` style
+
+**Docs:** [`<ul>`- mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
+The HTML <ul> element represents an unordered list of items, typically rendered as a bulleted list.
+
+Change the styling: 
+[`list-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style)
+
+```css
+/* type */
+list-style: square;
+
+/* image */
+list-style: url('../img/shape.png');
+
+/* Keyword value */
+list-style: none;
+```
+
