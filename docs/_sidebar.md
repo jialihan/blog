@@ -88,6 +88,7 @@
   - String
     - [String prefix & suffix - KMP algorithm](/leetcode/string/kmp.md)
   - Array
+    - [Quick Sort - JS](/leetcode/array/quicksort.md)
     - [Squares, Rectangles, Ones in matrix](/leetcode/array/ones_in_matrix.md)
     - [Max Sub-Array Sum - kadane's algorithm](/leetcode/array/max_subarray.md)
     - [Leetcode 300/1713 Longest Increasing Sequence](/leetcode/array/LIS.md)
