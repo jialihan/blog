@@ -6,7 +6,7 @@
 
 #### III. [1824.  Minimum Sideway Jumps](#question-3)
 
-#### IV. [1825.  Finding MK Average - not solved](#question-4)
+#### IV. [1825.  Finding MK Average](#question-4)
 
 <div id="question-1"/>
 
@@ -159,5 +159,5 @@ var minSideJumps = function(obstacles) {
 
 ### [1825.  Finding MK Average](https://leetcode.com/problems/finding-mk-average/)
 
-- Not solved
+- See my Discussion Article here: [Two JS Solution O(m) and O(mlogm)](https://leetcode.com/problems/finding-mk-average/discuss/1153297/JavaScript-Improved-O(m)-and-Previous-Sort-TLE-O(mlogm)-but-now-passed)
 - Same Google interview problem: https://leetcode.com/discuss/interview-question/1094948/find-out-mk-average-of-integer-stream
