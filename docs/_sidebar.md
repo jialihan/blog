@@ -55,6 +55,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [The Bad Parts - JavaScript](/javascript/bad_parts.md)
   - [Event Listener in JavaScript](/javascript/event_listener.md)
   - [Integrate Google Map API](/html_css/googlemap.md)
   - [Regular Expression in JavaScript](/javascript/regex.md)
