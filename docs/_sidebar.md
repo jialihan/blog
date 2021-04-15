@@ -31,6 +31,7 @@
   - [design website steps](/html_css/steps7.md)
   - [Cocoapods SetUp](/ios/cocoapods_setUp.md)
 - HTML/CSS
+  - [Enter Key trigger click on Focused Element](/html_css/button_enter.md)
   - [Web network protocol](/html_css/protocol.md)
   - [Web Accessibility](/html_css/a11y.md)
   - [How to center an element in CSS?](/html_css/center.md)
