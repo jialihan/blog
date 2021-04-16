@@ -48,6 +48,7 @@
   - [Background and Images in CSS](/html_css/background.md)
   - [CSS Common Properties](/html_css/cssproperty.md)
   - [CSS basics 02](/html_css/css02.md)
+  - [DOM Node & Element](/html_css/node_element.md)
   - [DOM & DOM Manipulation](/html_css/dom.md)
   - [Transform in CSS](/html_css/transform.md)
   - [CSS Specificity](/html_css/specificity.md)
