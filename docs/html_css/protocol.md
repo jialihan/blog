@@ -6,6 +6,8 @@
 
 #### III. [How CDN helps performance?](#question-3)
 
+#### IV. [What is Message Queue](#question-4)
+
 <div id="question-1"/>
 
 ### I. Network Performance: http1.0  vs http2
@@ -77,4 +79,41 @@ What is proxy?
 	- Apache
 	- ...
 2 ) Forward Proxy: from server to client
+
+<div id="question-4"/>
+
+### IV. What is Message Queue?
+
+#### 4.1 Definition
+
+**Asynchronous** **service-to-service communication** used in serverless and microservices architectures.
+ 
+A message queue provides an **asynchronous communications protocol,** which is a system that puts a message onto a message queue and does not require an immediate response to continuing processing.
+- Producer - server node
+- Consumer - server node
+
+#### 4.2 How MQ works?
+Rules:
+- Each message is processed only once, by a single consumer
+- Queues also have **fault tolerance,** they can **retry** the requests.
+
+![image](../assets/mq_flow.png ':size=517x240')
+
+Use case:
+- email
+- food order	
+	![image](../assets/foodorder.png ':size=505x256')
+
+#### 4.3 Advantages
+- Decouple
+- Scaling
+
+A decoupled system is achieved when two or more systems are able to communicate without being connected. The systems can remain completely autonomous and unaware of other functions.
+
+#### 4.4 Examples of MQ
+- Apache Kafka
+- RabbitMQ
+- .....
+
+
 
