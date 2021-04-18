@@ -29,11 +29,17 @@
 <div id="question-1"/>
 
 ### 1. Background
+
+#### What is JS engine?
+A JavaScript engine is a program or an interpreter which executes JavaScript code. A JavaScript engine can be implemented as a standard interpreter, or just-in-time compiler that compiles JavaScript to bytecode in some form.
+
 - javascript is an interpreted language? partial true, also have compilers to optimize it.
 - ECMAScript engines: [wiki/List_of_ECMAScript_engines](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines)
 - we give a javascript file to the engine, then the engine tell the computer what to do.
 - they read and run our javascript code, for example: V8 engine ....
--  the first javascript engine: [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich "Brendan Eich")
+-  the first javascript engine: [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich "Brendan Eich") - for **Firefox**
+- V8 — open source, developed by Google, written in C++
+- JavaScriptCore — open source, marketed as Nitro and developed by Apple for **Safari**
 
 <div id="question-2"/>
 
@@ -98,9 +104,9 @@
 
 translate and read the files **line by line** on the fly.
 
-<div id="q3-2"/>
+<div id="q3-2" />
 
-#### 3.2 compiler:
+#### 3.2 compiler
 
 it works ahead of time to create a translation of what code we've just written and it compiles down to usually a language that can be understood by our machines.
 
