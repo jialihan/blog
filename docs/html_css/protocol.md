@@ -3,6 +3,9 @@
 #### I. [network performance: http1.0  vs http2](#question-1)
 
 #### II. [network choices for Loading new Feeds](#question-2)
+- [Long Polling](#q2-1)
+- [Web Socket](#q2-2)
+- [SSE](#q2-3)
 
 #### III. [How CDN helps performance?](#question-3)
 
@@ -35,6 +38,8 @@ reference article: [link](https://imagekit.io/blog/http2-vs-http1-performance/)
 - WebSockets
 - SSE: Server Send Event
 
+<div id="q2-1" />
+
 #### 2.1 Long polling
 This is a variation of the traditional polling technique that allows the server to push information to a client whenever the data is available.
 - 1 ) The client makes an initial request using regular HTTP and then waits for a response.
@@ -43,9 +48,22 @@ This is a variation of the traditional polling technique that allows the server 
 - 4 ) The client typically sends a new long-poll request, either immediately upon receiving a response or after a pause to allow an acceptable latency period.
 - 5 ) Each Long-Poll request has a timeout. The client has to reconnect periodically after the connection is closed due to timeouts.
 
+**Advantages:**
+- With long polling, the client may be configured to allow for a longer timeout period (via a Keep-Alive header) when listening for a response.
+- a longer persisted connection on server side
+- wait data response or **timeout**([304 Not Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304))
+
+**Flow chart:**
+
+![image](../assets/longpolling.png ':size=517x378')
+
+<div id="q2-2" />
+
 #### 2.2 Websocket
 - 1 ) provides [Full duplex](https://en.wikipedia.org/wiki/Duplex_(telecommunications)#Full_duplex) communication channels over a single TCP connection. 
 - 2 ) It provides a persistent connection between a client and a server that both parties can use to start sending data at any time.
+
+<div id="q2-3" />
 
 #### 2.3 Server Send Event
 - 1 )  Client requests data from a server using regular HTTP.
