@@ -107,7 +107,7 @@ See my discussion article here:
 
 <div id="question-4" />
 
-### [1840.  Maximum Building Height](https://leetcode.com/problems/maximum-building-height/)
+### [1840. Maximum Building Height](https://leetcode.com/problems/maximum-building-height/)
 
 You want to build  `n`  new buildings in a city. The new buildings will be built in a line and are labeled from  `1`  to  `n`.
 
@@ -123,6 +123,19 @@ It is guaranteed that each building will appear  **at most once**  in  `restrict
 
 Return  _the  **maximum possible height**  of the  **tallest**  building_.
 
+**Analysis:**
+- Step1: find the max at each restricted index - dp[m]
+    - left: dp[i] = Min(dp[i-1] + (interval of building at index i & i-1 ), current_restricted_height)
+    - right: dp[i] = Min(dp[i], dp[i+1] + (interval of building at index i & i+1) );
+- Step2: find the max height of all building
+    - Initial max value: (the height of first restricted building) & (the height of last restricted until the end).
+    - How to calculate the heighest between restriction[i-1][0] & restriction[i][0]?
+    Just use math to calculate:
+
+    ![image](../assets/lc1840.png ':size=313x179') 
+
+
+**JavaScript Solution:**
 ```js
 var maxBuilding = function(n, restrictions) {
     var m = restrictions.length;
