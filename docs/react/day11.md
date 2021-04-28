@@ -12,7 +12,7 @@
 
 #### VI.[React Dev Skills](#question-6)
 
-#### VII.[React - Client Side Rendering](#question-7)
+#### VII.[React - Client Side Rendering vs. SSR](#question-7)
 
 #### VIII.[React - Controlled vs. Uncontrolled Components](#question-8)
 
@@ -110,7 +110,7 @@ Things need to consider:
 
 <div id="question-7" />
 
-### VII. React - Client Side Rendering
+### VII. React - Client Side Rendering vs. SSR
 -   SSR (traditional way) - server side rendering: server renders the page and returns fully compiled HTML
 	- everytime we enter the new URL, client side receives whole new files of JS, HTML & CSS from server
 
@@ -122,6 +122,8 @@ Things need to consider:
 		![image](../assets/singlepageapplication.png ':size=546x385')
 
 -   CSR (React) - client side rendering: server returns (almost) empty HTML and JavaScript renders the page on the client's side
+
+![image](../assets/rendering-on-the-web-seo-version.png)
 	
 <div id="question-8" />
 
