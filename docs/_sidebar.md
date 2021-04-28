@@ -4,6 +4,7 @@
   - [git rebase](/git-operation/rebase.md)
   - [git cherry pick](/git-operation/cherrypick.md)
 - React
+  - [Server Side Rendering with React](/react/ssr_react.md)
   - [React Day15 - Graphql & Apollo Client](/react/day15.md)
   - [React Day14 - LocalStorage & SessionStorage & Redux Persist](/react/day14.md)
   - [React Day13 - Stripe Integration with React App](/react/day13.md)
