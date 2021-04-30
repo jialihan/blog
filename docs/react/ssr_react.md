@@ -8,7 +8,6 @@
 
 #### IV. [Source code](#chapter4)
 
-
 <div id="chapter1" />
 
 ### I. Project Setup

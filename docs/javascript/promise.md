@@ -1,13 +1,15 @@
 ## Native implementation of Promise
-#### 1. [What is Promise?](#p1)  
+#### 1.[What is Promise?](#p1)  
 
-#### 2. [Analysis Promise object structure](#p2)  
+#### 2.[Analysis Promise object structure](#p2)  
 - [Three states](#p2-1)
 - [Constructor](#p2-2)
 - [Static methods](#p2-3)
 - [Instance method](#p2-4)
 
-#### 3. [Implementation](#p3)  
+#### 3.[Implementation](#p3)  
+
+#### 4.[Can a Promise be resovled Multiple times?](#p4)  
 
 <div id="p1" />
 
@@ -160,4 +162,39 @@ p.then(resp => console.log(resp)).catch(e => console.log(e));
 setTimeout(() => {
     p.then(resp => console.log(resp)).catch(e => console.log(e));
 }, 3000);
+```
+
+<div id="p4" />
+
+### 4.Can a Promise be resovled Multiple times?
+
+**NO !!!** - Reference answer: [stackoverflow-link](https://stackoverflow.com/questions/20328073/is-it-safe-to-resolve-a-promise-multiple-times)
+
+The only thing to understand is that once resolved (or rejected), that is it for a defered object - **it is done**.
+
+If you call `then(...)` on its promise again, you immediately get the **(first)** resolved/rejected result.
+
+Additional calls to resolve() will **NOT** have any effect.
+For example:
+
+```js
+var p = new Promise((resolve, reject) => {
+  resolve(1);
+  reject(2);
+  resolve(3);
+});
+
+p.then(x => console.log('resolved to ' + x)) // 1
+ .catch(x => console.log('never called ' + x));
+
+p.then(x => console.log('one more ' + x)); // 1
+p.then(x => console.log('two more ' + x)); // 1
+p.then(x => console.log('three more ' + x)); // 1
+```
+Output is:
+```
+resolved to 1
+one more 1
+two more 1
+three more 1
 ```
