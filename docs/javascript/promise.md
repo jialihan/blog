@@ -11,6 +11,8 @@
 
 #### 4.[Can a Promise be resovled Multiple times?](#p4)  
 
+#### 5.[Promise.then() Chaining return value](#p5)
+
 <div id="p1" />
 
 ### 1. What is Promise ?
@@ -197,4 +199,49 @@ resolved to 1
 one more 1
 two more 1
 three more 1
+```
+
+<div id="p5" />
+
+### 5. ".then()" Chaining return value
+
+#### 5.1  [then()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+ - receives a **Function** as parameter
+ - **chaining value** in many `then()` blocks
+ - if param is not a function, **NOT** throw an error, it's **omitted and skipped** for this `then()` block.
+ - If has no handler, the returned promise use the final state of the original Promise on which then was called. (use **most recent last value** for this Promise)
+
+#### 5.2  [Promise.resolve()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)
+- it return an promise **object**
+
+#### 5.3 Difference 
+```js
+// original problem
+Promise.resolve(1)
+.then(Promise.resolve(4)) // skipped
+.then(console.log); // 1, use the final state value of the Proimise
+
+// a modified question
+Promise.resolve(1)
+.then(()=>Promise.resolve(4))
+.then(console.log); // 4
+```
+
+#### 5.4 Example and Solution
+```js
+Promise.resolve(1)
+.then(() => 2) // return 2
+.then(3) // skipped, param is NOT a function
+.then((value) => value * 3) // last value of this promise is 2, return 2*3
+.then(Promise.resolve(4)) // skipped, param NOT a function
+.then(console.log) // console.log(current_value) => 6: last value of this Promise
+// finally this Promise object is "Fulfilled & resolved" with value "undefined"
+// because last `then()` didn't return any thing, only execute "console.log"
+```
+Finally this Promise object becomes:
+```js
+Promise {<fulfilled>: undefined}
+__proto__: Promise
+[[PromiseState]]: "fulfilled"
+[[PromiseResult]]: undefined
 ```
