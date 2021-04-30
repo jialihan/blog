@@ -1,4 +1,5 @@
 ## Native implementation of Promise
+
 #### 1.[What is Promise?](#p1)  
 
 #### 2.[Analysis Promise object structure](#p2)  
@@ -12,6 +13,8 @@
 #### 4.[Can a Promise be resovled Multiple times?](#p4)  
 
 #### 5.[Promise.then() Chaining return value](#p5)
+
+#### 6.[Exec Order of then, catch, finally](#p6)
 
 <div id="p1" />
 
@@ -245,3 +248,101 @@ __proto__: Promise
 [[PromiseState]]: "fulfilled"
 [[PromiseResult]]: undefined
 ```
+
+<div id="p6" />
+
+### 6. Exec Order of then, catch, finally
+
+I was told that in other classical languages eg: C++, or java, 
+the template order of these 3 keyword is impressive in my memory:
+```
+try{}
+catch{}
+finally{}
+```
+
+But let's **think in JavaScript** .
+
+#### 6.1 finally() never receive an argument
+
+**Docs:** [Promise.prototype.finally](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally)
+
+#### 6.2 Normal finally's return value won't affect the result of the promise object
+No matter reject or resolve, the finally won't affect the value of promise object.
+- resolved promise object with 1
+    ```js
+    Promise.resolve(1)
+    .finally(()=>2); 
+    ```
+- rejected promise object with 1
+    ```js
+    Promise.reject(1)
+    .finally(()=>2);
+    ```
+
+#### 6.3 throw Error in finally()
+Note: A throw (or returning a rejected promise) in the finally callback will reject the new promise with the rejection reason specified when calling throw.
+```js
+Promise.reject(1)
+.finally(() => {                                                                                                                 
+    throw new  Error(2); 
+});
+// or 
+Promise.reject(1)
+.finally(() => {                                                                                                                          
+    return Promise.reject(2); 
+});
+```
+The return promise object rejected value will be affected with **2**.
+
+#### 6.4 Order of then() & catch()
+Remember `then()` & `catch()` can be called to handle the promise at any time and at any order. It will use the latest final state of the promise object, and affects the new value of the promise object.
+
+```js
+Promise.reject(1)
+.catch((val)=>{
+    console.log(val); // 1 : rejected value is 1 
+    // return nothing
+    // will return undefined for promise object
+})
+.then((val)=>{
+    console.log(val); // undefine: current promise object is already handled by "catch()"
+})
+```
+
+#### 6.5 Example & Solution
+```js
+Promise.resolve(1)
+.then((val) => {
+  console.log(val) // resolve with value 1
+  return val + 1  //  return 2  
+}).then((val) => {
+  console.log(val) // 2
+  // return undefined
+}).then((val) => {
+  console.log(val)  // undefined   
+  return Promise.resolve(3)
+    .then((val) => {
+      console.log(val) // 3
+      // return undefined
+    })
+}).then((val) => {
+  console.log(val)   // undefined 
+  return Promise.reject(4)  // return 4    
+}).catch((val) => {
+  console.log(val)  // 4
+  // return undefined
+}).finally((val) => {
+  console.log(val)  // undefined: finally has no arguments
+  return 10   // no effect on promise object
+}).then((val) => {
+  console.log(val)  // undefined: because last 'catch()' handled the promise object with 'undefined'
+})
+```
+Output result should be:
+```
+
+```
+
+
+
