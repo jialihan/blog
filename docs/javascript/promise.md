@@ -341,7 +341,14 @@ Promise.resolve(1)
 ```
 Output result should be:
 ```
-
+1
+2
+undefined
+3
+undefined
+4
+undefined
+undefined
 ```
 
 
