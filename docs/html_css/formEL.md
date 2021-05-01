@@ -7,10 +7,6 @@
 #### 3. [](#question3)
 
 #### 4. [](#question4)
-- [Adjacent Sibling: `'+'`](#q4-1)
-- [General Sibling: `'~'`](#q4-2)
-- [Child Combinator: `'>'`](#q4-3)
-- [Descendant Combinator : `' '(space)`](#q4-4)
 
 
 <div id="question1" />
@@ -48,6 +44,34 @@ Syntax:
 		<input name="name" id="name" placeholder="Username" />
 		```
 **Source code:** [codepen link](https://codepen.io/jellyhan27/pen/zYoXwRa)
+
+<div id="question2" />
+
+### 2. Upload File button
+**HTML Code:**
+```html
+<label for="myfile">Select a file:</label>
+<input type="file" id="myfile" name="myfile">
+<label for="myfiles">Select your files:</label>
+<input type="file" id="myfiles" name="myfiles" multiple>
+```
+
+**How to style the input button?**
+
+use `::file-selector-button` selector: [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button)
+
+```css
+input[type=file]::file-selector-button {}
+input[type=file]::file-selector-button:hover  {}
+input[type=file]::-webkit-file-selector-button {}
+input[type=file]::-webkit-file-upload-button:hover {}
+```
+
+![image](../assets/uploadfile-btn.png ':size=257x214')
+
+**Source Code:**
+[codepen-link](https://codepen.io/jellyhan27/pen/GRrbeJW)
+
 
 <div id="question3" />
 

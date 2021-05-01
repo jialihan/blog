@@ -24,6 +24,7 @@
   - [Lifecycle Method](/react/lifecycle.md)
   - [componentWillMount()](/react/componentWillMount.md)
 - HTML/CSS
+  - [Form Elements in HTML Examples](/html_css/formEL.md)
   - [Enter Key trigger click on Focused Element](/html_css/button_enter.md)
   - [Web network protocol](/html_css/protocol.md)
   - [Web Accessibility](/html_css/a11y.md)
