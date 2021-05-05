@@ -1,15 +1,17 @@
 
 ## React day16: create-react-app tricks
  
-#### I. [How to use absolute path imports?](#p1)  
+I. [How to use absolute path imports?](#p1)  
 
-#### II. [Check 'prop-types'](#p2)  
+II. [Check 'prop-types'](#p2)  
 
-#### III. [Generate unique key in array of objects - UUID](#p3)
+III. [Generate unique key in array of objects - UUID](#p3)
 
-#### IV. [Bind onClick listener on List Item in React](#p4) 
+IV. [Bind onClick listener on List Item in React](#p4) 
 
-#### V. [Source Code](#p5)
+V. [do NOT use "for" in label in React](#p5)
+
+VI. [Source Code](#p6)
 
 <div id="p1" />  
 
@@ -121,6 +123,28 @@ const ListItem = ({id, name, value, handler}) =>{
 
 <div id="p5" />  
 
-### V. Source Code
-// TODO
+### V. do NOT use "for" in label in React
 
+
+[stackoverflow -link](https://stackoverflow.com/posts/59924600/timeline)
+
+When using React, you can't use the  `for`  keyword in JSX, since that's a javascript keyword (remember, JSX is javascript so words like  `for`  and  `class`  can't be used because they have some other special meaning!)
+
+To circumvent this, React elements use  `htmlFor`  instead (see  [React docs](https://reactjs.org/docs/dom-elements.html#htmlfor)  for more information).
+
+**For example:**
+```js
+render() {
+    return (
+        <div>
+          <label htmlFor="username">name</label>
+          <input type="text" id="username" value={this.state.blogs_name}  onChange={this.onChangeBlogsName} />
+        </div>
+    );
+}
+```
+
+<div id="p6" />  
+
+### VI. Source Code
+// TODO
