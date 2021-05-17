@@ -216,7 +216,7 @@ Basic Values of object `[]` and `{}`:
 ```js
 // To String
 [].toString(); // ""
-{}.toString(); // "[Object Objecy]"
+{}.toString(); // "[object Object]"
 // To Number:
 Number([]); // 0
 Number({}); // NaN
@@ -226,9 +226,9 @@ Normal Examples: **string concatenation**
 
 Eg1:  `[] + {}`
 ```
-prim1: "", prim2: "[Object Objecy]"
+prim1: "", prim2: "[object Object]"
 since either of them is string type, ToString and concat:
-ToString("") + ToString("[Object Objecy]")
+ToString("") + ToString("[[object Object]")
 = '[object Object]'
 ```
 
