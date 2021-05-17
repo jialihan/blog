@@ -20,6 +20,7 @@
 
 #### V. [Other -, *, /, % operators](#question-5)
 
+#### VI. [Abstract Equlity Comparison (==)](#question-6)
 
 <div id="question-1"/>
 
@@ -352,4 +353,29 @@ For example:
 
 2 / new Date(7);  // 0.2857142857142857
 // = 2 / Number(new Date(7)) = 2 / 7 = 0.2857142857142857
+```
+
+<div id="question-6"/>
+
+### VI. Abstract Equlity Comparison (==)
+
+[BFE - quiz 10 link](https://bigfrontend.dev/quiz/Equal-1)
+
+I read the [ECMA2020-$7.2.14](https://tc39.es/ecma262/#sec-abstract-equality-comparison) here to finish this quiz
+
+Rules summary:
+- Number & String: convert to Number in priority
+- Boolean & other: convert boolean to Number, then compare
+-String & other Object: convert Object ToPrimitive(), then compare
+- undefined, null is special, just remember rules 
+
+```js
+console.log(0 == false)  // ToNumber(false) = 0 -> 0 == 0 -> true
+console.log('' == false)  // "" == 0 -> ToNumber("") == 0 -> true
+console.log([] == false)  // [] == 0 -> ToNumber([]) == 0 -> 0 == 0 -> true
+console.log(undefined == false) // false
+console.log(null == false)  // null is not converted to 0 here, false
+console.log('1' == true)  // "1" == 1 -> ToNumber("1") == 1 -> 1 == 1 -> true
+console.log(1n == true)  // 1n == 1 -> ToNumber(1n) == 1 -> 1== 1 -> true
+console.log(' 1     ' == true)  // "1    " == 1 -> ToNumber("1      ")  == 1 -> true
 ```
