@@ -76,6 +76,7 @@
   - [Functions in Javascript](/javascript/functions.md)
   - [Closure in JavaScript](/javascript/closure.md)
   - [Objects Inheritance](/javascript/object_inheritance.md)
+  - [Type Coercion in JavaScript](/javascript/type_coercion.md)
   - [Arrays in JavaScript](/javascript/array.md)
   - [JavaScript Engine - understand deeply](/javascript/engine.md)
   - [ES6 vs ES5](/javascript/es6.md)
