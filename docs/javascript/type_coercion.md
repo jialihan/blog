@@ -14,9 +14,11 @@
 
 #### IV. [The  Addition operator (+)](#question-4)
 - [4.1 Basic Rules](#p4-1)
-- [4.2 Weird use-case: starting with {}](#p4-2)
-- [4.3 Weird use-case: Unary + Sign](#p4-3)
-- [4.4 Weird use-case: Complicated expressions](#p4-4)
+- [4.2 Normal Examples - Add Primitives](#p4-2)
+- [4.3 Normal Examples - Add Object](#p4-3)
+- [4.4 Weird use-case: starting with {}](#p4-4)
+- [4.5 Weird use-case: Unary + Sign](#p4-5)
+- [4.6 Weird use-case: Complicated expressions](#p4-6)
 
 #### V. [Other -, *, /, % operators](#question-5)
 
@@ -212,6 +214,62 @@ Given the following addition.
 - If either  `prim1`  or  `prim2`  is a **string** then convert both to strings: `ToString(prim1), ToString(prim2)`; and return the concatenation of the results.
 - Otherwise, convert both  prim1  and  prim2  to **numbers**: `ToNumber(prim1), ToNumber(prim2)`; and return the sum of the results.
 
+<div id="p4-2" />
+
+#### 4.2 Normal Examples - Add Primitives
+
+**Eg1: 1 + undefined**
+
+```
+prim1 = ToPrimitive(1) = 1
+prim2 = ToPrimitive(undefined) = undefined
+None of them is string, then convert to number
+return  ToNumber(1) + ToNumber(undefined)
+= return 1 + NaN
+= NaN
+```
+
+**Eg2: '1' + undefined**
+
+```
+prim1 = ToPrimitive('1') = '1'
+prim2 = ToPrimitive(undefined) = undefined
+One of them is string, then convert to string
+return  ToString('1') + ToString(NaN)
+= return '1' + 'NaN'
+= '1NaN'
+```
+
+### Eg3: '1' + +undefined
+
+Unary: **+undefined** = NaN
+
+```
+prim1 = ToPrimitive('1') = '1'
+prim2 = ToPrimitive(+undefined) ->(Unary)-> = ToPrimitive(NaN) = NaN
+One of them is string, then convert to string
+return  ToString('1') + ToString(NaN)
+= return '1' + 'NaN'
+= '1NaN'
+```
+
+**Eg4: '1' + +null**
+
+Unary: **+null** = 0
+
+```
+prim1 = ToPrimitive('1') = '1'
+prim2 = ToPrimitive(+null) ->(Unary)-> = ToPrimitive(0) =0
+One of them is string, then convert to string
+return  ToString('1') + ToString(0)
+= return '1' + '0'
+= '10'
+```
+
+<div id="p4-3" />
+
+#### 4.3 Normal Examples - Add Objects 
+
 Basic Values of object `[]` and `{}`:
 ```js
 // To String
@@ -221,8 +279,6 @@ Basic Values of object `[]` and `{}`:
 Number([]); // 0
 Number({}); // NaN
 ```
-
-Normal Examples: **string concatenation** 
 
 Eg1:  `[] + {}`
 ```
@@ -258,9 +314,9 @@ ToNumber(5) + ToNumber(7)
 = 12
 ```
 
-<div id="p4-2" />
+<div id="p4-4" />
 
-#### 4.2 Weird use-case: starting with {}
+#### 4.4 Weird use-case: starting with {}
 if the first operand of + is an empty object literal (results as seen on the **Firefox** console. The problem is that JavaScript interprets the `first {}` as an **empty code block and ignores** it.
 ```
 {} + {}; // NaN
@@ -289,9 +345,9 @@ Number("");
   <img src="../assets/firefox-weird-plus.png" /> 
 </p>
 
-<div id="p4-3" />
+<div id="p4-5" />
 
-#### 4.3 Weird use-case: Unary + Sign
+#### 4.5 Weird use-case: Unary + Sign
 
 Docs: [Unary Plus Sign +](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus)
 
@@ -305,9 +361,9 @@ For example:
 // equals to Number(objValue);
 ```
 
-<div id="p4-4" />
+<div id="p4-6" />
 
-#### 4.4 Weird use-case: Complicated expressions
+#### 4.6 Weird use-case: Complicated expressions
 
 Example1: `{}+[]+{}+[1]`
 ```
