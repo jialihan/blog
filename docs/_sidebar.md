@@ -78,6 +78,7 @@
   - [Objects Inheritance](/javascript/object_inheritance.md)
   - [Type Coercion in JavaScript](/javascript/type_coercion.md)
   - [Arrays in JavaScript](/javascript/array.md)
+  - [Object Operators in JavaScript](/javascript/op_precedence.md)
   - [JavaScript Engine - understand deeply](/javascript/engine.md)
   - [ES6 vs ES5](/javascript/es6.md)
   - [Webpack Config](/javascript/webpack.md)
