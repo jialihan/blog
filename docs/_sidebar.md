@@ -52,6 +52,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [Infinite Scroll on Window in JavaScript](/javascript/infinite-scroll.md)
   - [Debounce and Throttle in JavaScript](/javascript/debounce-throttle.md)
   - [The Bad Parts - JavaScript](/javascript/bad_parts.md)
   - [Event Listener in JavaScript](/javascript/event_listener.md)

@@ -73,10 +73,11 @@ Compare two solutions:
 
 这种方式适合那些需要大批量修改DOM元素的情况。具体的方式主要有三种：
 - use DOM Fragment
-	Article: [docs](https://www.cnblogs.com/echolun/p/10098752.html)
+	Article: [docs](https://www.cnblogs.com/echolun/p/10098752.html), [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment), [createDocumentFragment()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment)
 	Template code:
 	```js
 	var fragment = document.createDocumentFragment();  
+	var fragment2 = new DocumentFragment(); // same with prev line
 	// your dom manipulation on this fragment 
 	// ...		
 	document.getElementById('container').appendChild(fragment);
