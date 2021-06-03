@@ -54,6 +54,7 @@
 - JS
   - [Infinite Scroll on Window in JavaScript](/javascript/infinite-scroll.md)
   - [Debounce and Throttle in JavaScript](/javascript/debounce-throttle.md)
+  - [Create an Event Emitter in JavaScript](/javascript/emitter.md)
   - [The Bad Parts - JavaScript](/javascript/bad_parts.md)
   - [Event Listener in JavaScript](/javascript/event_listener.md)
   - [Integrate Google Map API](/html_css/googlemap.md)
