@@ -115,8 +115,7 @@ In this problem, you are asked to implement a enhanced throttle() which accepts 
 - trailing: whether to invoke after the delay.
 ```js
 function throttle(fn, wait, option = {leading: true, trailing: true}) {
-  if(!option.leading && !option.trailing)
-  {
+  if(!option.leading && !option.trailing) {
     // never get triggered
     return ()=>{};
   }
