@@ -79,35 +79,77 @@ function  throttle(fn, time) {
 	}
 }
 ```
-
-**Code 2: include leading & trailing edge triggering**
+**Optimized: remember last call**
+Because window.setTimeout and window.clearTimeout are not accurate in browser environment, they are replaced to other implementation when judging your code.
+Reference: [bfe 4. discussion](https://bigfrontend.dev/problem/implement-basic-throttle/discuss)
 ```js
-// trigger on leading & trailing edge time
-
-// last call on timelimit also run
-
-function  throttle2(fn, limit) {
-	var  lastCall;
-	var  timer;
-	return  function () {
-		if (!lastCall) {
-			// first invoke
-			fn();
-			lastCall = new  Date();
-		}
-		else {
-			// in throttle
-			clearTimeout(timer);
-			timer = setTimeout(() => {
-				if (Date.now() - lastCall >= limit) {
-					fn();
-					lastCall = new  Date();
+function throttle(fn, time) {
+  var isThrottle;
+  var lastArgs;
+	return  function (...args) {
+		if (!isThrottle) {
+			fn(...args);
+			isThrottle = true;
+			setTimeout(() => {
+				// check any trailing edge last call
+				if(lastArgs)
+				{
+				fn(...lastArgs);
 				}
-			}, limit - (Date.now() - lastCall));
-		} 
+				isThrottle = null; // reset to initial condition
+				lastArgs = null; // reset to initial condition
+			}, time);
+		}
+    	else{
+      		lastArgs = [...args];
+    	}
 	}
 }
 ```
+
+**Code 2: include leading & trailing edge triggering**
+
+**Link:** [bfe 5.](https://bigfrontend.dev/problem/implement-throttle-with-leading-and-trailing-option)
+In this problem, you are asked to implement a enhanced throttle() which accepts third parameter, option: {leading: boolean, trailing: boolean}
+- leading: whether to invoke right away
+- trailing: whether to invoke after the delay.
+```js
+function throttle(fn, wait, option = {leading: true, trailing: true}) {
+  if(!option.leading && !option.trailing)
+  {
+    // never get triggered
+    return ()=>{};
+  }
+  var isThrottle;
+  var lastArgs;
+
+  function setTimer(){
+	  isThrottle = true;
+		setTimeout(() => {
+      isThrottle = false; 
+      // check any trailing edge last call
+      if(option.trailing && lastArgs)
+      {
+           fn(...lastArgs);
+           lastArgs = null;
+           setTimer(); // setTimer() again at trailing edge call
+      }
+		}, wait);
+  }
+	return  function (...args) {
+		if (!isThrottle) {
+      if(option.leading) {
+        fn(...args); // invoke at the leading edge
+      }
+		  setTimer();
+		}
+    else{
+      lastArgs = [...args];
+    }
+	}
+}
+```
+
 **Usage example:**
 ```js
 containerEL.addEventListener(
