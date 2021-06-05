@@ -26,15 +26,44 @@ Use cases:
 **Code:**
 ```js
 function  debounce(fn, time) {
-var  timer;
-return  function (...args) {
-clearTimeout(timer);
-timer = setTimeout(() => {
-fn(...args);
-}, time);
-}
+	var  timer;
+	return  function (...args) {
+		clearTimeout(timer);
+		timer = setTimeout(() => {
+			fn(...args);
+		}, time);
+	}
 }
 ```
+
+**Debounce with leading & trailing options:**
+**link:** [bfe 7.](https://bigfrontend.dev/problem/implement-debounce-with-leading-and-trailing-option)
+```js
+function debounce(func, wait, option = {leading: false, trailing: true}) {
+  if(!option.leading && !option.trailing) {
+    // never get triggered
+    return ()=>{};
+  }
+  var timer;
+  var lastArgs;
+  return  function (...args) {
+    lastArgs = args; 
+    if(!timer && option.leading){
+      func(...args); // invoke first call
+      lastArgs = null;
+    }
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      if(option.trailing && lastArgs)
+      {
+        func(...lastArgs);
+      }
+      timer = null;
+    }, wait);
+  }
+}
+```
+
 **Usage example:**
 ```js
 inputEL.addEventListener(
