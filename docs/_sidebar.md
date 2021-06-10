@@ -92,6 +92,7 @@
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - TypeScript
   - [Day1 - Getting started!](/typescript/day1_getstarted.md)
+  - [Day2 - Basics and Basic Types](/typescript/day2_basictypes.md)
 - Leetcodeet
   - String
     - [String prefix & suffix - KMP algorithm](/leetcode/string/kmp.md)
