@@ -75,7 +75,7 @@ const result = add(number1, number2);
 console.log(result);
 ```
 
-<img src="../assets/compile-ts-error.png" />
+<img src="../assets/compile-ts-error.png" width="800"/>
 
 **Fix:**
 
@@ -203,21 +203,21 @@ const person = {
 console.log(person.nickName); // undefined
 ```
 
-<img src="../assets/not-exist-prop-object-ts.png" />
+<img src="../assets/not-exist-prop-object-ts.png" width="800" />
 
 #### 5.2 Object has types
 
 NOT K-V pairs, but something like this:
 
-<img src="../assets/object-type-pair.png" />
+<img src="../assets/object-type-pair.png" width="300" />
 
 Even though we assign the object with the generic type `object`, TS still can check the property error in detail.
 
-<img src="../assets/object-type-err2-ts.png" />
+<img src="../assets/object-type-err2-ts.png" width="800" />
 
 Or we assign the empty type: `{}`, still has an error:
 
-<img src="../assets/object-empty-type.png" />
+<img src="../assets/object-empty-type.png"  width="800"/>
 
 #### 5.3 TS detailed object type
 
@@ -274,7 +274,7 @@ Syntax: `string[]`
 
 For example:
 
-<img src="../assets/inferred-arr-types-ts.png" />
+<img src="../assets/inferred-arr-types-ts.png" width="400"/>
 
 #### 6.2 Explicitly set a type on an array
 
@@ -293,7 +293,7 @@ nums = [1, "hello"];
 
 Then the error will be:
 
-<img src="../assets/ts-type-array-error.png" />
+<img src="../assets/ts-type-array-error.png" width="800" />
  
 <div id="p7" />
 
@@ -312,7 +312,7 @@ role: [2, "author"];
 
 Then it's only made of two element, one is `number`, the second is `string`, and the **inferred type** is the following:
 
-<img src="../assets/tuple_types.png" />
+<img src="../assets/tuple_types.png" width="400" />
 
 TS knows the tuple should an array of element with **string OR number**, then it's valid in the following code:
 
@@ -341,13 +341,13 @@ person.role[1] = 10; // Wrong in TS
 
 **Error in TS:**
 
-<img src= "../assets/tuple-ts-error.png" />
+<img src= "../assets/tuple-ts-error.png" width="750"/>
 
 #### 7.3 change the length of tuple
 
 Reassgin the tuple into another length of array: Wrong !
 
-<img src="../assets/tuple-length-error.png" />
+<img src="../assets/tuple-length-error.png" width="800" />
 
 But an special exception is using the `push()`, **TS canNOT detect this error** !
 
@@ -594,9 +594,9 @@ function greet(user: User) {
 
 **Quiz:**
 
-<img src="../assets/ts02-object-type-quiz.png" />
-
-<img src="../assets/object-type-quiz-02.png" />
+<img src="../assets/ts02-object-type-quiz.png" width="784" />
+<br>
+<img src="../assets/object-type-quiz-02.png" width="784"/>
 
 <div id="p13" />
 
@@ -767,4 +767,4 @@ function fn2(): never {
 - **inferred** type is **"void"**
 - but you also can assign **both type "void" & "never" on exception/throwable functions**
 
-<img src="../assets/void-never-function-type.png" />
+<img src="../assets/void-never-function-type.png" width="651" />
