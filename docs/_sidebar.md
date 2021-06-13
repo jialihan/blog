@@ -93,6 +93,7 @@
 - TypeScript
   - [Day1 - Getting started!](/typescript/day1_getstarted.md)
   - [Day2 - Basics and Basic Types](/typescript/day2_basictypes.md)
+  - [Day3 - Compiler & its Configuration](/typescript/day3_compiler.md)
 - Leetcodeet
   - String
     - [String prefix & suffix - KMP algorithm](/leetcode/string/kmp.md)
