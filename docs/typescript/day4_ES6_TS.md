@@ -107,6 +107,8 @@ add(1); // WRONG, only 1 param, but b has NO default value
 
 ### V. The Spread Operator (...)
 
+**Docs:** [Reference vs. Primitive Values](https://academind.com/tutorials/reference-vs-primitive-values/)
+
 Another memory space, not the same object, copied the value to new memory space.
 
 - spread an array
