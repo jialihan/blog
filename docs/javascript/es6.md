@@ -212,7 +212,7 @@ let a = new MyClass(); // 42,42, 'private' - Correct!
 
 **Reference:**
 
-- [Public class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
+- [Public class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) - ES2022 (NOT in ES6)
 - [Private class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 
 #### 2. Constructor
