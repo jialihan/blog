@@ -202,12 +202,18 @@ class A {
 class MyClass {
   myProp = 42;
   prop2 = this.myProp;
+  #privateProp = "private"; // private property
   constructor() {
-    console.log(this.myProp, this.prop2); // 42, 42
+    console.log(this.myProp, this.prop2, this.#privateProp); // 42, 42, 'private'
   }
 }
-let a = new MyClass(); // 42,42 - Correct!
+let a = new MyClass(); // 42,42, 'private' - Correct!
 ```
+
+**Reference:**
+
+- [Public class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
+- [Private class fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 
 #### 2. Constructor
 
