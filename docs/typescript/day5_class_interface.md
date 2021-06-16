@@ -22,7 +22,7 @@
 
 #### XI. [Singleton & Private Constructors](#p11)
 
-#### XI. [Interface](#p12)
+#### XII. [Interface](#p12)
 
 - [12.1 What is Interface ?](#p12-1)
 - [12.2 Use Interface with Classes](#p12-2)
@@ -33,6 +33,8 @@
 - [12.7 weird rule: interface as Function types](#p12-7)
 - [12.8 Optional Parameters & Property](#p12-8)
 - [12.9 TS feature interface compile to JS](#p12-9)
+
+#### XIII. [References](#p13)
 
 <div id="p1" />
 
@@ -569,3 +571,12 @@ class  Person  implements  Greetable {
 - NO interface in JS and Runtime
 - compile to ES6: to classes
 - compile to ES5: constructor function & prototype
+
+<div id="p13" />
+
+### XIII. References
+
+These links might also be useful:
+
+- More on (JS) Classes: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+- More on TS Interfaces: [https://www.typescriptlang.org/docs/handbook/2/objects.html](https://www.typescriptlang.org/docs/handbook/2/objects.html)
