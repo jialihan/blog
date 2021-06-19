@@ -88,6 +88,7 @@
   - [Webpack Config](/javascript/webpack.md)
   - [eval in Javascript](/javascript/eval.md)
   - [Types in Javascript](/javascript/types.md)
+  - [Double negation (!!) in JavaScript](/javascript/toBoolean.md)
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - TypeScript
