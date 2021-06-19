@@ -129,7 +129,7 @@ class Person {
 
 Output in console:
 
-![image](../assets/class-decorator-output-1.png)
+![image](../assets/class-decorator-output-1.png ":size=505")
 
 <div id="p4" />
 
@@ -171,7 +171,7 @@ class Person {
 
 Even **no** instance created, decorator **still is called** while constructor function not called, then output is:
 
-![image](../assets/decorator-output-02.png)
+![image](../assets/decorator-output-02.png ":size=505")
 
 <div id="p5" />
 
@@ -203,7 +203,7 @@ class Person {
 
 Result on browser UI:
 
-![image](../assets/decoratoer-template-html-eg.png)
+![image](../assets/decoratoer-template-html-eg.png ":size=360")
 
 #### 5.2 Access class fields inside the Decorator
 
@@ -297,7 +297,7 @@ class  Product {
 
 **Output** in console will be the prototype and the propName:
 
-![image](../assets/property-decorator-output-01.png)
+![image](../assets/property-decorator-output-01.png ":size=610")
 
 <div id="p8" />
 
@@ -350,7 +350,7 @@ class  Product {
 
 **Output** in console is: _target, name, descriptor_
 
-![image](../assets/accessor-decorator-output-01.png)
+![image](../assets/accessor-decorator-output-01.png ":size=500")
 
 <div id="P9" />
 
@@ -410,7 +410,7 @@ class  Product {
 
 **Compare:** this is pretty similar with "**accessor decorator**", the only different is the JS built in "**descriptor object**", but it's not because of TS.
 
-![image](../assets/method-decorator-output-01.png)
+![image](../assets/method-decorator-output-01.png ":size=550")
 
 <div id="p10" />
 
@@ -460,7 +460,7 @@ class  Product {
 
 **Output** in console:
 
-![image](../assets/param-decorator-output-01.png)
+![image](../assets/param-decorator-output-01.png ":size=550")
 
 ### XI. Returning (and changing) a Class in a Class Decorator
 
