@@ -24,6 +24,7 @@
   - [Fetch API - Disadvantages](/react/fetchapi.md)
   - [Lifecycle Method](/react/lifecycle.md)
   - [componentWillMount()](/react/componentWillMount.md)
+  - [OnInput and OnChange event in JavaScript and React](/react/onchange_react.md)
 - HTML/CSS
   - [Form Elements in HTML Examples](/html_css/formEL.md)
   - [Enter Key trigger click on Focused Element](/html_css/button_enter.md)
