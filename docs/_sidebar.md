@@ -93,6 +93,7 @@
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - TypeScript
+  - [Day9 - Form & Item & List Project](/typescript/day9_project.md)
   - [Day8 - Decorators in TypeScript](/typescript/day8_decorator.md)
   - [Day7 - Generics in TypeScript](/typescript/day7_generics.md)
   - [Day6 - Advanced Types in TypeScript](/typescript/day6_advancetypes.md)
