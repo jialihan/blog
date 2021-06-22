@@ -93,6 +93,7 @@
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - TypeScript
+  - [Day10 - Code Split: Modules and Namespaces](/typescript/day10_code_split.md)
   - [Day9 - Form & Item & List Project](/typescript/day9_project.md)
   - [Day8 - Decorators in TypeScript](/typescript/day8_decorator.md)
   - [Day7 - Generics in TypeScript](/typescript/day7_generics.md)
