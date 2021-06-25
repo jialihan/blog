@@ -93,6 +93,7 @@
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - TypeScript
+  - [Day13 - Project: Google Map API with TypeScript](/typescript/day13_ts_googlemap.md)
   - [Day12 - Third Party Libraries & TypeScript](/typescript/day12_3rdLibrary.md)
   - [Day11 - Webpack & TypeScript](/typescript/day11_webpack.md)
   - [Day10 - Code Split: Modules and Namespaces](/typescript/day10_code_split.md)
