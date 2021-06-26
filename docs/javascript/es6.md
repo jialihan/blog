@@ -326,3 +326,51 @@ new F((fn) => {
 // expected output:
 // foo from F with value: success!
 ```
+
+#### 5. getter and setter in ES6 classes
+
+1 ) ES5 object getter & setter
+ONLY [object accessors](https://www.w3schools.com/js/js_object_accessors.asp) in ES5(ES2009).
+
+**Syntax:**
+
+```js
+const obj = {
+  get age(){
+    return 18;
+  }
+  set address (addr) {
+    this.addr = addr;
+  }
+}
+```
+
+**Usage:**
+
+```js
+obj.age; // 18
+obj.address("my new address");
+```
+
+2 ) ES6 class getter and setter
+Docs: [What are getters and setters for in ECMAScript 6 classes?](https://stackoverflow.com/questions/28222276/what-are-getters-and-setters-for-in-ecmascript-6-classes)
+**Syntax:**
+
+```js
+class Person {
+  get myName() {
+    return "jelly";
+  }
+  set updateName(name) {
+    this.name = name;
+  }
+}
+```
+
+**Usage:**
+
+```js
+const p = new Person();
+p.myName; // "jelly"
+p.updateName("alice");
+```
