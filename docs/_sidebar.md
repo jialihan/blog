@@ -4,6 +4,7 @@
   - [git rebase](/git-operation/rebase.md)
   - [git cherry pick](/git-operation/cherrypick.md)
 - React
+  - [React Day17 - Unit Test Jest & Enzyme](/react/day17_test.md)
   - [React Day16 - create-react-app tricks](/react/day16.md)
   - [Server Side Rendering with React](/react/ssr_react.md)
   - [React Day15 - Graphql & Apollo Client](/react/day15.md)
