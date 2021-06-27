@@ -4,9 +4,11 @@
 
 #### 2. [Upload File button](#question2)
 
-#### 3. [Input Element](#question3)
+#### 3. [Number Input Element](#question3)
 
-#### 4. [](#question4)
+#### 4. [Native Text Input Element](#question4)
+
+#### 5. [](#question5)
 
 <div id="question1" />
 
@@ -74,9 +76,7 @@ input[type="file"]::-webkit-file-upload-button:hover {
 
 <div id="question3" />
 
-### 3. Input Element
-
-#### 3.1 type = number
+### III. Number Input Element
 
 **Docs:** [`<input type="number">` - mdn](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number)
 
@@ -101,4 +101,64 @@ input[type="file"]::-webkit-file-upload-button:hover {
 | readonly | A Boolean attribute indicating whether the value is read-only |
 | **step** | A stepping interval to use when using up and down arrows to adjust the value, as well as for validation|
 
-### 4. Combinator Selectors
+<div id="question4" />
+
+### IV. Native [Text Input Element](https://www.w3schools.com/css/css_form.asp)
+
+#### 4.1 native text input UI
+
+Regular CSS & UI:
+
+![image](../assets/native-text-input.png)
+
+Focused state UI:
+
+![image](../assets/focused-text-input.png)
+
+#### 4.2 Custom Style on text input
+
+1 ) change size:
+
+```css
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+```
+
+2 ) change border:
+
+```css
+input[type="text"] {
+  border: none;
+  border-bottom: 2px solid gray;
+}
+```
+
+3 ) Focused state
+By default, some browsers will add a blue outline around the input when it gets focus (clicked on). You can remove this behavior by adding `outline: none;` to the input.
+
+- add background
+- add new whole border
+- add ["box-shadow"](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) if needed
+  `css /* offset-x | offset-y | blur-radius | spread-radius | color */ box-shadow: 0 0 2px 1px blue; `
+  **focused input:**
+
+```css
+input[type="text"]:focus {
+  outline: none;
+  background-color: #d1d1ff;
+  border: 3px solid #b373f2;
+  box-shadow: 0 0 5px 1px blue;
+}
+```
+
+**UI result when focused:**
+
+![image](../assets/focused-input-custom.png)
+
+<div id="question5" />
+
+### V.
