@@ -86,6 +86,7 @@
   - [Object Operators in JavaScript](/javascript/op_precedence.md)
   - [JavaScript Engine - understand deeply](/javascript/engine.md)
   - [ES6 vs ES5](/javascript/es6.md)
+  - [JS Modules - CommonJS vs AMD vs RequireJS vs ES6 Modules](/javascript/js_modules.md)
   - [Webpack Config](/javascript/webpack.md)
   - [eval in Javascript](/javascript/eval.md)
   - [Types in Javascript](/javascript/types.md)
