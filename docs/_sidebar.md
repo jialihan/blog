@@ -4,6 +4,7 @@
   - [git rebase](/git-operation/rebase.md)
   - [git cherry pick](/git-operation/cherrypick.md)
 - React
+  - [React Day18 - How to Use SVG in React](/react/day18.md)
   - [React Day17 - Unit Test Jest & Enzyme](/react/day17_test.md)
   - [React Day16 - create-react-app tricks](/react/day16.md)
   - [Server Side Rendering with React](/react/ssr_react.md)
