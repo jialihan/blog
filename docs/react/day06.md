@@ -1,28 +1,32 @@
-## React day06 - Network Call in React: Http & Ajax 
+## React day06 - Network Call in React: Http & Ajax
 
 #### I. [Reaching out to the web network call](#question-1)
 
 #### II. [Where to make Http request?](#question-2)
 
 #### III. [Write a simple Get request](#question-3)
+
 - [fetch example: ( GET request)](#q3-1)
 - [axios example: ( GET request )](#q3-2)
 - [Transforming Data](#q3-3)
 - [Fetch data when component Update](#q3-4)
 
 #### IV. [POST data to sever](#question-4)
+
 - [ PUT/POST request with fetch api](#q4-1)
 - [POST request with axios api](#q4-2)
 
 #### V. [Send Delete Request to sever](#question-5)
+
 - [delete request with fetch api](#q5-1)
 - [delete request with axios api](#q5-2)
 
 #### VI. [Handle Error locally](#question-6)
 
 #### VII. [More features about Axios](#question-7)
+
 - [Adding interceptors to Execute Code Globally](#q7-1)
--  [Remove an interceptor in axios](#q7-2)
+- [Remove an interceptor in axios](#q7-2)
 - [Set up a Default Global Configuration for Axios](#q7-3)
 - [ Create different axios instances](#q7-4)
 
@@ -32,49 +36,19 @@
 
 In react, handling network part, the following image shows the basic flow.
 
-![image](../assets/httpflow.png ':size=318x269')
+![image](../assets/httpflow.png ":size=270")
 
 React Official Docs: [Ajax & APIs](https://reactjs.org/docs/faq-ajax.html)
 
 **Options:**
+
 - XMLHttpRequest (native javascript way to the web): [template source code reference](https://github.com/jialihan/JavaScript-Onboarding/blob/master/AJAX_Javascript/script.js)
 - [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [axios](https://github.com/axios/axios#installing): third party library/package
-	Install: `npm install axios`
-
-#### 1.1 Syntax
-[applymiddleware()](https://redux.js.org/api/applymiddleware)
-
-import:
-```
-import { applyMiddleware } from 'redux';
-```
-
-Usage: when initialize the store, pass to the ["enhancer parameter"](https://redux.js.org/api/createstore).
-```js
-const store = createStore(rootReducer, applyMiddleware(myMiddleware));
-```
-
-1.2 Customized Logger Middleware example
-
-Create and define the logger middle ware:
-```jsx
-const logger = store => {
-	return next => {
-		console.log('[Midlleware Logger] Dispatching', action);
-		// call the next dispatch method
-		const result = next(action);
-		console.log('[Midlleware Logger] state after dispatch', store.getState());
-		return result;
-	} 
-}
-```
-
-Add this logger middleware into the store:
-```jsx
-const store = createStore(rootReducer, applyMiddleware(logger));
-```
-
+  Install:
+  ```bash
+  npm install axios
+  ```
 
 <div id="question-2"/>
 
@@ -82,13 +56,14 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 
 Http request will cause side effect, due to the component life-cycle in `componentDidMount()` (class-based). Only after the http request and **after we get response back**, then we can **update the state**, otherwise, it will cause re-render.
 
-![image](../assets/httplocation.png ':size=582x363')
+![image](../assets/httplocation.png ":size=450")
 
 <div id="question-3"/>
 
 ### III. Write a simple Get request
 
 Code Structure:
+
 - fetch the URL
 - get the promise as response
 - processing data in response
@@ -113,6 +88,7 @@ componentDidMount() {
 <div id="q3-2"/>
 
 #### 3.2 axios example: ( GET request )
+
 Note:
 Advantage to use "**axios**": in axios responses are already served as javascript object, **no need to parse**, simply get response and access data.
 
@@ -132,9 +108,10 @@ componentDidMount() {
 
 #### 3.3 transforming data
 
-**Where:** After we got the response, the same place we process the data. 
+**Where:** After we got the response, the same place we process the data.
 
 **Example:**
+
 ```js
 axios.get(url)
 	  .then(resp => {
@@ -148,21 +125,25 @@ axios.get(url)
 <div id="q3-4"/>
 
 #### 3.4 Fetch data when component Update
+
 Updating Life Cycle:
--   [`static getDerivedStateFromProps()`](https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
--   [`shouldComponentUpdate()`](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
--   [**`render()`**](https://reactjs.org/docs/react-component.html#render)
--   [`getSnapshotBeforeUpdate(prevProps, prevState)`](https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate)
--   [**`componentDidUpdate()`**](https://reactjs.org/docs/react-component.html#componentdidupdate)
+
+- [`static getDerivedStateFromProps()`](https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops)
+- [`shouldComponentUpdate()`](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
+- [**`render()`**](https://reactjs.org/docs/react-component.html#render)
+- [`getSnapshotBeforeUpdate(prevProps, prevState)`](https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate)
+- [**`componentDidUpdate()`**](https://reactjs.org/docs/react-component.html#componentdidupdate)
 
 **Note:** two legacy methods in Updating life cycle, need to avoid using them. (~~**don't use these two legacy methods**~~)
--   [`UNSAFE_componentWillUpdate()`](https://reactjs.org/docs/react-component.html#unsafe_componentwillupdate)
--   [`UNSAFE_componentWillReceiveProps()`](https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)
+
+- [`UNSAFE_componentWillUpdate()`](https://reactjs.org/docs/react-component.html#unsafe_componentwillupdate)
+- [`UNSAFE_componentWillReceiveProps()`](https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)
 
 Where and When to fetch data when component update?
 **Use case:**
-for example, when we click the component, and we  will fetch the item by id, sending a new http request.
+for example, when we click the component, and we will fetch the item by id, sending a new http request.
 **Where:**
+
 ```js
 componentDidUpdate() {
 	if(this.props.id)
@@ -170,7 +151,7 @@ componentDidUpdate() {
 		fetch("https://some-url.com/items/"+this.props.id)
 		.then(resp=>resp.json())
 		.then(resp=>{
-			// handle new data 
+			// handle new data
 			console.log(resp);
 		});
 	}
@@ -186,21 +167,23 @@ componentDidUpdate() {
 #### 4.1 PUT/POST request with fetch api
 
 More complicated, we need more parameters.
+
 - url
 - request options: headers, body, method
-	For example: [uploading json data ( PUT + fetch )](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Uploading_JSON_data)
-	```js
-	const options = {
-	  method: 'POST', // or 'PUT'
-	  headers: {
-	    'Content-Type': 'application/json',
-	  },
-	  body: JSON.stringify({title: "hello world!"}),
-	}
-	```
-	
-**Example:** 
+  For example: [uploading json data ( PUT + fetch )](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Uploading_JSON_data)
+  ```js
+  const options = {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ title: "hello world!" })
+  };
+  ```
+
+**Example:**
 Simple PUT request with a JSON body using fetch
+
 ```javascript
 const requestOptions = {
     method: 'PUT',
@@ -215,23 +198,26 @@ const requestOptions = {
 
 <div id="q4-2"/>
 
-#### 4.2 POST request with axios api
+#### 4.2 POST request with [axios api](https://github.com/axios/axios#axios-api)
+
 Much simpler, we need the url and the data object we want to send. Don't need to [JSON.stringify()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify), axios will do it for us automatically.
 
+**Docs:** [HTTP Post headers example - mdn](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+
 Code example:
+
 ```js
 const postDataHandler = () => {
-	const data = {
-		title: 'hello',
-		body: 'default content',
-		author: 'jelly'
-	};
-	axios.post("https://some-url.com/", data)
-	.then(resp=>{
-		// handle data
-		console.log(resp);
-	})
-}
+  const data = {
+    title: "hello",
+    body: "default content",
+    author: "jelly"
+  };
+  axios.post("https://some-url.com/", data).then((resp) => {
+    // handle data
+    console.log(resp);
+  });
+};
 ```
 
 <div id="question-5"/>
@@ -244,26 +230,26 @@ const postDataHandler = () => {
 
 ```javascript
 const deletePostHandler = () => {
-    // Simple DELETE request with fetch
-    fetch('https://some-url.com/item/1', 
-	    { method: 'DELETE'})
-	.then(resp=> resp.json())
-	.then((resp) => { 
-		// handle delete success
-	    console.log(resp);
-		this.setState({ isDeleted: true});
-	});
-}
+  // Simple DELETE request with fetch
+  fetch("https://some-url.com/item/1", { method: "DELETE" })
+    .then((resp) => resp.json())
+    .then((resp) => {
+      // handle delete success
+      console.log(resp);
+      this.setState({ isDeleted: true });
+    });
+};
 ```
 
 <div id="q5-2"/>
 
 #### 5.2 delete request with axios api
 
-**Syntax:** 
+**Syntax:**
 [axios.delete()](https://github.com/axios/axios#axiosdeleteurl-config)
 
-For example: 
+For example:
+
 ```js
 const deletePostHandler = ()=> {
 	axios.delete('https://some-url.com/'+ this.props.id)
@@ -277,7 +263,7 @@ const deletePostHandler = ()=> {
 
 ### VI. Handle Error locally
 
-Syntax 1: **catch()** 
+Syntax 1: **catch()**
 
 ```js
 .then()
@@ -288,15 +274,14 @@ Syntax 1: **catch()**
 ```
 
 Syntax 2: **try, catch**
+
 ```js
 async function httpRequest() {
-	try {
-		const resp = await fetch('https://some-url.com/data.json');
-	}
-	catch(err)
-	{
-		// handle error
-	}
+  try {
+    const resp = await fetch("https://some-url.com/data.json");
+  } catch (err) {
+    // handle error
+  }
 }
 ```
 
@@ -311,34 +296,43 @@ async function httpRequest() {
 Docs: [interceptors](https://github.com/axios/axios#interceptors)
 
 Syntax:
+
 - add a request interceptor
-	We can have two functions as parameters:
-	```js
-	axios.interceptors.request.use(request => {
-	    // Do something before request is sent
-	    return request;
-	},  error => {
-	    // Do something with request error
-	    return Promise.reject(error);
-	});
-	```
+  We can have two functions as parameters:
+  ```js
+  axios.interceptors.request.use(
+    (request) => {
+      // Do something before request is sent
+      return request;
+    },
+    (error) => {
+      // Do something with request error
+      return Promise.reject(error);
+    }
+  );
+  ```
 - add a response interceptor
-	```js
-	axios.interceptors.response.use(response => {
-	    // Do something with response data
-	    return response;
-	}, error => {
-	    // Do something with response error
-	    return Promise.reject(error);
-	});
-	```
+  ```js
+  axios.interceptors.response.use(
+    (response) => {
+      // Do something with response data
+      return response;
+    },
+    (error) => {
+      // Do something with response error
+      return Promise.reject(error);
+    }
+  );
+  ```
 
 <div id="q7-2"/>
 
 #### 7.2 remove an interceptor in axios
 
 ```js
-const myInterceptor = axios.interceptors.request.use(function () {/*...*/});
+const myInterceptor = axios.interceptors.request.use(function () {
+  /*...*/
+});
 axios.interceptors.request.eject(myInterceptor);
 ```
 
@@ -347,7 +341,9 @@ axios.interceptors.request.eject(myInterceptor);
 #### 7.3 set up a Default Global Configuration for Axios
 
 **Use case 1:**
+
 - set the default base url, might be helpful to reuse
+
 ```js
 // index.js
 axios.defaults.baseURL = "https://some-url.com/";
@@ -359,9 +355,10 @@ axios.post("/items").then(/* ... */);
 
 **Use case 2:**
 set some common headers globally to reduce duplicated code:
+
 ```js
-axios.defaults.headers.common['Authorization'] = 'auth token';
-axios.defaults.headers.common['ContentT-ype'] = 'application/json';
+axios.defaults.headers.common["Authorization"] = "auth token";
+axios.defaults.headers.common["ContentT-ype"] = "application/json";
 ```
 
 <div id="q7-4"/>
@@ -371,15 +368,17 @@ axios.defaults.headers.common['ContentT-ype'] = 'application/json';
 When we want to use different or multiple base-url, then we need different axios instances.
 
 Syntax:
+
 ```js
 const instance1 = axios.create({
-	baseURL: 'https://some-url.com/'
-})
-instance1.headers.common['Authorization'] = 'auth token from instance1';
+  baseURL: "https://some-url.com/"
+});
+instance1.headers.common["Authorization"] = "auth token from instance1";
 export default instance1;
 ```
 
 Usage:
+
 ```js
 import axios from '../axios.js';
 axios.get(...);
