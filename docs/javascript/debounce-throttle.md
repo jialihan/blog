@@ -6,6 +6,8 @@
 
 #### III. [source code](#p3)
 
+#### IV. [Check User isTying using Debounce](#p4)
+
 <div id="p1" />
 
 ### I. Debounce
@@ -28,7 +30,7 @@ Use cases:
 function  debounce(fn, time) {
 	var  timer;
 	return  function (...args) {
-		clearTimeout(timer);
+		timer = clearTimeout(timer); // "undefined"
 		timer = setTimeout(() => {
 			fn(...args);
 		}, time);
@@ -186,7 +188,7 @@ containerEL.addEventListener(
 );
 ```
 
-#### 2.3 Debounce on input Demo
+#### 2.3 Throttle on Scrolling Demo
 
 ![image](../assets/throttle-cover.gif)
 
@@ -195,3 +197,61 @@ containerEL.addEventListener(
 ### III. Source Code
 
 [github link](https://github.com/jialihan/JavaScript-Onboarding/tree/master/debounce_throttle)
+
+<div id="p4" />
+
+#### IV. Check User isTying using Debounce
+
+It's not a simple debounce, but we can write a similar function to this use-case. 
+
+**Requirements:**
+- first type: set "isTyping" to be *true*
+- middle time: keep **"clear and reset"** the timeout on every event
+- last type: send "clear typing" event, "isTyping" to be *false*.
+
+```js
+function setTyping(){
+        textInfoEL.textContent = "is typing..."; 
+}
+function clearTyping(){
+        textInfoEL.textContent = ""; 
+}
+function debounce(fn1, fn2) {
+  var timer; 
+  return function(...args) {
+      console.log("onkey down...");
+      if(!timer)
+      {     
+        // first type
+        fn1(...args);
+      }
+      timer = clearTimeout(timer);
+      timer = setTimeout(()=>{
+		// last type finished and no more coming typing event
+        fn2(...args);
+        timer = clearTimeout(timer); 
+      }, 200);
+  }
+}
+```
+**Usage:**
+```js
+inputEL.addEventListener('keydown', debounce(setTyping, clearTyping));
+```
+
+**Tips:**
+- NOT use ["keypress" event](https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event), it's deprecated
+- re-assign the `timer = clearTimeout(timer)` to have a "undefined" value, otherwise, the "timer" will still be a valid number value, eg: `0, 1, 2,...`.
+	```js
+	clearTimout(timer); // WRONG, timer value not change
+	timer = clearTimeout(timer); // timer = "undefined"
+	```
+
+**Demo:**
+
+![image](../assets/istyping-demo.gif)
+
+**Souce Code:**
+
+https://codepen.io/jellyhan27/pen/zYwxKeP?editors=1111
+
