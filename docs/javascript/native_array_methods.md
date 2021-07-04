@@ -258,7 +258,11 @@ console.log(newArray); // (3) [1, 4, 7]
 
 ### 4. Array.prototype.push
 
-native implementation of array.push():
+native implementation of `array.push()`, with the help of native method ["array.splice()"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice).
+
+Here, the usage is: `splice(n, 0, ...args)`, which means insert/add extra items from arguments at the end of original array.
+
+**Code:**
 ```js
 Array.prototype.myPush = function (...args) {
 	var  params = [...args];

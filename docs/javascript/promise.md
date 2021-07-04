@@ -247,20 +247,22 @@ three more 1
  - if param is not a function, **NOT** throw an error, it's **omitted and skipped** for this `then()` block.
  - If has no handler, the returned promise use the final state of the original Promise on which then was called. (use **most recent last value** for this Promise)
 
-#### 5.2  [Promise.resolve()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)
+#### 5.2 [Promise.resolve()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)
 - it return an promise **object**
+
+![image](../assets/promise-resolve-return-value.png)
 
 #### 5.3 Difference 
 ```js
 // original problem
 Promise.resolve(1)
 .then(Promise.resolve(4)) // skipped
-.then(console.log); // 1, use the final state value of the Proimise
+.then(console.log); // output: 1, use the final state value of the Promise
 
 // a modified question
 Promise.resolve(1)
 .then(()=>Promise.resolve(4))
-.then(console.log); // 4
+.then(console.log); // output: 4
 ```
 
 #### 5.4 Example and Solution
