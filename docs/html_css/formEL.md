@@ -8,7 +8,7 @@
 
 #### 4. [Native Text Input Element](#question4)
 
-#### 5. [](#question5)
+#### 5. [Button Element](#question5)
 
 <div id="question1" />
 
@@ -161,4 +161,59 @@ input[type="text"]:focus {
 
 <div id="question5" />
 
-### V.
+### V. Button Element
+
+#### 5.1 how to style a "disabled" button?
+
+Docs:
+
+- https://www.w3schools.com/cssref/sel_disabled.asp
+- https://stackoverflow.com/questions/50349017/how-can-i-change-cursor-for-disabled-button-or-a-in-bootstrap-4
+
+CSS selector:
+
+```css
+button:disabled {
+  cursor: not-allowed;
+  background-color: black;
+}
+```
+
+#### 5.2 use button to Submit inside of form
+
+**Docs:**
+
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+- https://www.w3schools.com/tags/att_button_type.asp
+
+**Note: type "submit"**
+
+> The button submits the form data to the server. This is the default if the attribute is not specified for buttons associated with a `<form>`, or if the attribute is an empty or invalid value.
+
+For example:
+
+```html
+<form>
+  <input name="name" placeholder="name" type="text" />
+  <button>Submit</button>
+</form>
+```
+
+When button is **inside of** a `<form>`, these two HTML code are the same by default:
+
+```html
+<button>Submit</button>
+<button type="submit">Submit</button>
+```
+
+**JS code:**
+**Important!!!** add `e.preventEventDefault()` method! **otherwise, the page will be refreshed!**
+
+```js
+btnEL.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("button clicked!");
+});
+```
+
+**Source Code** : [codepen - submit-button example](https://codepen.io/jellyhan27/pen/jOmWYQd?editors=1111)
