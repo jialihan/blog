@@ -1,4 +1,4 @@
-## React Simple Calculator App
+## How to Create a Simple Calculator with React?
 
 #### I. [UI Design](#chapter1)
 
