@@ -33,11 +33,11 @@ After reference to multiple chat app layouts:
 
 - iphone's calculator UI
 
-  ![image](../assets/iphone-calculator.png)
+  ![image](../assets/iphone-calculator.png ":size=200")
 
 - mac's calculator UI
 
-  ![image](../assets/mac-calculator.png)
+  ![image](../assets/mac-calculator.png ":size=200")
 
 <div id="chapter2" />
 
@@ -124,9 +124,9 @@ Set up the grid layout, here we need **6** rows:
   - https://stackoverflow.com/questions/62308301/if-i-press-too-much-numbers-in-my-javascript-calculator-the-numbers-go-outside-t#comment110203378_62308395
   - ["text-overflow"](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow): here we set it to "clip", the real app is like this, but you can also try some "ellipsis" on UI to see the difference.
 
-    ![image](../assets/text-oveflow-ellipsis.png)
+    ![image](../assets/text-oveflow-ellipsis.png ":size=200")
 
-    ![image](../assets/text-oveflow-clip.png)
+    ![image](../assets/text-oveflow-clip.png ":size=200")
 
     **CSS solution:**
 
@@ -174,7 +174,7 @@ const clearHandler = () => {
 
 UI demo this toggle feature:
 
-![image](../assets/toggle-sign-ui.gif)
+![image](../assets/toggle-sign-ui.gif ":size=220")
 
 **Bug:**
 Toggle has a lot of tricky edge cases, for example:
@@ -213,7 +213,7 @@ const toggleSignHandler = () => {
 
 Be careful when handling the `"."` dot character, error example:
 
-![image](../assets/dot-error-input-number.png)
+![image](../assets/dot-error-input-number.png ":size=220")
 
 JS Code:
 
@@ -339,7 +339,7 @@ then wait next user input...
 
 the feature of "percentage" button (`%`) works like the following UI:
 
-![image](../assets/percentage-btn-example.gif)
+![image](../assets/percentage-btn-example.gif ":size=230")
 
 Code Example:
 
@@ -389,7 +389,7 @@ when NONE of the operators are pressed, only one number and the `"="(equal)` but
 
 Bug example:
 
-![image](../assets/always-add-bug.gif)
+![image](../assets/always-add-bug.gif ":size=240")
 
 To Be Fixed!
 
@@ -417,7 +417,7 @@ To Be Fixed!
 
 **Demo:**
 
-![image](../assets/first-version-demo.gif)
+![image](../assets/first-version-demo.gif ":size=250")
 
 <div id="chapter6" />
 
