@@ -83,6 +83,7 @@
   - [Functions in Javascript](/javascript/functions.md)
   - [Curry and Partials in JavaScript](/javascript/curry.md)
   - [Objects Inheritance](/javascript/object_inheritance.md)
+  - [BFE 20. Check Data Types in JavaScript](/javascript/checktypes.md)
   - [Type Coercion in JavaScript](/javascript/type_coercion.md)
   - [Arrays in JavaScript](/javascript/array.md)
   - [Flatten an array in JavaScript](/javascript/flattenArray.md)
