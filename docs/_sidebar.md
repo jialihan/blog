@@ -87,6 +87,7 @@
   - [Type Coercion in JavaScript](/javascript/type_coercion.md)
   - [Arrays in JavaScript](/javascript/array.md)
   - [Flatten an array in JavaScript](/javascript/flattenArray.md)
+  - [BFE 26. Implement Object.assign() in JavaScript](/javascript/obj_assign.md)
   - [Object Operators in JavaScript](/javascript/op_precedence.md)
   - [JavaScript Engine - understand deeply](/javascript/engine.md)
   - [ES6 vs ES5](/javascript/es6.md)
