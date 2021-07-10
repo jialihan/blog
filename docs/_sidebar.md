@@ -80,6 +80,7 @@
   - [This keyword in JavaScript](/javascript/this.md)
   - [Execution Context vs. Scope in JavaScript](/javascript/hoisting.md)
   - [Closure in JavaScript](/javascript/closure.md)
+  - [Iterations and Generators in JavaScript](/javascript/generators.md)
   - [Functions in Javascript](/javascript/functions.md)
   - [Curry and Partials in JavaScript](/javascript/curry.md)
   - [Objects Inheritance](/javascript/object_inheritance.md)
