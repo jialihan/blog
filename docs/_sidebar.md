@@ -84,6 +84,7 @@
   - [Functions in Javascript](/javascript/functions.md)
   - [Curry and Partials in JavaScript](/javascript/curry.md)
   - [Objects Inheritance](/javascript/object_inheritance.md)
+  - [Prototype Inheritance in ES5 - JavaScript](/javascript/prototype.md)
   - [BFE 20. Check Data Types in JavaScript](/javascript/checktypes.md)
   - [Type Coercion in JavaScript](/javascript/type_coercion.md)
   - [Arrays in JavaScript](/javascript/array.md)
