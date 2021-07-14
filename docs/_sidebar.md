@@ -82,6 +82,7 @@
   - [Closure in JavaScript](/javascript/closure.md)
   - [Iterations and Generators in JavaScript](/javascript/generators.md)
   - [Functions in Javascript](/javascript/functions.md)
+  - [Native Implementation of call(), apply(), bind()](/javascript/native_funcs.md)
   - [Curry and Partials in JavaScript](/javascript/curry.md)
   - [Objects Inheritance](/javascript/object_inheritance.md)
   - [Prototype Inheritance in ES5 - JavaScript](/javascript/prototype.md)
