@@ -6,7 +6,7 @@
 
 #### III. [1937. Maximum Number of Points with Cost](#question-3)
 
-#### IV. [1938. Maximum Genetic Difference Query - not solved](#question-4)
+#### IV. [1938. Maximum Genetic Difference Query - solved after](#question-4)
 
 #### V. [Summary](#question-5)
 
@@ -171,7 +171,62 @@ https://leetcode.com/problems/maximum-number-of-points-with-cost/discuss/1344888
 
 ### [1938. Maximum Genetic Difference Query](https://leetcode.com/problems/maximum-genetic-difference-query/)
 
-Not solved! TODO: dfs + trie
+There is a rooted tree consisting of n nodes numbered 0 to n - 1. Each node's number denotes its unique genetic value (i.e. the genetic value of node x is x). The genetic difference between two genetic values is defined as the bitwise-XOR of their values. You are given the integer array parents, where parents[i] is the parent for node i. If node x is the root of the tree, then parents[x] == -1.
+
+You are also given the array queries where queries[i] = [nodei, vali]. For each query i, find the maximum genetic difference between vali and pi, where pi is the genetic value of any node that is on the path between nodei and the root (including nodei and the root). More formally, you want to maximize vali XOR pi.
+
+Return an array ans where ans[i] is the answer to the ith query.
+
+**Reference**:
+[421. Maximum XOR of Two Numbers in an Array](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/)
+copied my Trie-JavaScript code from my previous solution: [JavaScript - Trie solution](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/1123179/JavaScript-Trie-solution)
+
+**Key points:**
+
+- how to delete one node? - use `cnt` property
+- **TLE failed cases** in contest:
+  - on-demand find each query path to compute, multiple DFS
+  - one DFS, but store each path on each node, eg: `node.path = [......]`, uhm, i got "**Memory** Exceeds"
+  - ....
+
+**Full code** reference: https://leetcode.com/problems/maximum-genetic-difference-query/discuss/1346613/JavaScript-DFS-%2B-Trie
+
+**Important code JS:**
+
+```js
+var maxGeneticDifference = function (parents, queries) {
+  var n = parents.length;
+
+  // 1. build adj
+  var [adj, root] = buildAdjacentMap(parents);
+
+  // 2. pre-process queries and ans array
+  var ans = new Array(queries.length).fill(0);
+  queries = queries.map((q, i) => [...q, i]);
+  var queryMap = buildQueryMap(queries);
+
+  // 3. DFS with Trie
+  var trie = new TrieNode();
+  function dfs(node) {
+    insert(trie, node);
+    if (queryMap.has(node)) {
+      // compute cur node result
+      for (var val of queryMap.get(node)) {
+        var [v, index] = val;
+        ans[index] = getMaxPairXOR(trie, v);
+      }
+    }
+    if (adj.has(node)) {
+      for (var next of adj.get(node)) {
+        dfs(next);
+      }
+    }
+    remove(trie, node);
+  }
+  dfs(root);
+  return ans;
+};
+```
 
 <div id="question-5"/>
 
