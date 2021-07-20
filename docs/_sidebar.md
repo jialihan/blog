@@ -102,6 +102,9 @@
   - [Double negation (!!) in JavaScript](/javascript/toBoolean.md)
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
+- Design Patterns - JS
+  - [1. Singleton Design Pattern - JS](/javascript/patterns/01_singleton.md)
+  - [2. Observer Design Pattern - JS](/javascript/patterns/02_observer.md)
 - TypeScript
   - [Day15 - Node.js and Express and TypeScript](/typescript/day15_nodejs_ts.md)
   - [Day14 - React and TypeScript](/typescript/day14_react_ts.md)
