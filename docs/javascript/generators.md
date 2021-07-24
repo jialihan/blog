@@ -1,12 +1,22 @@
-## Generator Functions in ES6 - JavaScript
+## Iterations and Generators in JavaScript
 
 #### 1. [What is a generator function?](#question1)
 
 #### 2. [The iterator protocol](#question2)
 
+- [2.1 Iterator Syntax](#q2-1)
+- [2.2 Usage Example](#q2-2)
+- [2.3 use Generator function as an Iterator](#q2-3)
+
 #### 3. [The iterable protocol](#question3)
 
-#### 4. [Reference and Links](#question4)
+- [3.1 Protocal Syntax](#q3-1)
+- [3.2 bfe #39. range() use iteration protocol](#q3-2)
+- [3.3 iterable object from a Generator function](#q3-3)
+
+#### 4. [Iterator Pattern in JS](#question4)
+
+#### 5. [Reference and Links](#question5)
 
 <div id="question1" />
 
@@ -58,6 +68,10 @@ function range(from, to) {
 
 ### II. [The iterator protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol "Permalink to The iterator protocol")
 
+<div id="q2-1" />
+
+#### 2.1 Iterator Syntax
+
 An object is an iterator when it implements a `next()` method with the following semantics:
 
 ![image](../assets/iterator-protocol.png ":size=550")
@@ -80,12 +94,49 @@ const myIterator = {
 **Iterator Code Example:**
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterator_examples
 
+<div id="q2-2" />
+
+#### 2.2 Usage Example
+
+```js
+myIterator.next(); // {value: 1, done: false}
+myIterator.next().value; // 1
+```
+
+<div id="q2-3" />
+
+#### 2.3 use Generator function as an Iterator
+
+**Note:**
+generation function returns an [Generator object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator), which conforms to both the iterable protocol and the iterator protocol.
+
+**Instance Method:**
+
+- Generator.prototype.`next()`
+  Returns a value yielded by the yield expression.
+- Generator.prototype.`return()`
+  Returns the given value and finishes the generator.
+- Generator.prototype.`throw()`
+
+**Usage:**
+
+```js
+function* gen() {
+  yield* [1, 2, 3];
+}
+var myIterator = gen();
+console.log(myIterator.next()); // {value: 1, done: false}
+console.log(myIterator.next().value); // 1
+```
+
 <div id="question3" />
 
 ### III. [The iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol "Permalink to The iterable protocol")
 
 **Docs:**
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol
+
+<div id="q3-1" />
 
 #### 3.1 Protocal Syntax
 
@@ -110,7 +161,9 @@ const myIterator = {
 };
 ```
 
-#### 3.2 bfe #39. solution use iteration protocol
+<div id="q3-2" />
+
+#### 3.2 bfe #39. range() use iteration protocol
 
 ```js
 function range(from, to) {
@@ -133,9 +186,93 @@ function range(from, to) {
 }
 ```
 
+<div id="q3-3" />
+
+#### 3.3 iterable object from a Generator function
+
+For example, we already have an generator function:
+
+```js
+function* gen() {
+  yield* [1, 2, 3];
+}
+```
+
+To make an iterable object:
+
+**Syntax 1:**
+
+```js
+var myIterable = {
+  [Symbol.iterator]: gen
+};
+```
+
+**Syntax 2:**
+
+```js
+var myIterable = {
+  [Symbol.iterator]: function* () {
+    yield* [1, 2, 3];
+  }
+};
+```
+
+**Usage Example:**
+Only "Iterable" object can be used in `for...of` loop and `...`(spread operator):
+
+```js
+for (var val of myIterable) {
+  console.log(val);
+}
+console.log(...myIterable); // 1 2 3
+```
+
 <div id="question4" />
 
-### IV. Reference and Links
+#### IV. Iterator Pattern in JS
+
+Pretty similar to JS standard [Iterator protocal](#question2), but we can build more custom & convenient methods, eg: `hasNext(), current(), rewind()....`
+
+**Method:**
+
+- next()
+- hasNext()
+- rewind() : To reset the pointer back to the beginning
+- current() : To return the current element, because you cannot do this with `next()` **without advancing the pointer**
+
+**Code Example:**
+
+```js
+var myIterator = (function () {
+  var index = 0,
+    data = [1, 2, 3],
+    length = data.length;
+  return {
+    next: function () {
+      var element;
+      if (!this.hasNext()) {
+        return null;
+      }
+      element = data[index++];
+      return element;
+    },
+    hasNext: function () {
+      return index < length;
+    },
+    rewind: function () {
+      index = 0;
+    },
+    current: function () {
+      return data[index];
+    }
+  };
+})();
+```
+
+<div id="question5" />
+
+### V. Reference and Links
 
 - **Iterators and generators** : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
 - **Iteration protocols** : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol
