@@ -104,6 +104,7 @@
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - Design Patterns - JS
+  - [4. Factory Design Pattern - JS](/javascript/patterns/04_factory.md)
   - [3. Proxy Design Pattern - JS](/javascript/patterns/03_proxy.md)
   - [2. Observer Design Pattern - JS](/javascript/patterns/02_observer.md)
   - [1. Singleton Design Pattern - JS](/javascript/patterns/01_singleton.md)
