@@ -56,6 +56,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [My first Chrome Extension - Adblocker](/javascript/chrome_ext.md)
   - [White Spaces and Line Breaks in JavaScript](/javascript/whitespace_linebreak.md)
   - [Infinite Scroll on Window in JavaScript](/javascript/infinite-scroll.md)
   - [Debounce and Throttle in JavaScript](/javascript/debounce-throttle.md)
