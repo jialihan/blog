@@ -105,11 +105,12 @@
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - Design Patterns - JS
+  - [7. Mediator Design Pattern - JS](/javascript/patterns/07_mediator.md)
+  - [6. Facade Design Pattern - JS](/javascript/patterns/06_facade.md)
   - [5. Decorator Design Pattern - JS](/javascript/patterns/05_decorator.md)
   - [4. Factory Design Pattern - JS](/javascript/patterns/04_factory.md)
   - [3. Proxy Design Pattern - JS](/javascript/patterns/03_proxy.md)
   - [2. Observer Design Pattern - JS](/javascript/patterns/02_observer.md)
-  - [1. Singleton Design Pattern - JS](/javascript/patterns/01_singleton.md)
 - TypeScript
   - [Day15 - Node.js and Express and TypeScript](/typescript/day15_nodejs_ts.md)
   - [Day14 - React and TypeScript](/typescript/day14_react_ts.md)
