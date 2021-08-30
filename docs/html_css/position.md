@@ -1,49 +1,51 @@
-
 ## Deep Understand CSS Position
- 
-I. [static](#static)  
 
-II. [Change Positions](#change)  
+I. [static](#static)
 
-III. [absolute](#absolute)  
+II. [Change Positions](#change)
 
-IV. [relative](#relative)  
+III. [absolute](#absolute)
+
+IV. [relative](#relative)
 
 V. [sticky](#sticky)
- 
 
-<div id="static" />  
+VI. [Properties: top / bottom / left / right](#prop4)
+
+<div id="static" />
 
 ### I. display: static;
+
 - The element is positioned according to the **normal flow** of the DOM.
 - The **default** property value applies to be the "static"
 - respect and include the block-level and inline-level position
 
 For example: nothing happens
+
 ```css
 .item {
-	display: static;
+  display: static;
 }
 ```
 
-![image](../assets/pos-static.png ':size=349x329')
+![image](../assets/pos-static.png ":size=349x329")
 
-<div id="change" />  
+<div id="change" />
 
 ### II. Change Positions
 
 - document flow
-	- top
-	- left
-	- bottom
-	- right
+  - top
+  - left
+  - bottom
+  - right
 - positioning context
-	- viewport
-	- body
-	- html
-	- ...
+  - viewport
+  - body
+  - html
+  - ...
 
-<div id="fix" />  
+<div id="fix" />
 
 ### II. display: fix;
 
@@ -52,6 +54,7 @@ For example: nothing happens
 - it always stays in the same place even if the page is scrolled.
 
 For example:
+
 ```css
 .header {
   position: fixed;
@@ -61,43 +64,51 @@ For example:
 
 **Source Code** : [github link](https://github.com/jialihan/CSS-onboarding/tree/master/Position/fixed)
 
-<div id="absolute" />  
+<div id="absolute" />
 
 ### III. display: absolute;
+
 - remove it from normal Document work flow
-- it moves up to a higher level than the normal work flow 
+- it moves up to a higher level than the normal work flow
 - place it with position values: `top, left, right, bottom`
 - Decide positioning context:
-	- the closest ancestor element with "**position**" value
-	- otherwise, it refers to the  "**viewport**"
+  - the closest ancestor element with "**position**" value
+  - otherwise, it refers to the "**viewport**"
 
 Use Cases:
-#### 1. only with  `position: absolute;`
+
+#### 1. only with `position: absolute;`
+
 it will be removed from normal document flow, then the following content will move up to fill its original spaces.
+
 ```css
 .item {
-	position: absolute;
+  position: absolute;
 }
 ```
+
 #### 2. position context is **viewport**
 
 When we add some direction changes, we will see the impact of the positioning context. If parent elements don't have a `position` property, the default positioning context will be the **viewport**.
+
 ```css
 .item {
-	position: absolute;
-	top: 15px;
+  position: absolute;
+  top: 15px;
 }
 ```
 
-#### 3. position context is parent element 
+#### 3. position context is parent element
+
 When its parent element has a `position` property, it will be the new position context for that child element rather than viewport.
+
 ```css
 .container {
-	position: relative;
+  position: relative;
 }
 .item {
-	position: absolute;
-	top: 15px;
+  position: absolute;
+  top: 15px;
 }
 ```
 
@@ -107,8 +118,7 @@ When its parent element has a `position` property, it will be the new position c
 
 **Source Code**: [github link](https://github.com/jialihan/CSS-onboarding/tree/master/Position/absolute)
 
-
-<div id="relative" />  
+<div id="relative" />
 
 ### IV. display: relative;
 
@@ -117,37 +127,43 @@ When its parent element has a `position` property, it will be the new position c
 - positioning context is its **own original position** in DOM
 
 **Use Cases**
-#### 1. Only with  `position: relative;`
+
+#### 1. Only with `position: relative;`
 
 **Nothing changed** ! It's still the same with original Document position. It has no effect on anything !
+
 ```css
 .item {
-	display: relative;
+  display: relative;
 }
 ```
 
 #### 2. `position: relative;` with **percentage** value
+
 When the value is provided as a **percentage**, it is **relative to the height of the containing block**.
-For example: 
-A parent container element has height "200px", then the child item with `top: 50%;` means:  200 * 50% = 100px.
+For example:
+A parent container element has height "200px", then the child item with `top: 50%;` means: 200 \* 50% = 100px.
+
 ```css
 .container {
-	height: 200px;
+  height: 200px;
 }
 .item {
-	display: relative;
-	top: 50%; 
+  display: relative;
+  top: 50%;
 }
 ```
 
 #### 3. `position: relative;` with number value
+
 It will move the length due to its **original position** to `left, right, bottom, top`.
 For example:
 `.item` element will move down 20px on y-axis than it's original position.
+
 ```css
 .item {
-	display: relative;
-	top: 20px; 
+  display: relative;
+  top: 20px;
 }
 ```
 
@@ -157,7 +173,7 @@ For example:
 
 **Source Code**: [github link](https://github.com/jialihan/CSS-onboarding/tree/master/Position/relative)
 
-<div id="sticky" />  
+<div id="sticky" />
 
 ### IV. display: sticky;
 
@@ -166,12 +182,21 @@ For example:
 - Once it is scrolled to **a given offset position in the viewport** , then it "sticks" in place (like position:fixed).
 
 For example:
+
 ```css
 .header {
-	position: sticky;
-	top: 0;
+  position: sticky;
+  top: 0;
 }
 ```
 
 **Source Code**: [github link](https://github.com/jialihan/CSS-onboarding/tree/master/Position/sticky)
 
+<div id="prop4" />
+
+### VI.top / bottom / left / right
+
+**Docs:**
+https://css-tricks.com/almanac/properties/t/top-right-bottom-left/
+
+The top, bottom, left, and right **properties** are used with "position" to set the placement of an element. They **ONLY** have an effect on **positioned elements**, which are elements with the position property set to anything --other than-- `static`. For example: relative, absolute, fixed, or sticky.
