@@ -285,6 +285,26 @@ async function httpRequest() {
 }
 ```
 
+**Fetch can NOT handle http error code!!!**
+HTTP status code: [MDN-doc](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+- Informational responses (100–199)
+- Successful responses (200–299)
+- Redirects (300–399)
+- Client errors (400–499)
+- Server errors (500–599)
+
+```js
+fetch(url).then(handleHttpError).then(...);
+function handleHttpError(res) {
+  if (!res.ok) {
+    // create error object and reject if not a 2xx response code
+    throw new Error("HTTP status code: " + res.status);
+  }
+  return res;
+}
+```
+
 <div id="question-7"/>
 
 ### VII. More features about Axios
