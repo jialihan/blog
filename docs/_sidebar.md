@@ -57,6 +57,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [ES2021 (ES12) New Features](/javascript/ES2021.md)
   - [My first Chrome Extension - Adblocker](/javascript/chrome_ext.md)
   - [White Spaces and Line Breaks in JavaScript](/javascript/whitespace_linebreak.md)
   - [Infinite Scroll on Window in JavaScript](/javascript/infinite-scroll.md)
@@ -98,7 +99,8 @@
   - [Object Operators in JavaScript](/javascript/op_precedence.md)
   - [JavaScript Engine - understand deeply](/javascript/engine.md)
   - [ES6 vs ES5](/javascript/es6.md)
-  - [JS Modules - CommonJS vs AMD vs RequireJS vs ES6 Modules](/javascript/js_modules.md)
+  - [JS
+    - [ES2021 New Features](/javascript/) Modules - CommonJS vs AMD vs RequireJS vs ES6 Modules](/javascript/js_modules.md)
   - [Webpack Config](/javascript/webpack.md)
   - [eval in Javascript](/javascript/eval.md)
   - [Types in Javascript](/javascript/types.md)
@@ -106,12 +108,19 @@
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
 - Design Patterns - JS
-  - [7. Mediator Design Pattern - JS](/javascript/patterns/07_mediator.md)
-  - [6. Facade Design Pattern - JS](/javascript/patterns/06_facade.md)
-  - [5. Decorator Design Pattern - JS](/javascript/patterns/05_decorator.md)
-  - [4. Factory Design Pattern - JS](/javascript/patterns/04_factory.md)
-  - [3. Proxy Design Pattern - JS](/javascript/patterns/03_proxy.md)
-  - [2. Observer Design Pattern - JS](/javascript/patterns/02_observer.md)
+  - [ES2021 New Features](/javascript/)
+  - [7. Mediator Design Pattern - JS
+    - [ES2021 New Features](/javascript/)](/javascript/patterns/07_mediator.md)
+  - [6. Facade Design Pattern - JS
+    - [ES2021 New Features](/javascript/)](/javascript/patterns/06_facade.md)
+  - [5. Decorator Design Pattern - JS
+    - [ES2021 New Features](/javascript/)](/javascript/patterns/05_decorator.md)
+  - [4. Factory Design Pattern - JS
+    - [ES2021 New Features](/javascript/)](/javascript/patterns/04_factory.md)
+  - [3. Proxy Design Pattern - JS
+    - [ES2021 New Features](/javascript/)](/javascript/patterns/03_proxy.md)
+  - [2. Observer Design Pattern - JS
+    - [ES2021 New Features](/javascript/)](/javascript/patterns/02_observer.md)
 - TypeScript
   - [Day15 - Node.js and Express and TypeScript](/typescript/day15_nodejs_ts.md)
   - [Day14 - React and TypeScript](/typescript/day14_react_ts.md)
@@ -132,7 +141,8 @@
   - String
     - [String prefix & suffix - KMP algorithm](/leetcode/string/kmp.md)
   - Array
-    - [Quick Sort - JS](/leetcode/array/quicksort.md)
+    - [Quick Sort - JS
+      - [ES2021 New Features](/javascript/)](/leetcode/array/quicksort.md)
     - [Squares, Rectangles, Ones in matrix](/leetcode/array/ones_in_matrix.md)
     - [Max Sub-Array Sum - kadane's algorithm](/leetcode/array/max_subarray.md)
     - [Leetcode 300/1713 Longest Increasing Sequence](/leetcode/array/LIS.md)
