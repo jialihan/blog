@@ -57,6 +57,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - JS
+  - [ES2022 (ES13 New Features)](/javascript/es2022.md)
   - [ES2021 (ES12) New Features](/javascript/ES2021.md)
   - [My first Chrome Extension - Adblocker](/javascript/chrome_ext.md)
   - [White Spaces and Line Breaks in JavaScript](/javascript/whitespace_linebreak.md)
