@@ -56,7 +56,8 @@
   - [HTML Basic 01](/html_css/htmlBasic_01.md)
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
-- JS
+- ## JS
+  - [Reflect Object in JavaScript][/javascript/reflect.md]
   - [ES2022 (ES13 New Features)](/javascript/es2022.md)
   - [ES2021 (ES12) New Features](/javascript/ES2021.md)
   - [My first Chrome Extension - Adblocker](/javascript/chrome_ext.md)
@@ -100,8 +101,7 @@
   - [Object Operators in JavaScript](/javascript/op_precedence.md)
   - [JavaScript Engine - understand deeply](/javascript/engine.md)
   - [ES6 vs ES5](/javascript/es6.md)
-  - [JS
-    - [ES2021 New Features](/javascript/) Modules - CommonJS vs AMD vs RequireJS vs ES6 Modules](/javascript/js_modules.md)
+  - [JS Modules - CommonJS vs AMD vs RequireJS vs ES6 Modules](/javascript/js_modules.md)
   - [Webpack Config](/javascript/webpack.md)
   - [eval in Javascript](/javascript/eval.md)
   - [Types in Javascript](/javascript/types.md)
