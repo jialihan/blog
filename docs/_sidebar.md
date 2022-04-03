@@ -29,6 +29,7 @@
   - [componentWillMount()](/react/componentWillMount.md)
   - [OnInput and OnChange event in JavaScript and React](/react/onchange_react.md)
 - HTML/CSS
+  - [Write a Five-Star rating in CSS](/html_css/five-star.md)
   - [Copy and Highlight Selected Text in HTML](/html_css/copy_highlight.md)
   - [Form Elements in HTML Examples](/html_css/formEL.md)
   - [Enter Key trigger click on Focused Element](/html_css/button_enter.md)
