@@ -110,6 +110,8 @@
   - [Double negation (!!) in JavaScript](/javascript/toBoolean.md)
   - [Date in Javascript](/javascript/date.md)
   - [Snake Game in Javascript](/javascript/snakegame.md)
+- High Performance JavaScript
+  - [Chapter 1 - Loading & Exec](/javascript/high-performance-js/chapter01_loading_exec.md)
 - Design Patterns - JS
   - [ES2021 New Features](/javascript/)
   - [7. Mediator Design Pattern - JS
