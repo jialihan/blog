@@ -113,6 +113,7 @@
 - High Performance JavaScript
   - [Chapter 1 - Loading & Exec](/javascript/high-performance-js/chapter01_loading_exec.md)
   - [Chapter 3 - DOM scripting](/javascript/high-performance-js/chapter03_dom.md)
+  - [Chapter 4 - Algorithms and Flow Control](/javascript/high-performance-js/chapter04_algorithms.md)
 - Design Patterns - JS
   - [ES2021 New Features](/javascript/)
   - [7. Mediator Design Pattern - JS
