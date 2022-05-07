@@ -59,6 +59,7 @@
   - [CSS basic 01](/html_css/css_01.md)
   - [UI Design basics](/html_css/uidesign_01.md)
 - ## JS
+  - [Understanding Cookies and Sessions](/javascript/cookie.md)
   - [Reflect Object in JavaScript][/javascript/reflect.md]
   - [ES2022 (ES13 New Features)](/javascript/es2022.md)
   - [ES2021 (ES12) New Features](/javascript/ES2021.md)
