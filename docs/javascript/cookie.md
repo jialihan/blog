@@ -19,3 +19,7 @@ A session ends when the user closes the browser or after leaving the site, the s
 ### 3. HTTP is a stateless protool
 
 So that cookie makes it more stateful between client and server.
+
+### 4. Additional Resources
+
+- MDN docs: [Using HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
