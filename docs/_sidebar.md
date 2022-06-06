@@ -119,6 +119,7 @@
   - [Chapter 4 - Algorithms and Flow Control](/javascript/high-performance-js/chapter04_algorithms.md)
   - [Chapter 5 - Strings and Regex](/javascript/high-performance-js/chapter05_string_regex.md)
   - [Chapter 6 - Browser's reponsive interfaces](/javascript/high-performance-js/chapter06_responsive_interfaces.md)
+  - [Chapter 7 - AJAX](/javascript/high-performance-js/chapter07_ajax.md)
 - Design Patterns - JS
   - [7. Mediator Design Pattern - JS](/javascript/patterns/07_mediator.md)
   - [6. Facade Design Pattern - JS](/javascript/patterns/06_facade.md)
