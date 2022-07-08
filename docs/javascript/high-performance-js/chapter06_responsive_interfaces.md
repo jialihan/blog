@@ -88,7 +88,7 @@ To create a web worker, you must pass in the URL for the JavaScript file:
 var worker = new Worker("code.js");
 ```
 
-#### 5.2 Worker Communication
+#### 5.2 Web Worker (multi-threading)
 
 Communication between a worker and the web page code is established through an event interface.
 
@@ -117,6 +117,8 @@ Web workers are suitable for any long-running scripts that work on pure data and
 - Encoding/decoding a large string
 - Complex mathematical calculations (including image or video processing)
 - Sorting a large array
+
+Online example: https://www.loginradius.com/blog/engineering/adding-multi-threading-to-javascript-using-web-workers/
 
 ### 6. Summary
 
