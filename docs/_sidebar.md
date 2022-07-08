@@ -121,6 +121,8 @@
   - [Chapter 6 - Browser's reponsive interfaces](/javascript/high-performance-js/chapter06_responsive_interfaces.md)
   - [Chapter 7 - AJAX](/javascript/high-performance-js/chapter07_ajax.md)
   - [Chapter 8 - Programming Practices](/javascript/high-performance-js/chapter08_practices.md)
+  - [Chapter 9 - Build and Deploy JS App](/javascript/high-performance-js/chapter09_build_deploy.md)
+  - [Chapter 10 - Tools](/javascript/high-performance-js/chapter10_tools.md)
 - Design Patterns - JS
   - [7. Mediator Design Pattern - JS](/javascript/patterns/07_mediator.md)
   - [6. Facade Design Pattern - JS](/javascript/patterns/06_facade.md)
