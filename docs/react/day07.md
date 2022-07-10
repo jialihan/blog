@@ -496,9 +496,9 @@ class MyComponent extends React.Component {
   const myRef = useRef(initialValue);
   ```
 
-  `useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`).
+  `useRef` returns a mutable ref **object** whose `.current` property is initialized to the passed argument (`initialValue`).
 
-- access the ref object: use `.current`
+- access the ref **object**: use `.current`
   ```js
   myRef.current.focus(); // for example
   ```
@@ -510,6 +510,25 @@ class MyComponent extends React.Component {
 #### 4.4.4 Reference doc link:
 
 [useRef hook](https://reactjs.org/docs/hooks-reference.html#useref)
+
+One example: [bfe-react-02](https://bigfrontend.dev/react/usetimeout)
+It can memorize one object all the time, and keep the ref to the object.
+
+```js
+import React, { useEffect, useRef } from "react";
+
+export function useTimeout(callback: () => void, delay: number) {
+  const callbackRef = useRef(callback);
+  callbackRef.current = callback;
+
+  useEffect(() => {
+    const timer = setTimeout(() => callbackRef.current(), delay);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [delay]);
+}
+```
 
 <div id="question-5" />
 
