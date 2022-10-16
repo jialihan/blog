@@ -175,6 +175,7 @@
     - [1373. Maximum Sum BST in Binary Tree](/leetcode/lc1373.md)
     - [Leetcode 1489 MST](/leetcode/mst.md)
   - Contest
+    - [LeetCode Contest 314 JavaScript👎](/leetcode/contest315.md)
     - [LeetCode Contest 314 JavaScript](/leetcode/contest314.md)
     - [LeetCode Contest 313 JavaScript👍](/leetcode/contest313.md)
     - [LeetCode Contest 312 JavaScript](/leetcode/contest312.md)
