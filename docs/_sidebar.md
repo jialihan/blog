@@ -63,7 +63,7 @@
 
   - [Number and Bitwise Operator in JavaScript](/javascript/bit.md)
   - [Understanding Cookies and Sessions](/javascript/cookie.md)
-  - [Reflect Object in JavaScript][/javascript/reflect.md]
+  - [Reflect Object in JavaScript](/javascript/reflect.md)
   - [ES2022 (ES13 New Features)](/javascript/es2022.md)
   - [ES2021 (ES12) New Features](/javascript/ES2021.md)
   - [My first Chrome Extension - Adblocker](/javascript/chrome_ext.md)
