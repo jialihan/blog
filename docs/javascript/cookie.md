@@ -4,7 +4,7 @@
 
 Cookies are produced and shared between the browser and the server using the HTTP Header.
 
-[!image](../assets/cookie_01.png)
+![image](../assets/cookie_01.png)
 
 - the browser will **always** send COOKIES with every request
 - the server will send back the cookie with "**sessionID**"
@@ -25,13 +25,13 @@ Features of session:
   Eg: A session ends when the user closes the browser or after leaving the site, the server will terminate the session after a predetermined period of time, commonly 30 minutes duration.
 - session storage is larger than cookie.
 
-[!image](../assets/cookie_02.png)
+![image](../assets/cookie_02.png)
 
 ### 3. HTTP is a stateless protool
 
 So that cookie makes it more stateful between client and server. Traditional session and cookie based authentication:
 
-[!image](../assets/cookie_auth_server.png)
+![image](../assets/cookie_auth_server.png)
 
 ### 4. Token
 
@@ -39,15 +39,15 @@ Token is generated on server side then send to client side, then you can store c
 
 What is token?
 
-[!image](../assets/token_01.png)
+![image](../assets/token_01.png)
 
 How the token based auth process?
 
-[!image](../assets/token_auth_02.png)
+![image](../assets/token_auth_02.png)
 
 ### 5. Compare Cookie, Session & Token
 
-[!image](../assets/token_auth_compare_03.png)
+![image](../assets/token_auth_compare_03.png)
 
 ### 6. Additional Resources
 
