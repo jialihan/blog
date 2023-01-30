@@ -31,6 +31,7 @@
   - [componentWillMount()](/react/componentWillMount.md)
   - [OnInput and OnChange event in JavaScript and React](/react/onchange_react.md)
 - HTML/CSS
+  - [Defer vs. Async in script tag](/html_css/defer_async_script.md)
   - [Write a Five-Star rating in CSS](/html_css/five-star.md)
   - [Copy and Highlight Selected Text in HTML](/html_css/copy_highlight.md)
   - [Form Elements in HTML Examples](/html_css/formEL.md)
