@@ -10,6 +10,11 @@
   x = true;
   ```
 - **ES6**: `let, const`
+
+  > Constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it can't be redeclared.
+
+  Eg: `const` cannot be accessed outside of `try{}` block, but `var` can be accessed outside of `try{}`, [stackoverflow link](https://stackoverflow.com/questions/44301160/how-can-i-access-to-a-variable-in-try-block-in-other-try-block).
+
   ```
   // constants: must have a inital value
     const x = 0;
