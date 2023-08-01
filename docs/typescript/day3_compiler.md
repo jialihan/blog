@@ -68,7 +68,7 @@ tsc --watch // watch mode for all ts files
 Notes: includes any sub folder's `.ts` file, all TS files in project.
 The following is the folder structure after `tsc --init`:
 
-<img src="../assets/complie-project-tsc.png" height="392" />
+![image](../assets/complie-project-tsc.png ":size=392")
 
 **Official TS CLI docs:** [link](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
 
@@ -121,65 +121,6 @@ For example:
 - es5
 - es6 - modern browsers
 
-#### 4.1 Type Assignment
-
-the syntax is use the `:` sign with the following types
-
-```js
-let num1: number;
-let s: string;
-let isValid: boolean;
-```
-
-#### 4.2 [Type Inference](https://www.typescriptlang.org/docs/handbook/type-inference.html)
-
-TS knows and can read the type information from its initial value's type when **NO explicit type** annotation assigned.
-
-For example:
-
-```js
-const num = 1.0; // type is number, and it never changes.
-let str = "hello"; // type is string
-```
-
-**Bad Practice:**
-Since TS can get the type info from **type inference** in the initial value.
-
-```js
-let x = 3; // GOOD
-let x: number = 3; // BAD
-```
-
-#### 4.3 Error examples in type assignment
-
-When it's already assigned a type to the variable, you cannot change the var to another type in future code.
-
-**Example 1:**
-
-```js
-let s = "hello";
-s = 5.0; // WRONG !!!
-```
-
-Error:
-
-```text
-error TS2322: Type 'number' is not assignable to type 'string'.
-```
-
-**Example 2:**
-
-```js
-let s: string;
-s = 5.0; // WRONG !!!
-```
-
-Error:
-
-```text
-error TS2322: Type 'number' is not assignable to type 'string'.
-```
-
 <div id="p5" />
 
 ### V. TypeScript Core Libs - compilation
@@ -231,7 +172,7 @@ In `tsconfig.json`, compiler options, we can see this property.
 Advantages:
 provide rich **debugging** in Dev Tools to `.ts` files, we can debug our TS files
 
-<img src="../assets/source-maps-ts.png" width="540" />
+![image](../assets/source-maps-ts.png ":size=540")
 
 <div id="p8" />
 
@@ -255,8 +196,7 @@ Example:
 ```
 
 Folder structure:
-
-<img src="../assets/complie-project-tsc.png" height="360" />
+![image](../assets/complie-project-tsc.png ":size=360")
 
 #### 8.2 rootDir
 
@@ -325,7 +265,7 @@ Default value is `false`:
 
 **Error Example:**
 
-<img src="../assets/error-ts-file-button.png" width="552" />
+![image](../assets/error-ts-file-button.png ":size=552")
 
 When we run `tsc` and compile, the `app.js` file **still output and emitted**, which might be an error in TS file.
 
@@ -354,7 +294,7 @@ If you set `"strict": true`, you will got all the following props set to **"true
 
 Example: no data type can be inferred, it's `any` type, in parameters.
 
-<img src="../assets/implicit-any-error-strict.png" width="800" />
+![iamge](../assets/implicit-any-error-strict.png ":size=800")
 
 **Fix:**
 
@@ -376,7 +316,7 @@ if you want to **turn off** this rule, use:
 
 Error Example:
 
-<img src="../assets/strict-check-null-error.png" width="552" />
+![image](../assets/strict-check-null-error.png ":size=552")
 
 **Fix:** 2 solutions
 
@@ -401,7 +341,7 @@ if you want to **turn off** this rule, use:
 
 Error Example:
 
-<img src="../assets/strict-bind-error.png" width="720" />
+![image](../assets/strict-bind-error.png ":size=720")
 
 **Fix:** match the params with original function
 
@@ -427,7 +367,7 @@ if you want to **turn off** this rule, use:
 This property controls that output `.js` file always use **strict** mode.
 Example:
 
-<img src="../assets/strict-always-strict-error.png" width="220" />
+![image](../assets/strict-always-strict-error.png ":size=220")
 
 if you want to **turn off** this rule, use:
 
@@ -443,15 +383,15 @@ if you want to **turn off** this rule, use:
 
 - **"noUnusedLocals"** : true, /_ Report errors on unused locals. _/
 
-  <img src="../assets/no-local-unused.png" width="496" />
+  ![image](../assets/no-local-unused.png ":size=496")
 
 - **"noUnusedParameters"** : true, /_ Report errors on unused parameters. _/
 
-  <img src="../assets/unused-param-strict-error.png" width="565" />
+  ![image](../assets/unused-param-strict-error.png ":size=565")
 
 - **"noImplicitReturns"** : true, /_ Report error when not all code paths in function return a value. _/
 
-  <img src="../assets/no-implicit-return-error.png" width="565" />
+  ![image](../assets/no-implicit-return-error.png ":size=565")
 
 - "noFallthroughCasesInSwitch": true, /_ Report errors for fallthrough cases in switch statement. _/
 
@@ -467,15 +407,15 @@ if you want to **turn off** this rule, use:
 
 1.  enable "**sourceMaps**", and click menu bar **"Run -> start Debugging"**:
 
-<img src="../assets/step1-debug-vscode.png" width="720" />
+![image](../assets/step1-debug-vscode.png ":size=720")
 
 2.  Run **"npm start**" and update local URL config in `.launch.json` file
 
-<img src="../assets/step2-launch-url-config.png" height="560" />
+![image](../assets/step2-launch-url-config.png ":size=560")
 
 3.  Add break point in vscode, then click menu bar "Run -> start Debugging"
 
-<img src="../assets/run-debug-step3.png" width="800" />
+![image](../assets/run-debug-step3.png ":size=800")
 
 <div id="p14" />
 
