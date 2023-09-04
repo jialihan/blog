@@ -266,3 +266,6 @@
   - [Android Jetpack Compose Basics](/android/compose00.md)
 - VUE
   - [Introduction to VUE - 01](/VUE/intro_01.md)
+  - [Section 2 - fundamentals](/VUE/section2.md)
+  - [Section 3 - exercise](/VUE/section3.md)
+  - [Section 4 - fundamental plus](/VUE/section4.md)
