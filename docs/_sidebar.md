@@ -270,3 +270,4 @@
   - [Section 3 - exercise](/VUE/section3.md)
   - [Section 4 - fundamental plus](/VUE/section4.md)
   - [Section 5 - vite](/VUE/section5.md)
+  - [Section 6 - Components](/VUE/section6.md)
