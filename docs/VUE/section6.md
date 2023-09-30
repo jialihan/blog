@@ -379,3 +379,32 @@ wrong example:
 <!-- WRONG!!! -->
 <div v-slot:help> </div>
 ```
+
+### 13 Dynamic components - [doc](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components)
+
+`<component>` tag provided by vue:
+
+- `is` attribute: the name of the component to load
+- the component will unmount if it's not choosed to load.
+  ```vue
+  <script>
+  export default {
+    unmounted() {
+      console.log("About comp is unmounted");
+    }
+  };
+  </script>
+  ```
+- Way to `persist` component: `<keep-alive>`: VUE will keep it in memory instead if destroying it and create a new component. the Vue set it to `inactive`.
+
+  ![image](./section7-1_01.png :size="360")
+
+  ```js
+  // two more life cycle functions
+    activated() {
+    console.log("About comp is activated");
+  },
+  deactivated() {
+    console.log("About comp is deactivated");
+  }
+  ```
