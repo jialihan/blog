@@ -272,3 +272,5 @@
   - [Section 5 - vite](/VUE/section5.md)
   - [Section 6 - Components](/VUE/section6.md)
   - [Section 7 - Transitions & Animations](/VUE/section7.md)
+  - [Section 8 - build a small app](/VUE/section08.md)
+  - [Section 9 - State & Pinia](/VUE/section9.md)
