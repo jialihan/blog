@@ -274,3 +274,5 @@
   - [Section 7 - Transitions & Animations](/VUE/section7.md)
   - [Section 8 - build a small app](/VUE/section08.md)
   - [Section 9 - State & Pinia](/VUE/section9.md)
+  - [Section 10 - Form Validation](/VUE/section10.md)
+  - [Section 10.11 - VUE Slots](VUE/section10_11_slot.md)
