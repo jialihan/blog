@@ -444,12 +444,12 @@ Or in HTML:
 
 ### 2.19 Conditional Rendering
 
-3. When `v-if` is false, the element will be removed from the dom, instead of hiding it.
+2.19.1. When `v-if` is false, the element will be removed from the dom, instead of hiding it.
 
 eg:
 ![image](../assets/vue-section2-2_19_01.png)
 
-2. **Syntax**: [doc](https://vuejs.org/guide/essentials/conditional.html)
+2.19.2. **Syntax**: [doc](https://vuejs.org/guide/essentials/conditional.html)
 
 ```html
 <p v-if="mode==1">show v-if directive content</p>
@@ -457,8 +457,8 @@ eg:
 <p v-else>v-else</p>
 ```
 
-3. `<template>` tag in VUE
-   it serves as an **invisible** wrapper. The final rendered result will not include the `<template>` element.
+2.19.3. `<template>` tag in VUE
+it serves as an **invisible** wrapper. The final rendered result will not include the `<template>` element.
 
 ```html
 <template v-else-if="mode==2">
