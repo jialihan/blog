@@ -277,3 +277,4 @@
   - [Section 10 - Form Validation](/VUE/section10.md)
   - [Section 10.11 - VUE Slots](VUE/section10_11_slot.md)
   - [Section 11 - Authentication with firebase](VUE/section11.md)
+  - [Section 12 - VUE Router](VUE/section12.md)
