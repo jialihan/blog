@@ -12,6 +12,10 @@
 
 #### VI. [Generic Classes](#p6)
 
+- 6.1 [Generic Constraints](#p6_1)
+- 6.2 [Using Type Parameters in Generic Constraints](#p6_2)
+- 6.3 [Generic Parameter Defaults](#p6_3)
+
 #### VII. [Advantages of Generics](#p7)
 
 #### VIII. [Generic Utility Types](#p8)
@@ -193,6 +197,73 @@ class  DataStorage<T  extends  string | number | boolean> {
 const  numberStorage = new  DataStorage<number>();
 const  textStorage = new  DataStorage<string>();
 const boolStorage = new DataStorage<boolean>();
+```
+
+<div id="p6_1" />
+
+#### 6.1 Generic Constraints - [doc](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints)
+
+If you remember from an earlier example, you may sometimes want to write a generic function that works on a set of types where you have some knowledge about what capabilities that set of types will have.
+
+**Problem:**
+
+```ts
+function loggingIdentity<Type>(arg: Type): Type {
+  console.log(arg.length);
+Property 'length' does not exist on type 'Type'.
+  return arg;
+}
+```
+
+**Fix:**
+To do so, we’ll create an interface that describes our constraint. Here, we’ll create an interface that has a single .length property and then we’ll use this interface and the extends keyword to denote our constraint:
+
+```ts
+interface Lengthwise {
+  length: number;
+}
+
+function loggingIdentity<Type extends Lengthwise>(arg: Type): Type {
+  console.log(arg.length); // Now we know it has a .length property, so no more error
+  return arg;
+}
+```
+
+<div id="p6_2" />
+
+#### 6.2 Using Type Parameters in Generic Constraints - [doc](https://www.typescriptlang.org/docs/handbook/2/generics.html#using-type-parameters-in-generic-constraints)
+
+```ts
+function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+  return obj[key];
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+getProperty(x, "a");
+getProperty(x, "m");
+Argument of type '"m"' is not assignable to parameter of type '"a" | "b" | "c" | "d"'.
+```
+
+<div id="p6_3" />
+
+#### 6.3 Generic Parameter Defaults - [doc](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-parameter-defaults)
+
+By declaring a default for a generic type parameter, you make it optional to specify the corresponding type argument. For example, a function which creates a new `HTMLElement`. Calling the function with no arguments generates a `HTMLDivElement`.
+
+```ts
+declare function create<T extends HTMLElement = HTMLDivElement, U = T[]>(
+  element?: T,
+  children?: U,
+): Container<T, U>;
+
+const div = create();
+
+const div: Container<HTMLDivElement, HTMLDivElement[]>;
+
+const p = create(new HTMLParagraphElement());
+
+const p: Container<HTMLParagraphElement, HTMLParagraphElement[]>;
 ```
 
 <div id="p7" />

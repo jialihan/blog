@@ -18,7 +18,7 @@
 
 ### I. Docs
 
-Docs: [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
+Docs: [ES6 Compatibility Table](https://compat-table.github.io/compat-table/es6/)
 
 <div id="p2" />
 
@@ -122,7 +122,7 @@ activeHobbies.push(...hobbies);
 // Obj
 const person = {
   name: "Max",
-  age: 30
+  age: 30,
 };
 const copiedPerson = { ...person };
 ```
