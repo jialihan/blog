@@ -191,4 +191,268 @@ http://localhost:5173/foo/about
 http://localhost:5173/about
 ```
 
-### 12.6 Custom Links
+### 12.6 Tailwind Styles for Active Links
+
+12.6.1
+Background: the `<router-link>` will provide some default styles for the `:active` state:
+
+```html
+<a
+  href="/about"
+  class="router-link-active router-link-exact-active
+  text-white px2"
+  aria-current="page"
+></a>
+```
+
+But we can **customize** it: ([vue-doc](https://v3.router.vuejs.org/api/#linkexactactiveclass))
+
+- override the class name
+- config css class names in the `router/index.js config file`: partial match or exact match
+
+```js
+const router = createRouter({
+  // ...
+  linkExactActiveClass: "text-yellow-500",
+});
+```
+
+12.6.2 override the css class on a specific link:
+`exact-active-class`: [doc](https://v3.router.vuejs.org/api/#exact-active-class)
+
+- type: string
+- default: `"router-link-exact-active"`
+- Configure the active CSS class applied when the link is active with **exact match**.
+
+Example code:
+
+```html
+<router-link
+  class="text-white text-2xl mr-4"
+  to="/"
+  exact-active-class="no-active"
+></router-link>
+```
+
+### 12.7 Named Routes - add a name to the route
+
+A route with a name can be referenced by its name rather than its path.
+In `/router/index.js` to add a `name` property:
+
+```js
+const routes = [
+  {
+    path: "/",
+    name: "home",
+    component: Home,
+  },
+];
+```
+
+To use the `name` of the route instead of `path` of the route in the web application, on the `:to` property:
+
+```
+// old
+ to="/"
+// new: bind the attribute
+:to="{ name: 'home' }"
+```
+
+### 12.8 non-exist route and redirection route
+
+#### 12.8.1 non-exist route
+
+shows an empty page on the browser: eg: `/unknown`, options to handle this case:
+
+- 1. render a 404 message: not found
+- 2. redirect user to the `new path`(the correct page)
+
+Use the `redirect property` in router config file, [doc](https://router.vuejs.org/guide/essentials/redirect-and-alias#Redirect)
+
+```js
+// /router/index.js
+  {
+    path: "/manage",
+    redirect: "/manage-music",
+  },
+```
+
+#### 12.8.2 "catch-all" route/ 404 not found route
+
+use `:catchAll` or `:pathMath`, doc: https://router.vuejs.org/guide/essentials/dynamic-matching#Catch-all-404-Not-found-Route
+
+```js
+[
+  {
+    // path: "/:catchAll(.*)*",
+    path: "/:pathMatch(.*)*",
+    redirect: { name: "home" },
+  },
+];
+```
+
+### 12.9 Route Alias
+
+doc: https://router.vuejs.org/guide/essentials/redirect-and-alias#Alias
+
+`alias prop` is an additional path: the value is a path string,
+eg:
+
+```js
+{
+  path: "/manage-music",
+  component: Manage,
+  name: "manage",
+  alias: "/manage",
+},
+```
+
+Note: comparing with redirect route, when to use?
+
+> Note about SEO: when using aliases, make sure to define [canonical links](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls?hl=en&visit_id=638376861835662375-2311211209&rd=1).
+> Reason:
+> To specify which URL that you want people to see in search results. You might prefer people to reach your green dresses product page via https://www.example.com/dresses/green/greendress.html rather than https://example.com/dresses/cocktail?gclid=ABCD.
+
+### 12.10 Guarding Routes
+
+doc:[Navigation Gaurds](https://router.vuejs.org/guide/advanced/navigation-guards.html)
+Guards are defined as `functions`, we can **run a function before user navigates to a specific page**, like a hook.
+
+#### 12.10.1 option1: global guard
+
+```js
+router.beforeEach((to, from, next) => {
+  console.log("global guard: ", to, from);
+
+  // the component won't load until the next() func is called.
+  next();
+});
+```
+
+#### 12.10.2 specific route guard
+
+[beforeEnter()](https://router.vuejs.org/guide/advanced/navigation-guards.html#Per-Route-Guard): guards only trigger when entering the route, they don't trigger when the params, query or hash change e.g. going from `/users/2` to `/users/3` or going from `/users/2#info` to `/users/2#projects`. They are **only triggered when navigating from a different route**.
+
+```js
+beforeEnter: (to, from, next) => {
+  // ...
+};
+```
+
+#### 12.10.3 define a guard in a component
+
+```vue
+<script>
+export default {
+  name: "mamage", // comp name, better to have
+  beforeRouteEnter(to, from, next) {
+    console.log("beforeRouteEnter guard");
+    next();
+  },
+};
+</script>
+```
+
+Note: the order of the priority of the guards, please see the below console message:
+
+![image](./docs/VUE/section12-10_01.png)
+
+**The Full Navigation Resolution Flow:** ([doc](https://router.vuejs.org/guide/advanced/navigation-guards.html#The-Full-Navigation-Resolution-Flow)):
+
+- Navigation triggered.
+- Call `beforeRouteLeave` guards in deactivated components.
+- Call **global** `beforeEach` guards.
+- Call `beforeRouteUpdate` guards in reused components.
+- Call `beforeEnter` in **route configs**.
+- Resolve async route components.
+- Call `beforeRouteEnter` in **activated components**.
+- Call global `beforeResolve` guards.
+- Navigation is confirmed.
+- Call global `afterEach` hooks.
+- DOM updates triggered.
+- Call callbacks passed to next in `beforeRouteEnter` guards with instantiated instances.
+
+### 12.11 Restrictions on Route
+
+If the user is logged in, we allow to enter the route. use the `UserStore` in the guard functions to implement this.
+`next()`: 3rd parameter, [doc](https://router.vuejs.org/guide/advanced/navigation-guards.html#Optional-third-argument-next.)
+
+```js
+// check user logged in or not
+const store = useUserStore();
+if (store.isLoggedIn) {
+  next();
+} else {
+  // redirect to home page
+  next({ name: "home" });
+}
+```
+
+### 12.12 Redirect after Logging Out
+
+```js
+signOut() {
+  this.userStore.signOut();
+  if (this.$route.name === "manage") {
+    // access router object in components, vue will inject it.
+    this.$router.push({ name: "home" });
+  }
+},
+```
+
+### 12.13 Route Meta Fields
+
+doc:https://router.vuejs.org/guide/advanced/meta.html
+
+Problem: manually restrict multiple routes to enter
+
+```js
+if (
+  this.$route.name === "manage" ||
+  this.$route.name === "page1" ||
+  this.$route.name === "page2" ||
+  this.$route.name === "page3" ||
+  this.$route.name === "page4"
+) {
+  // redirect to home page
+}
+```
+
+**Solution:**
+define a meta field on the `router.js config`:
+
+```js
+{
+  path: "/manage-music",
+  component: Manage,
+  name: "manage",
+  beforeEnter: (to, from, next) => {
+    next();
+  },
+  meta: {
+    requiresAuth: true,
+  },
+},
+```
+
+Then the app will check the `meta[fieldKey]` instead of the route name `this.$route.name`:
+
+```js
+if (this.$route.meta.requiresAuth === true) {
+}
+```
+
+**Improved Solution**: check meta field on global **level**
+
+```js
+router.beforeEach((to, from, next) => {
+  console.log("to.meta field", to.meta);
+  if (!to.meta.requiresAuth) {
+    // no meta field
+    next();
+  } else {
+    // check useStore.isLoggedIn
+    // ...
+  }
+});
+```
