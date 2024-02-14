@@ -279,3 +279,4 @@
   - [Section 11 - Authentication with firebase](VUE/section11.md)
   - [Section 12 - VUE Router](VUE/section12.md)
   - [Section 13 - Vue File Uploading](VUE/section13.md)
+  - [Section 14 - Vue Audio Playing with Howler.js](VUE/section14.md)
