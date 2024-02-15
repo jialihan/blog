@@ -281,3 +281,4 @@
   - [Section 13 - Vue File Uploading](/VUE/section13.md)
   - [Section 14 - Vue Audio Playing with Howler.js](/VUE/section14.md)
   - [Section 15 - Vue Custom Directives](/VUE/section15.md)
+  - [Section 16 - Vue I18n](/VUE/section16.md)
