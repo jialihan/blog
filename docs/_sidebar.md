@@ -282,3 +282,4 @@
   - [Section 14 - Vue Audio Playing with Howler.js](/VUE/section14.md)
   - [Section 15 - Vue Custom Directives](/VUE/section15.md)
   - [Section 16 - Vue I18n](/VUE/section16.md)
+  - [Section 17 - Vite PWA plugin](/VUE/section17.md)
