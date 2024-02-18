@@ -33,6 +33,8 @@ Error: Cannot find module 'stream/web'
 Require stack:
 ```
 
+✅Note: issue resolved by upgrade Node version to `v16+`.
+
 ### 2. vite doc - vercel
 
 https://vitejs.dev/guide/static-deploy#vercel
