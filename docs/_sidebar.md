@@ -286,3 +286,4 @@
   - [Section 18 - Performance Optimization](/VUE/section18.md)
   - [Section 19 - Deploy to production](/VUE/section19.md)
   - [Section 20 - Vite/Vue Testing](/VUE/section20.md)
+  - [Section 21 - Vue Composition API](/VUE/section21.md)
