@@ -380,7 +380,7 @@ console.log(isReactive(accounts));
 
 ### 15. the setup attribute
 
-`<script setup>` which means the code inside will be wrapped by the setup function. Then **no need to add a setup func**.
+`<script setup>` ([doc](https://vuejs.org/api/sfc-script-setup.html)) which means the code inside will be wrapped by the setup function. Then **no need to add a setup func**.
 
 Note:
 
