@@ -283,3 +283,6 @@
   - [Section 15 - Vue Custom Directives](/VUE/section15.md)
   - [Section 16 - Vue I18n](/VUE/section16.md)
   - [Section 17 - Vite PWA plugin](/VUE/section17.md)
+  - [Section 18 - Performance Optimization](/VUE/section18.md)
+  - [Section 19 - Deploy to production](/VUE/section19.md)
+  - [Section 20 - Vite/Vue Testing](/VUE/section20.md)
