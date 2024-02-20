@@ -92,8 +92,8 @@ Implement in JS code:
 
 ```
 // access in JS file
-binding.value.icon
-binding.value.right
+binding.value.icon;
+binding.value.right;
 ```
 
 import in the local component.js file:
