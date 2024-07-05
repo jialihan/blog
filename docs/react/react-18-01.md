@@ -156,3 +156,40 @@ A framework for fetching and managing GraphQL data. Every component can be reaso
 
 - [Fragment](https://graphql.org/learn/queries/#fragments): That’s why GraphQL includes reusable units called fragments. Fragments let you construct sets of fields, and then include them in queries where you need to.
 - [useFragment](https://relay.dev/docs/api-reference/use-fragment/) in react-relay: GraphQL fragment specified using a graphql template literal. It **returns** an Object that contains data which has been read out from the Relay store; the object matches the shape of specified fragment.
+
+### 2.5 Server Components (still in development) - [doc](https://react.dev/blog/2020/12/21/data-fetching-with-react-server-components)
+
+#### 2.5.1 Please see this [demo](https://youtu.be/TQQPAU21ZUw) from react team
+
+A few Question and Learnings found during the demo:
+
+- `react-fetch` is sync call on server side code, don't need to await.
+- in dev-tools in browser's `Source tab`, you can see the webpack folder the server side components are not in the JS bundle.
+- must pass `serializable` props over the network http request, eg: `json, jsx,...`. But the wrong example is: ❌ `func={()=>{}}` which is not seriablizable, react will throw error.
+- server components does not render into HTML, they render into a special format that can stream down to clients.
+
+**Key points:**
+
+- Server components have zero effect on the bundle sizse, eg: `Note.server.js`, dependencies like `date-fns` won't be in the webpack's bundle.
+- Server components let you access the backend resources directly, eg: `react-fs` read from file system, `./db` read from DB.
+- React IO Libraries:
+  - `react-fs`: Filesystem
+  - `react-pg`: PostgreSQL
+  - `react-fetch`: Fetch
+  - ...
+- Server components read GraphQL queries on the server, won't replace GraphQL. But server components gives the option to integrate GraphQL endpoint later.
+- Server components let you only load the code that is necessary. On demand downloading the client component if it's needed ,server side only send the instructions to download the bundle if needed.
+  - webpack bundler collaborate to support server components
+  - next.js to collaborate with server components
+  - Parcel
+- server components let you decide the tradeoff for every concrete case. If interactive conentent needes, better to render on client. But if some articles or static content, better to render on server side.
+- server components is `Opt-in`, react client is NOT going away
+- server components are still in research and in development
+
+#### 2.5.2 Github Demo source code
+
+[Clone the demo](https://github.com/reactjs/server-components-demo) to play with React Server Components on your computer.
+
+#### 2.5.3 RFC of server components
+
+Read the [RFC (with FAQ at the end)](https://github.com/reactjs/rfcs/pull/188) for a deeper technical breakdown and to provide feedback.
