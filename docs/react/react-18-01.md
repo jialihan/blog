@@ -163,7 +163,7 @@ A framework for fetching and managing GraphQL data. Every component can be reaso
 
 A few Question and Learnings found during the demo:
 
-- `react-fetch` is sync call on server side code, don't need to await.
+- `react-fetch` is sync call on server side code, don't need to await. But in their RFC they added `async / await` support for server components [here](https://github.com/reactjs/rfcs/pull/229).
 - in dev-tools in browser's `Source tab`, you can see the webpack folder the server side components are not in the JS bundle.
 - must pass `serializable` props over the network http request, eg: `json, jsx,...`. But the wrong example is: ❌ `func={()=>{}}` which is not seriablizable, react will throw error.
 - server components does not render into HTML, they render into a special format that can stream down to clients.
