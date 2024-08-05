@@ -8,7 +8,7 @@ mdn doc: [link](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceReso
 
 1. [a typical HTTP session](https://developer.mozilla.org/en-US/docs/Web/HTTP/Session)
 
-   - The client establishes a TCP connection (or the appropriate connection if the transport layer is not TCP). 复习：`vs. UDP` - TCP is connection-based and provide reliable services, while **UDP is stateless and not realiable** delievery.
+   - The client establishes a TCP connection (or the appropriate connection if the transport layer is not TCP). 复习：`vs. UDP` - TCP is **connection-based**, **stateful** and provide **reliable** services, while **UDP is stateless and not realiable** delievery.
    - The client sends its request, and waits for the answer.
    - The server processes the request, sending back its answer, providing a status code and appropriate data.
 
