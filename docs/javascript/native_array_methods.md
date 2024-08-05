@@ -33,21 +33,20 @@
 For example:
 
 ```js
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
 // eg: 1 + 2 + 3 + 4
-array1.reduce(reducer, initialValue);
+array1.reduce(callbackFn(acc, curValue, index, array), initialValue);
 ```
 
 <div  id="q1-2"  />
 
 #### 1.2. Advanced Usage
 
-The **reducer** function takes four arguments:
+The **callbackFn()** function takes four arguments:
 
-1. Accumulator
-2. Current Value
-3. Current Index - optional
-4. Source Array - optional
+1. `Accumulator` - returned value at each step
+2. `Current Value`
+3. `[Current Index`]` - optional
+4. `[Source Array]` - optional
 
 **Edge case:**
 When `initialValue` not provided:
@@ -65,7 +64,7 @@ For example: when **No initial value provided**
   accumulator,
   currentValue,
   currentIndex,
-  array
+  array,
 ) {
   return accumulator + currentValue;
 });
@@ -108,11 +107,13 @@ Array.prototype.myReduce = function (fn, initialValue) {
   if (!initialValue && this.length === 0) {
     throw "error input";
   }
+  // 1. setup initial value
   var acc = arguments.length === 1 ? this[0] : initialValue;
   for (var i = 0; i < this.length; i++) {
     if (i === 0 && arguments.length === 1) {
       continue;
     }
+    // 2. callbackFn with accumulator and curValue
     acc = fn.call(this, acc, this[i], i, this);
   }
   return acc;
