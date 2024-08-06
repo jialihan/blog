@@ -1,10 +1,26 @@
-### I. Big questions about background
+### 0. clarification questions
 
-#### 1.1 full functional
+### I. Requirements (functional & non-functional)
 
-#### 1.2 is it SEO or only SPA is good enough
+#### 1.1 functional requirements
 
-What is SEO friendly?
+#### 1.2 non-functional
+
+- all devices & mobile friendly: web is good enough, desktop first eg: for B2B transactions, most people use it in larger screen, then web first is fine.
+
+- edge cases:
+
+  - infinite scrolling
+  - caching
+  - retries
+
+- offline chace
+- Loading state/ errror /success states
+- A11y
+- i18n: eg: [html lang attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang)
+
+- SEO vs. SPA?
+  What is SEO friendly?
 
 - **“SEO”** refers to search engine optimization, or [the process of optimizing a website](https://www.wordstream.com/blog/ws/2018/07/26/international-seo)
 
@@ -25,20 +41,7 @@ How to achieve SEO ?
 
 Progressive Web Application means that it is intended to work on any platform that uses a [standards-compliant](https://en.wikipedia.org/wiki/Standards-compliant "Standards-compliant") [browser](https://en.wikipedia.org/wiki/Web_browser "Web browser"), including both [desktop](https://en.wikipedia.org/wiki/Desktop_computer "Desktop computer") and [mobile devices](https://en.wikipedia.org/wiki/Mobile_device "Mobile device"), and for every user to use it.
 
-#### 1.4 mobile -> mobile first, then desktop? or web is good enough, desktop first?
-
-- eg: for B2B transactions, most people use it in larger screen, then web first is fine.
-
-### II. MVP
-
-List what is the MVP feature that you want to implement.
-
-- list MVP
-- list that OOS: out of scope, not covered
-
-### III. Big picture (UI)
-
-### IV. Data flow and User flow
+### II. Component Design (Big picture/Architecture/UI)
 
 - For each user-case
   for example:
@@ -47,21 +50,81 @@ List what is the MVP feature that you want to implement.
   case2. user send message
   case3. user receive a message
   ```
-- Define front end data structure
-  for example:
-  ```js
-  state = {
-  	contacts: {...},
-  	items: {...},
-  	userInfo: {...}
-  }
-  ```
+- Drawing pictures of client <---> server
 
-### V. state of the UI component
+### III. Data Model
 
-### VI. how to split components and how to organize components together
+3.1 componentProps:
 
-### VII. challenges/bottlenecks
+```
+type componentArgs = {
+	// data
+	resultData: [],
+	minSearchLen: number,
+	// cache
+	// interactions/callback
+	onChange: ()=>{},
+	onFocus:()=>{},
+	onBlur: ()=>{},
+	onSubmit: ()=>{},
+	// styling
+	style: string
+	className: string,
+	// debounce
+	debounceTime: number,
+}
+```
+
+3.2 Define front end data structure
+for example:
+
+```js
+state = {
+	contacts: {...},
+	items: {...},
+	userInfo: {...}
+}
+```
+
+### IV. Interface (API)
+
+- HTTP1.0 vs. HTTP 2.O: half-duplex
+- GraphQL: Modern API, http2 compatibility, `pull the dat you need`.
+- websockets: full-duplex communication over a single TCP, speed is fast. Cons: hard to load balance (eg: consistent hashing), if one server is down, ....
+
+### V.Optimization/improvment
+
+#### 5.1 Network Performance
+
+- compress headers, GZIP files(js file, css files)
+- http caching
+- Batch Requests
+- impage optimization: pull compressed images by fixed size from [microservices](https://www.atlassian.com/microservices/microservices-architecture/microservices-vs-monolith)("a series of independently deployable services.")
+- code-splitting: lazy load, vendor bundle (eg: tracking, analysis, etc..)
+
+#### 5.2 Rendering Performance
+
+- mobile fridenly and responsive UI
+- client side cache: local storagem cookies, [session storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
+- `preload` JS when needed
+- SSR -> next.js
+- error states / success states
+
+#### 5.3 A11y
+
+- use `aria-label` on non-text content
+- keyboard navigation
+- semantic html
+- device tests
+
+#### 5.4 Security
+
+- XSS -> sanitize HTML input before sending to API
+- CORS
+
+### Appendix
+
+<s> #### [Outdated]VII. challenges/bottlenecks</s>
 
 Basically consider it with two areas:
 
@@ -102,8 +165,8 @@ Basically consider it with two areas:
 - **Code splitting/Skeleton:** [reference](https://developer.mozilla.org/en-US/docs/Glossary/Code_splitting)
   Code splitting is the splitting of code into various bundles or components which can then be loaded on demand or in parallel.
   - webpack manages the bundles
-    - App bundle -> lazy load
-    - Vendor bundle -> tracking, 3rd party libraries
+  - App bundle -> lazy load
+  - Vendor bundle -> tracking, 3rd party libraries
   - ES2020 - dynamic import
     ````js
     import('/modules/some-module.js')

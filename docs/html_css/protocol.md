@@ -1,6 +1,26 @@
 ## Web Network Protocol Comparison
 
-#### 0. Five layer Model in network (OSI model)
+#### I. [Five layer Model in network (OSI model)](#question-1)
+
+#### II. [How does TLS works?](#question-2)
+
+#### III. [network performance: http1.0 vs http2](#question-3)
+
+#### IV. [network choices for Loading new Feeds](#question-4)
+
+- [Long Polling](#q4-1)
+- [Web Socket](#q4-2)
+- [SSE](#q4-3)
+
+#### V. [How CDN helps performance?](#question-5)
+
+### VI. [What is the Reverse Proxy?](#question-6)
+
+#### VII. [What is Message Queue](#question-7)
+
+<div id="question-1" />
+
+### I. Five layer Model in network (OSI model)
 
 - Application Layer: HTTP
 - Transport Layer: SSL(secure socket layer)/TSL，TCP, UDP
@@ -8,21 +28,53 @@
 - Data-Link Layer: `Frame` data
 - [Physical Layer](https://www.simplilearn.com/tutorials/cyber-security-tutorial/physical-layer-in-the-osi-model): raw `Bit` data
 
-#### I. [network performance: http1.0 vs http2](#question-1)
+<div id="question-2"/>
 
-#### II. [network choices for Loading new Feeds](#question-2)
+### II. how TLS works?
 
-- [Long Polling](#q2-1)
-- [Web Socket](#q2-2)
-- [SSE](#q2-3)
+Transport layer security, while SSL is the old technology.
 
-#### III. [How CDN helps performance?](#question-3)
+#### 2.1 TSL tasks
 
-#### IV. [What is Message Queue](#question-4)
+- authentication
+- data encryption
+- data integrity
 
-<div id="question-1"/>
+#### 2.2 how does TLS work?
 
-### I. Network Performance: http1.0 vs http2
+TLS session has 2 phase:
+
+- Handshake phase: for authentication
+  - how to obtain the certificate? - Authority(CA) give to server/domain, and the cert is `digitally signed` with its own `private key`.
+  - Server sends ---> Cert & public key ---> client
+- Encrpytion phase：
+  - Client verify the Cert is valid, use public key to encrpyt the secrete string.
+  - Server receive the encrpyted string, use its own private key to decode.
+  - Both client & server use: `screte string + other_info --> master key --> session KEY`
+
+#### 2.3 how fast is TLS performance? encrpty & decrpty
+
+TLS Auth phase: `public-private` key use ASymmetric algorithm, slow.
+TLS Encrpytion: `secrete key` use Symmetric algorithm, fast.
+
+#### 2.4 over TCP + TLS1.3
+
+it saves the handshake phase time to re-use for TCP handshake:
+
+- handshake time
+- send data time
+
+#### 2.5 how to implement TLS on a website?
+
+- obtain a security certificate from CA(cert authority)
+- config the cert on your server
+- update website's URL to "http + s"
+- tes tthe website
+- automate crtificate renewal (it has expires date)
+
+<div id="question-3"/>
+
+### III. Network Performance: http1.0 vs http2
 
 HTTP1 Disadvantages:
 
@@ -41,18 +93,18 @@ reference article: [link](https://imagekit.io/blog/http2-vs-http1-performance/)
 - \***\*Server Push\*\***
   Instead of waiting for the client to request for assets like JS and CSS, the server can “push” the resources it believes would be required by the client. Avoids the round trip.
 
-<div id="question-2"/>
+<div id="question-4"/>
 
-### II. network choices for Loading new Feeds
+### IV. network choices for Loading new Feeds
 
 - traditional Polling: with time interval
 - Long Polling
 - WebSockets
 - SSE: Server Send Event
 
-<div id="q2-1" />
+<div id="q4-1" />
 
-#### 2.1 Long polling
+#### 4.1 Long polling
 
 This is a variation of the traditional polling technique that allows the server to push information to a client whenever the data is available.
 
@@ -72,16 +124,16 @@ This is a variation of the traditional polling technique that allows the server 
 
 ![image](../assets/longpolling.png ":size=517x378")
 
-<div id="q2-2" />
+<div id="q4-2" />
 
-#### 2.2 Websocket
+#### 4.2 Websocket
 
 - 1 ) provides [Full duplex](<https://en.wikipedia.org/wiki/Duplex_(telecommunications)#Full_duplex>) communication channels over a single TCP connection.
 - 2 ) It provides a persistent connection between a client and a server that both parties can use to start sending data at any time.
 
-<div id="q2-3" />
+<div id="q4-3" />
 
-#### 2.3 Server Send Event
+#### 4.3 Server Send Event
 
 - 1 ) Client requests data from a server using regular HTTP.
 - 2 ) The requested webpage opens a connection to the server.
@@ -93,16 +145,18 @@ SSEs are best when we need **real-time traffic** from the server to the client o
 **Disadvantage:**
 BUT: If the **~~client wants to send data to the server,~~** it would require the use of **another technology/protocol** to do so.
 
-<div id="question-3"/>
+<div id="question-5"/>
 
-### III. How CDN helps performance?
+### V. How CDN helps performance?
 
 - CDN has a quick time to fetch static resources
 - cache `images, css, js` files on CDN is a great improvement on performance on front end
 
 ![image](../assets/cdn_flow.png ":size=627x226")
 
-### IV. What is the Reverse Proxy?
+<div id="question-6"/>
+
+### VI. What is the Reverse Proxy?
 
 What is proxy?
 
@@ -113,11 +167,11 @@ What is proxy?
 1 ) Reverse Proxy: from client to server - Ngnix - Apache - ...
 2 ) Forward Proxy: from server to client
 
-<div id="question-4"/>
+<div id="question-7"/>
 
-### IV. What is Message Queue?
+### VII. What is Message Queue?
 
-#### 4.1 Definition
+#### 7.1 Definition
 
 **Asynchronous** **service-to-service communication** used in serverless and microservices architectures.
 
@@ -126,7 +180,7 @@ A message queue provides an **asynchronous communications protocol,** which is a
 - Producer - server node
 - Consumer - server node
 
-#### 4.2 How MQ works?
+#### 7.2 How MQ works?
 
 Rules:
 
@@ -141,14 +195,14 @@ Use case:
 - food order
   ![image](../assets/foodorder.png ":size=505x256")
 
-#### 4.3 Advantages
+#### 7.3 Advantages
 
 - Decouple
 - Scaling
 
 A decoupled system is achieved when two or more systems are able to communicate without being connected. The systems can remain completely autonomous and unaware of other functions.
 
-#### 4.4 Examples of MQ
+#### 7.4 Examples of MQ
 
 - Apache Kafka
 - RabbitMQ
