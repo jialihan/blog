@@ -28,6 +28,13 @@
 - Data-Link Layer: `Frame` data
 - [Physical Layer](https://www.simplilearn.com/tutorials/cyber-security-tutorial/physical-layer-in-the-osi-model): raw `Bit` data
 
+which layer APR protocal working on?
+`Address Resolution Protocol (ARP)` is a layer 2(data link layer) protocol for **mapping an Internet Protocol address (IP address) to a physical machine address (Mac address)** that is recognized in the local network.
+
+The Address Resolution Protocol is a layer 2 protocol used to map MAC addresses to IP addresses. All hosts on a network are located by their IP address, but `NICs`(eg: ethernet adapter, **Network interface controller**,，网络适配器，网卡，或局域网接收器) do not have IP addresses, they have MAC addresses. ARP is the protocol used to associate the IP address to a MAC address.
+
+When a host wants to send a packet to another host, say IP address 10.5.5.1, on its local area network (`LAN`), it first sends out (broadcasts) an ARP packet. The ARP packet contains a simple question: What is the MAC address corresponding to IP address 10.5.5.1? The host that has been configured to use the IP address responds with an ARP packet containing its MAC address.
+
 <div id="question-2"/>
 
 ### II. how TLS works?

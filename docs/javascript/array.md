@@ -18,6 +18,7 @@
 - [6.2 Slice method](#q6-2)
 - [6.3 Pop, Push, Shift and Unshift](#q6-3)
 - [6.4 how to "shuffle()" an Array?](#q6-4)
+- [6.5 sort() default behavior](#q6-5)
 
 #### VII. [Dimensions](#question7)
 
@@ -251,6 +252,19 @@ Javascript also gives us four method to easily add/ remove items to the beginnin
   // console.log(arr);
   ```
 
+#### 6.5 sort() default behavior
+
+The [default sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) order is ascending, built upon converting the elements into **strings**, then comparing their sequences of UTF-16 code units values.
+
+eg:
+
+```js
+const array1 = [1, 30, 4, 21, 100000];
+array1.sort();
+console.log(array1);
+// Expected output: Array [1, 100000, 21, 30, 4]
+```
+
 ### VII. Dimensions
 
 Note: Javascript does not have more than one dimension.
@@ -263,7 +277,7 @@ How to make a 2D array in javascript?
 var items = [
   [1, 2],
   [3, 4],
-  [5, 6]
+  [5, 6],
 ];
 ```
 
