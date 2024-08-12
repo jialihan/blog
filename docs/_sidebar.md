@@ -189,3 +189,6 @@
 - System Design~
   - [Browser URL](/performance/browser.md)
   - [Web network protocol](/html_css/protocol.md)
+  - [System Design Concepts](/web-design/design-concepts.md)
+  - [System Design Builing Blocks](/web-design/design-building-blocks.md)
+  - [System Design Interview Questions](/web-design/frequent-questions.md)
