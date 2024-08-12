@@ -2,6 +2,12 @@
 
 #### 1. [Object.setPrototypeOf()](#question1)
 
+- [Docs](#q1-1)
+- [Syntax](#q1-2)
+- [Code Example on Instances](#q1-2)
+- [Error Example](#q1-2)
+- [setPrototypeOf() on constructor functions](#q1-5)
+
 #### 2. [`setPrototypeOf()` on instances](#question2)
 
 #### 3. [Create from New Prototype Object](#question3)
@@ -9,14 +15,20 @@
 - [`Object.assign()` to create a new prototype object](#q3-1)
 - [`Object.create()` to extend prototype chain](#q3-2)
 
-#### 4. [Reference and Links](#question4)
+#### 4. [BFE-53: myExtends in ES5](#question4)
+
+#### 5. [Reference and Links](#question5)
 
 <div id="question1" />
 
 ### I. What is the [Object.setPrototypeOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) ?
 
+<div id="q1-1" />
+
 **1.1 Docs:**
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
+
+<div id="q1-2" />
 
 **1.2 Syntax:**
 
@@ -27,7 +39,9 @@ Object.setPrototypeOf(obj, prototype);
 > Note:
 > `Object.setPrototypeOf()` is in the ECMAScript 2015 specification. It is generally considered the proper way to set the prototype of an object, vs. the more controversial [`Object.prototype.__proto__`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) property.
 
-**1.3 Code Example:**
+<div id="q1-3" />
+
+**1.3 Code Example on Instances**
 The following two lines are the same, results are also the same:
 
 ```js
@@ -43,6 +57,8 @@ Result of the **instance** of Student :
 
 ![image](../assets/instance_setprototype_results2.png)
 
+<div id="q1-4" />
+
 **1.4 Error Example** --> DON'T do like this:
 Nothing happened, you are adding a `__proto__` link on the constructor function ( which is NOT a real object), nothing happens.
 
@@ -53,6 +69,35 @@ Object.setPrototypeOf(Student, Person.prototype);
 Student canNOT inherits any thing from Person, Student class NOT changes, see the following result:
 
 ![image](../assets/student_instance_obj.png)
+
+<div id="q1-5" />
+
+#### 1.5 setPrototypeOf() on constructor functions
+
+Code syntax:
+
+```js
+var Person = function () {
+  this.name = "x";
+  this.age = 20;
+};
+var Student = function () {
+  this.id = 10001;
+};
+// No impact on instances object, only extends the static methods/static props.
+Object.setPrototypeOf(Student, Person);
+```
+
+For example:
+
+```js
+Person.boo = "abc";
+// before the link
+Student.boo = "undefined";
+Object.setPrototypeOf(Student, Person);
+// after
+Student.boo = "abc";
+```
 
 <div id="question2" />
 
@@ -127,7 +172,36 @@ It works and extends the inheritance `__proto__` link automatically! Also allows
 
 <div id="question4" />
 
-### IV. Reference and Links
+### IV.BFE-53: myExtends in ES5
+
+Coding question [BFE 53](https://bigfrontend.dev/problem/write-your-own-extends-in-es5):
+
+```js
+const myExtends = (SuperType, SubType) => {
+  function Child(...args) {
+    SuperType.apply(this, args);
+    SubType.apply(this, args);
+
+    // Important to make ALL instances directly from SubType
+    // instanceChild.__proto__ === Student.prototype
+    this.__proto__ = SubType.prototype;
+  }
+
+  // instanceChild.__proto__.__proto__ === Person.prototype
+  SubType.prototype.__proto__ = SuperType.prototype;
+
+  // For test case: ExtendedType.prototype should be SuperType
+  // NOT needed on creating instances
+  // only for edge cases eg: SuperType.boo = 'abc', then Child.boo = 'abc'.
+  Child.__proto__ = SuperType;
+
+  return Child;
+};
+```
+
+<div id="question5" />
+
+### V. Reference and Links
 
 - **setPrototypeOf()** : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
 - **Object.prototype.**proto\*\*\*\* : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
