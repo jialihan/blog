@@ -23,6 +23,13 @@
     <--SYN+ACK--
     --ACK-->
 
+- 4.1 [TLS](https://jialihan.github.io/blog/#/html_css/protocol?id=question-2) if using `https`:
+  - client --> server: which TLS version & which encrpytion algorithm to use.
+  - server --> client: send certificate & public key
+  - client --> server: message with public key encrepyted.
+
+![image](../assets/tcp_tls_working.png)
+
 5.  send a request to get the specific page
 6.  handle the response from the server and
 7.  how it renders the page so you, the viewer, can interact with the website
