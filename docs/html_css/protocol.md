@@ -49,6 +49,8 @@ Transport layer security, while SSL is the old technology.
 
 #### 2.2 how does TLS work?
 
+Refer to youtube: https://www.youtube.com/watch?v=THxIyHz191A
+
 TLS session has 2 phase:
 
 - Handshake phase: for authentication
