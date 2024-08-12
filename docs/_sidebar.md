@@ -40,7 +40,6 @@
   - [Copy and Highlight Selected Text in HTML](/html_css/copy_highlight.md)
   - [Form Elements in HTML Examples](/html_css/formEL.md)
   - [Enter Key trigger click on Focused Element](/html_css/button_enter.md)
-  - [Web network protocol](/html_css/protocol.md)
   - [Web Accessibility](/html_css/a11y.md)
   - [How to center an element in CSS?](/html_css/center.md)
   - [Reflow/Repaint & Minimize DOM manipultion](/html_css/reflow.md)
@@ -154,31 +153,6 @@
   - [Day3 - Compiler & its Configuration](/typescript/day3_compiler.md)
   - [Day2 - Basics and Basic Types](/typescript/day2_basictypes.md)
   - [Day1 - Getting started!](/typescript/day1_getstarted.md)
-- Leetcodeet
-  - String
-    - [String prefix & suffix - KMP algorithm](/leetcode/string/kmp.md)
-  - Array
-    - [Quick Sort - JS](/leetcode/array/quicksort.md)
-    - [Squares, Rectangles, Ones in matrix](/leetcode/array/ones_in_matrix.md)
-    - [Max Sub-Array Sum - kadane's algorithm](/leetcode/array/max_subarray.md)
-    - [Leetcode 300/1713 Longest Increasing Sequence](/leetcode/array/LIS.md)
-    - [Maximal Rectangle](/leetcode/lc85.md)
-  - DP
-    - [PaintHouse_III](/leetcode/PaintHouse_III.md)
-    - [Palindrome Partition I,II,III,IV](/leetcode/dp/palindrome_partition.md)
-  - DFS
-    - [1617.Count Subtrees With Max Distance Between Cities](/leetcode/lc1617.md)
-    - [1245.Tree Diameter](/leetcode/dfs/lc1245.md)
-  - Graph
-    - [1334.Smallest Number of Neighbors at a Threshold Distance](/leetcode/lc1334.md)
-  - BFS
-    - [1559. Detect Cycles in 2D Grid](/leetcode/bfs/lc1559.md)
-    - [1368.Minimum Cost to Make at Least One Valid Path in a Grid](/leetcode/bfs/lc1368.md)
-    - [1102.Path With Maximum Minimum Value](/leetcode/lc1102.md)
-    - [505.The Maze II](/leetcode/bfs/lc505.md)
-  - Tree
-    - [1373. Maximum Sum BST in Binary Tree](/leetcode/lc1373.md)
-    - [Leetcode 1489 MST](/leetcode/mst.md)
 - IOS
   - [Tip: Radius & Shadow](/ios/radius-shadow.md)
   - [Responsive UI](/ios/responsiveUI.md)
@@ -212,3 +186,6 @@
   - [Section 19 - Deploy to production](/VUE/section19.md)
   - [Section 20 - Vite/Vue Testing](/VUE/section20.md)
   - [Section 21 - Vue Composition API](/VUE/section21.md)
+- System Design~
+  - [Browser URL](/performance/browser.md)
+  - [Web network protocol](/html_css/protocol.md)
