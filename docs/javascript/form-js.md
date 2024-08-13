@@ -51,6 +51,7 @@ For each element, we need add event listener on it.
 Complete code example:
 
 ```
+// WRONG: do not add listener on each element, add on the parent element only!!!
 var radios = document.getElementsByName("inputr");
 for( let el of radios)
 {

@@ -18,6 +18,8 @@
 
 #### VII. [What is Message Queue](#question-7)
 
+#### VIII. [What is REST?](#question-8)
+
 <div id="question-1" />
 
 ### I. Five layer Model in network (OSI model)
@@ -216,3 +218,34 @@ A decoupled system is achieved when two or more systems are able to communicate 
 - Apache Kafka
 - RabbitMQ
 - .....
+
+<div id="question-8" />
+
+### 8. What is REST?
+
+[A REST API](https://www.redhat.com/en/topics/api/what-is-a-rest-api) (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction between servers and clients.
+REST stands for `representational state transfer`.
+
+REST is a set of architectural constraints, not a protocol or a standard. API developers can implement REST in a variety of ways.
+
+In order for an API to be considered RESTful, it has to conform to these criteria:
+
+- A `client-server architecture` made up of clients, servers, and resources, with requests managed through HTTP.
+- **Stateless client-server communication**, meaning no client information is stored between get requests and each request is separate and unconnected.
+- Cacheable data that streamlines client-server interactions.
+
+** Making Requests**
+REST requires that a client make a request to the server in order to retrieve or modify data on the server. A request generally consists of:
+
+- an HTTP verb, which defines what kind of operation to perform
+- a header, which allows the client to pass along information about the request
+- a path to a resource
+- an optional message body containing data
+
+**HTTP Verbs**
+There are 4 basic HTTP verbs we use in requests to interact with resources in a REST system:
+
+- GET — retrieve a specific resource (by id) or a collection of resources
+- POST — create a new resource
+- PUT — update a specific resource (by id)
+- DELETE — remove a specific resource by id
