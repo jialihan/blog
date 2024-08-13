@@ -2,6 +2,8 @@
 
 github source: [System Design Interview problems](https://github.com/ashishps1/awesome-system-design-resources?tab=readme-ov-file#-system-design-interview-problems).
 
+![image](../assets/big-picture-system-design.png)
+
 ### [What to expect to answer interview questions?](https://github.com/ashishps1/awesome-system-design-resources/tree/main?tab=readme-ov-file#-how-to-answer-a-system-design-interview-problem)
 
 [Article](https://blog.algomaster.io/p/how-to-answer-a-system-design-interview-problem) in details:

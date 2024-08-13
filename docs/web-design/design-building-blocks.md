@@ -2,6 +2,8 @@
 
 Github resources: [awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources?tab=readme-ov-file)
 
+![image](../assets/big-picture-system-design.png)
+
 ### 1. application servers
 
 computers that handle the business logic and processing required by the application.
