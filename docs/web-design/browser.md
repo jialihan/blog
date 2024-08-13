@@ -5,7 +5,7 @@
 - 复习: [web worker API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
 
 2.  HTTP Cache
-3.  DNS: look up the location of the server hosting the website ([DNS find the IP address](https://www.freecodecamp.org/news/what-happens-when-you-hit-url-in-your-browser/)), it runs a DNS **Query**:
+3.  DNS: look up the location of the server hosting the website ([DNS find the IP address](https://www.freecodecamp.org/news/what-happens-when-you-hit-url-in-your-browser/)), it runs a DNS **Query**: (`nslookup google.com`)
 
     - check local browser cache or Mac OS cache
     - Recursive Resolver Server (is your ISP, internet service provider). then it runs in ISP cache.
