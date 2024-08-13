@@ -1,4 +1,4 @@
-## 1. [createReactClass()](https://legacy.reactjs.org/docs/react-without-es6.html) vs React.Component
+### 1. [createReactClass()](https://legacy.reactjs.org/docs/react-without-es6.html) vs React.Component
 
 ❌ createReactClass - before ES6, not encouraged, very less usage in `react` github, only some pure compoennt use it, eg: ReactArt-Rectangle.
 
@@ -106,31 +106,41 @@ class Greeting extends Component {
 
 [SyntheticEvent](https://github.com/facebook/react/blob/v18.2.0/packages/react-native-renderer/src/legacy-events/SyntheticEvent.js#L61):
 
-2.1 naming convention
+#### 2.1 naming convention
 
 - `onClick={}`: camel cases
 - native event: all small cases, eg: `onclick, onsubmit`
 
-  2.2. passing the function
+#### 2.2 passing the function
 
-  - `onClick={hanlder}` or arrow function `onClick={()=>handler()}`
-  - native event: a string of fucntion name:
+- `onClick={hanlder}` or arrow function `onClick={()=>handler()}`
+- native event: a string of fucntion name:
 
-  ```html
-  <button onclick="myFunction()">Click me</button>
-  <script>
-    function myFunction() {
-      document.getElementById("demo").innerHTML = "Hello World";
-    }
-  </script>
-  ```
+```html
+<button onclick="myFunction()">Click me</button>
+<script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello World";
+  }
+</script>
+```
 
-  2.3 Not a 1-to-1 mapping of DomEvent, eg: in `onMouseLeave`, `e.nativeEvent` will point to a `mouseout` event.  
-   If you need the underlying browser event for some reason, read it from e.nativeEvent.
+#### 2.3 Not a 1-to-1 mapping of DomEvent
 
-  2.4 React event objects implement some of the standard `Event`([mdn doc](https://developer.mozilla.org/en-US/docs/Web/API/Event)) properties: - bubbles: A boolean. Returns whether the event bubbles through the DOM. - cancelable: A boolean. Returns whether the event can be canceled. - `currentTarget`: A DOM node. Returns the node to which the current handler is attached in the React tree. - `defaultPrevented`: A boolean. Returns whether preventDefault was called. - eventPhase: A number. Returns which phase the event is currently in. - isTrusted: A boolean. Returns whether the event was initiated by user. - `target`: A DOM node. Returns the node on which the event has occurred (which could be a distant child). - timeStamp: A number. Returns the time when the event occurred.
+eg: in `onMouseLeave`, `e.nativeEvent` will point to a `mouseout` event. If you need the underlying browser event for some reason, read it from e.nativeEvent.
 
-  2.5 Benefis of SyntheticEvent(before v17) - [doc](https://blog.saeloun.com/2021/04/06/react-17-removes-event-pooling-in-modern-system/)
+#### 2.4 React event objects implement some of the standard `Event`([mdn doc](https://developer.mozilla.org/en-US/docs/Web/API/Event)) properties:
+
+- bubbles: A boolean. Returns whether the event bubbles through the DOM.
+- cancelable: A boolean. Returns whether the event can be canceled.
+- `currentTarget`: A DOM node. Returns the node to which the current handler is attached in the React tree.
+- `defaultPrevented`: A boolean. Returns whether preventDefault was called.
+- eventPhase: A number. Returns which phase the event is currently in.
+- isTrusted: A boolean. Returns whether the event was initiated by user.
+- `target`: A DOM node. Returns the node on which the event has occurred (which could be a distant child).
+- timeStamp: A number. Returns the time when the event occurred.
+
+#### 2.5 Benefis of SyntheticEvent(before v17) - [doc](https://blog.saeloun.com/2021/04/06/react-17-removes-event-pooling-in-modern-system/)
 
 **Before react 17:**
 

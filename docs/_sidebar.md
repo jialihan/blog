@@ -4,10 +4,9 @@
   - [git rebase](/git-operation/rebase.md)
   - [git cherry pick](/git-operation/cherrypick.md)
 - React
-  - [React Questions 0 - basics](/react/react-questions-2024/react_questions.md)
   - [React Questions 01](/react/react-questions-2024/q01_createReactClass.md)
   - [React Questions 02](/react/react-questions-2024/q02_react_event_obj.md)
-  - [React Questions 03](/react/react-questions-2024/q03_controlled_component.md)
+  - [React Q3 - controlled components](/react/react-questions-2024/q03_controlled_component.md)
   - [React 18 Migration](/react/react-18-01.md)
   - [React - How to create a Simple Calculator?](/react/react_calc.md)
   - [React Day18 - How to Use SVG in React](/react/day18.md)

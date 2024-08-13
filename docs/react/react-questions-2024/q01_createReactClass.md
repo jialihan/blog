@@ -32,6 +32,8 @@ But in ES6 Component, 2 ways to bind the methods:
 constructor() {
     this.handler = this.handler.bind(this);
 }
+onClick = {this.handleClick}
+
 // way 2: use arrow func
 onClick={(e) => this.handleClick(e)}
 ```

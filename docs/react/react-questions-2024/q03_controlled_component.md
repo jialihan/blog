@@ -2,12 +2,26 @@
 
 In most cases, we recommend using [controlled components](https://legacy.reactjs.org/docs/uncontrolled-components.html) to implement forms.
 
-1. key difference: `React` can or cannot know the `value/state changes` in those elements, eg: `input`, `select`.
+#### 1. key difference
 
-- controlled component: form data is handled by a React component, use **two way binding**, writing an `event handler` for every state
+`React` can or cannot know the `value/state changes` in those elements, eg: `input`, `select`.
+
+- controlled component: form data is handled by a React component, use **two way binding**, writing an `event handler` for every state. The below code to bind:
+
+  ```js
+  // way 1
+  constructor() {
+      this.handler = this.handler.bind(this);
+  }
+  onClick = {this.handleClick}
+
+  // way 2: use arrow func
+  onClick={(e) => this.handleClick(e)}
+  ```
+
 - uncontrolled components: form data is handled by the DOM itself, you can use a `ref` to get form values from the DOM.
 
-2. how to change a uncontrolled component to be controlled?
+#### 2. how to change a uncontrolled component to be controlled?
 
 controlled element:
 
