@@ -191,3 +191,4 @@
   - [System Design Concepts](/web-design/design-concepts.md)
   - [System Design Builing Blocks](/web-design/design-building-blocks.md)
   - [System Design Interview Questions](/web-design/frequent-questions.md)
+  - [System Design File size](/web-design/numbers_and \_size.md)
