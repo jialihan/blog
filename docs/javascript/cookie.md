@@ -49,6 +49,10 @@ How the token based auth process?
 
 ![image](../assets/token_auth_compare_03.png)
 
-### 6. Additional Resources
+### 6. localstorage & sessionStorage
+
+![image](../assets/localstorage-session.png)
+
+### 7. Additional Resources
 
 - MDN docs: [Using HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
