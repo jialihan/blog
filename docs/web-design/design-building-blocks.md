@@ -44,8 +44,17 @@ computers that handle the business logic and processing required by the applicat
 #### 3.1 Relational DB
 
 A relational database like `SQL` is a collection of data items organized in tables.
+handle large amounts of **structured data**, enforce data integrity, and support **complex queries and ACID transactions**.
 
 ![image](../assets/relational_db_image.png)
+
+** Good Examples** of using RDBMS (eg: `MySQL, PostgreSQL`):
+
+- `Enterprise Applications`: For managing customer data, `inventory, employee records, and financial transactions`, where **data integrity and relationships are critical**.
+
+- `E-commerce Platforms`: Handling product catalogs, customer orders, and payment transactions, **requiring complex queries and transaction processing**.
+
+- `Banking and Financial Services`: Managing accounts, transactions, and user data, where the **ACID properties ensure the reliability and consistency** of financial operations.
 
 #### 3.2 How to scale the RDBMS?
 
@@ -106,6 +115,11 @@ It **breaks up large tables into horizontal data partitions**, each `Shard` cont
 - Data distribution can become lopsided in a shard.
   - **Rebalancing adds additional complexity**. A sharding function based on [consistent hashing](http://www.paperplanes.de/2011/12/9/the-magic-of-consistent-hashing.html) can reduce the amount of transferred data.
 
+**Question: can sharding be done on a RDBMS database?**
+
+- In RDBMS, sharding is less common and more complex compared to NoSQL databases due to the strict schema requirements and relational nature of the data.
+- there are constraints when sharding the RDBMS, eg: not all data could be sharded, eg: [Foreign key](https://www.cockroachlabs.com/blog/what-is-a-foreign-key/) relationship must be in a single shard.
+
 #### 3.2.5 SQL tuning
 
 TODO: https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#sql-tuning
@@ -131,6 +145,13 @@ Doc: [SQL v.s NoSQL - 5 critical differences](https://www.integrate.io/blog/the-
 - SQL databases are **vertically scalable**, while **NoSQL databases are horizontally scalable**.
 - SQL databases are **table-based**, while NoSQL databases are document, key-value, graph, or wide-column stores.
 - SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.
+
+**Question: Is SQL faster than NoSQL?**
+[doc](https://www.testgorilla.com/blog/sql-vs-nosql/):
+
+- neither, it depends.
+- This means SQL databases are faster for queries, joins, updates, etc. Because SQL databases **avoid duplication and data redundancy**.
+- data is stored together (not separately, as with SQL). This means that **it’s faster to perform read or write operations on one data entity** compared with SQL databases.
 
 ### 4. Cache
 

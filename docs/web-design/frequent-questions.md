@@ -4,7 +4,7 @@ github source: [System Design Interview problems](https://github.com/ashishps1/a
 
 ![image](../assets/big-picture-system-design.png)
 
-### [What to expect to answer interview questions?](https://github.com/ashishps1/awesome-system-design-resources/tree/main?tab=readme-ov-file#-how-to-answer-a-system-design-interview-problem)
+### [BE: What to expect to answer interview questions?](https://github.com/ashishps1/awesome-system-design-resources/tree/main?tab=readme-ov-file#-how-to-answer-a-system-design-interview-problem)
 
 [Article](https://blog.algomaster.io/p/how-to-answer-a-system-design-interview-problem) in details:
 
@@ -25,6 +25,21 @@ github source: [System Design Interview problems](https://github.com/ashishps1/a
     - replicas
     - fallbacks
     - retries
+
+### FE design questiob Steps
+
+- 0.  clarification questions
+- I. Requirements (functional & non-functional)
+  - 1.1 functional requirements
+  - 1.2 non-functional
+- II. Component Design (Big picture/Architecture/UI)
+- III. Data Model
+- IV. Interface (API) / Protocal
+- V.Optimization/improvment
+  - 5.1 Network performacne
+  - 5.2 Rendering performance
+  - 5.3 A11t
+  - 5.4 Security
 
 ### 1. design a URL shortening service like TinyUrl
 
