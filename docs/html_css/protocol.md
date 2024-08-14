@@ -20,6 +20,8 @@
 
 #### VIII. [What is REST?](#question-8)
 
+#### IX. [Streaming Protocols](#question-9)
+
 <div id="question-1" />
 
 ### I. Five layer Model in network (OSI model)
@@ -249,3 +251,20 @@ There are 4 basic HTTP verbs we use in requests to interact with resources in a 
 - POST — create a new resource
 - PUT — update a specific resource (by id)
 - DELETE — remove a specific resource by id
+
+<div id="question-9" />
+
+### 9. Streaming Protocols
+
+#### 9.1 HTTP Live Streaming (HLS)
+
+- built on TCP (http)
+- The Segmentation Principle: HLS breaks video streams **into smaller chunks (segments)** usually a few seconds long.
+- Manifest Files: HLS uses manifest files (e.g., .m3u8) to list available segments and their corresponding bitrates.
+- Client-Side Logic: The video player on the client device is responsible for **downloading segments**, selecting appropriate bitrates, and ensuring smooth playback.
+
+#### 9.2 RTSP (built on RTP - real-time-protocol)
+
+RTSP leverages TCP to maintain an end-to-end and stable connection without requiring local download or caching.
+
+However, the protocol **does NOT support content encryption or retransmission of lost media packets** and **cannot stream directly to a browser over HTTP**. This is because RTSP is connected to a dedicated server for streaming and relies on RTP to transmit real media.
