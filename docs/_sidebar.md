@@ -185,10 +185,10 @@
   - [Section 19 - Deploy to production](/VUE/section19.md)
   - [Section 20 - Vite/Vue Testing](/VUE/section20.md)
   - [Section 21 - Vue Composition API](/VUE/section21.md)
-- System Design~
+- System Design
   - [Browser URL](/web-design/browser.md)
   - [Web network protocol](/html_css/protocol.md)
   - [System Design Concepts](/web-design/design-concepts.md)
   - [System Design Builing Blocks](/web-design/design-building-blocks.md)
   - [System Design Interview Questions](/web-design/frequent-questions.md)
-  - [System Design File size](/web-design/numbers_and \_size.md)
+  - [System Design File size](/web-design/numbers_and_size.md)
