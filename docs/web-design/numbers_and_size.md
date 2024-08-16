@@ -18,3 +18,19 @@ a **20KB image** is a low quality image, a **2MB image** is a high quality one.
 | Download from Facebook | < 100KB |
 | Graphic Designer or Web Editor preference | > 2MB |
 | Taken on SmartPhone | > 2MB |
+
+### 3. Audio size
+
+a song of `3.5 minutes` is arond `3.2MB`.
+
+### 4. metadata file sizse
+
+- user metadata: `1KB per user`
+- song/file's metadata: `100 bytes`: eg： `artist_id, file_name`
+
+### 4. number unit in chinese
+
+- 1 million - 一百万
+- 10 million - 一千万
+- 100 million - 一亿
+- 1 billion - 十亿
