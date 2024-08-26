@@ -62,3 +62,24 @@ function Component1() {
   );
 }
 ```
+
+### 3. Handling Events
+
+doc: https://react.dev/learn/responding-to-events
+way1:
+
+```
+onClick={handleClick}
+```
+
+way2:
+
+```
+onClick={()=>handleClick(args)}
+```
+
+❌ Wrong:
+
+```
+onClick={handleClick()}
+```
