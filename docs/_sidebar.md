@@ -193,3 +193,4 @@
   - [System Design Interview Questions](/web-design/frequent-questions.md)
   - [System Design File size](/web-design/numbers_and_size.md)
   - [Design TinyUrl](/web-design/desing-tinyurl.md)
+  - [Design Yelp - location based service](/web-design/design-yelp.md)

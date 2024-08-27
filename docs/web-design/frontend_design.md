@@ -89,7 +89,7 @@ state = {
 ### IV. Interface (API)
 
 - HTTP1.0 vs. HTTP 2.O: half-duplex
-- GraphQL: Modern API, http2 compatibility, `pull the dat you need`.
+- GraphQL: Modern API, http2 compatibility, `pull the data you need`.
 - websockets: full-duplex communication over a single TCP, speed is fast. Cons: hard to load balance (eg: consistent hashing), if one server is down, ....
 
 ### V.Optimization/improvment
